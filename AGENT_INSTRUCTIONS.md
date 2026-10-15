@@ -207,7 +207,112 @@ Do NOT auto-apply to portal jobs — those require manual file upload.
 
 ---
 
-## PART F — UPDATE TRACKER AND COMMIT
+## PART F — COLD OUTREACH (3 per day)
+
+Send 3 personalised cold-outreach emails per day to HR managers, talent leads, or technical hiring contacts at AI/ML companies and research labs. Track every contact in outreach.csv so no one is emailed twice.
+
+### outreach.csv columns
+date,company,contact_name,contact_email,contact_role,company_type,email_sent,notes
+
+If the file does not exist, create it with just the header.
+
+### Target companies for cold outreach (rotate through — never repeat a company already in outreach.csv)
+
+AI Research Labs:
+- DeepMind (deepmind.google) — London
+- Anthropic — UK/remote
+- Meta AI (Research) — London
+- Microsoft Research Cambridge
+- Samsung AI Research — Cambridge
+- Qualcomm AI Research — London
+- ARM ML Group — Cambridge
+- NVIDIA AI Research — remote/London
+- AMD ROCm / AI — remote
+
+UK AI Companies:
+- Wayve (wayve.ai) — London, AV + LLM
+- PolyAI (poly.ai) — London, conversational AI
+- Faculty.ai — London
+- Quantexa — London, AI analytics
+- Stability AI — London/remote
+- Cohere — London/remote
+- Coreweave — London, GPU cloud
+- Groq — remote, inference hardware/software
+- Modal Labs (modal.com) — remote
+- Replicate (replicate.com) — remote
+- Fireworks AI — remote
+
+AI-Heavy Product Companies:
+- Harvey AI
+- Waymo (London presence)
+- Palantir (London)
+- Babylon Health / successor
+- Healx — Cambridge, AI drug discovery
+- BenevolentAI — London
+- Exscientia — Oxford, AI drug discovery
+
+### Step-by-step each day
+
+1. Read outreach.csv. Collect all companies already contacted (column: company).
+
+2. Pick 3 companies from the target list above that are NOT already in outreach.csv and NOT already in tracker.csv as applied/drafted.
+
+3. For each of the 3 companies:
+
+   a. WebFetch the company's careers or about page to find any named HR, Talent, or Recruiting contact.
+      Also WebSearch: "[company name] head of talent email" OR "[company name] recruiter LinkedIn AI engineering"
+      Try patterns: careers@, hr@, talent@, recruiting@[domain]
+      If a named contact is found (e.g. "Sarah Jones, Talent Partner"), prefer them over a generic address.
+
+   b. If no email is found after two searches: use careers@ or hr@ at their primary domain as a best-effort address.
+      Note in outreach.csv: email_found=inferred.
+
+   c. Write a cold outreach email using this exact template (personalise the [SLOTS]):
+
+      Subject: LLM Inference Engineer — Open to Opportunities at [Company Name]
+
+      Body:
+      Hi [Contact Name / Hiring Team],
+
+      I'm Oluwatosin Ayeni — an AI & ML Engineer based in Glasgow, Scotland, specialising in LLM inference engineering and production AI systems.
+
+      A few things that might be relevant to [Company Name]:
+      • Benchmarked Qwen2.5-7B on RTX 4090 with vLLM and SGLang — achieved 28x cost reduction and 18x latency improvement via continuous batching and KV cache optimisation.
+      • Fine-tuned Mistral 7B on radiology data: +22% diagnostic accuracy, −35% hallucination rate — deployed as a live clinical assistant.
+      • Built a production LLM serving stack on Kubernetes (vllm-k8s-stack): KV-cache-aware routing, HPA autoscaling, GPU node management.
+      • MSc Artificial Intelligence with Distinction — University of Strathclyde, 2023.
+
+      I'm actively looking for LLM inference, ML engineering, or AI systems roles — open to remote, hybrid, or Glasgow/London-based.
+
+      My profiles:
+      • GitHub (43 repos, inference benchmarks, fine-tuning pipelines): https://github.com/AyeniOluwatosinOlawale
+      • LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
+      • CV (LaTeX source): https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_example.tex
+
+      [ONE SENTENCE SPECIFIC TO THIS COMPANY — e.g. for Wayve: "I'm particularly drawn to Wayve's approach of training end-to-end neural driving models — the inference throughput challenges at that scale are exactly the class of problem I want to work on." For DeepMind: "DeepMind's work on Gemini's architecture and the inference optimisation research coming out of the systems team is what pulled me into this field." For Cohere: "Cohere's focus on enterprise-grade open models and the serving infrastructure needed to run them at scale aligns exactly with what I've been building independently."]
+
+      I'd welcome a conversation — even a 15-minute call — if there's a fit.
+
+      Best regards,
+      Oluwatosin Ayeni
+      07727305230 | ayenioluwatosinolawale@gmail.com
+
+   d. Send the email via Gmail MCP:
+      - To: [contact email]
+      - CC: ayenioluwatosinolawale@gmail.com
+      - Subject and body as above
+
+   e. Append a row to outreach.csv:
+      date=today, company=[company], contact_name=[name or "Hiring Team"], contact_email=[email], contact_role=[role or "unknown"], company_type=[Research Lab / UK AI Company / etc.], email_sent=true, notes=[any detail]
+
+4. If all target companies have been contacted (outreach.csv is exhaustive), WebSearch for:
+   - "AI inference engineer hiring UK 2026 email"
+   - "LLM ML engineer hiring email contact lab 2026"
+   Find 3 new companies from these results and add them to the outreach run.
+
+---
+
+## PART G — UPDATE TRACKER AND COMMIT
 
 1. For each 75+ job append row to tracker.csv:
    - date=today, company, role, status=applied (if auto-applied) or drafted (if manual needed)
@@ -225,7 +330,7 @@ Do NOT auto-apply to portal jobs — those require manual file upload.
 
 ---
 
-## PART G — SEND EMAIL SUMMARY
+## PART H — SEND EMAIL SUMMARY
 
 Use Gmail MCP. Send to: ayenioluwatosinolawale@gmail.com
 Subject: Job Search Daily - [DATE]
@@ -257,11 +362,17 @@ WORTH A LOOK (60-74)
 For each 60-74 job: [Score]/100 | [Title] at [Company] | one-line reason | [URL]
 If none: None today.
 
+COLD OUTREACH SENT TODAY
+For each of the 3 companies contacted:
+  [Company] — [Contact Name / Hiring Team] — [contact email]
+  Why targeted: [one sentence on why this company is relevant]
+  Total outreach to date: X companies contacted
+
 SOURCES SEARCHED TODAY
 List every source that was checked (LinkedIn, Indeed, Reed, Totaljobs, HackerNews, RemoteOK, Anthropic, DeepMind, etc.) and how many jobs were found from each.
 
 STATS
-Total jobs scanned: X | Auto-applied: X | Manual upload needed: X | Worth reviewing: X | Application updates: X | Follow-ups due: X
+Total jobs scanned: X | Auto-applied: X | Manual upload needed: X | Worth reviewing: X | Application updates: X | Follow-ups due: X | Cold outreach sent today: 3
 
-If no new jobs found: email with just application updates, sources checked, and note no new roles in last 24h.
+If no new jobs found: email with just application updates, cold outreach, sources checked, and note no new roles in last 24h.
 If any source fails to load: note it in the Sources section but continue with the rest.
