@@ -5,7 +5,7 @@ Oluwatosin Olawale Ayeni — ayenioluwatosinolawale@gmail.com — Glasgow UK
 Phone: 07727305230 | LinkedIn: linkedin.com/in/oluwatosinolawaleayeni | GitHub: github.com/AyeniOluwatosinOlawale | anaai.tech
 
 ## Target Roles
-LLM Inference Engineer, ML Engineer (LLM), Generative AI Engineer, AI Engineer, MLOps Engineer
+LLM Inference Engineer, ML Engineer (LLM), Generative AI Engineer, AI Engineer, MLOps Engineer, AI Research Engineer
 
 ## Skills
 Primary: Python, vLLM, SGLang, TensorRT-LLM, CUDA/NVIDIA Nsight, AWQ, speculative decoding, KV cache optimisation, PyTorch, TensorFlow, LLM fine-tuning (Mistral 7B / Phi-4 / Qwen3 via PEFT/LoRA), LangChain, RAG systems, n8n
@@ -41,7 +41,8 @@ MTech/BSc Physics, Federal University of Technology Akure 2016
 
 ## PART A — CHECK FOR RESPONSES TO EXISTING APPLICATIONS
 
-1. Read tracker.csv (header: date,company,role,status,fit_score,apply_url,cv_file,cover_letter_file,notes,last_updated)
+1. Read tracker.csv (header: date,company,role,status,fit_score,apply_url,cv_file,cover_letter_file,auto_applied,notes,last_updated)
+   If the file lacks the auto_applied column, add it after cover_letter_file (default empty for existing rows).
 2. For each open row (status not rejected or offer_accepted): use Gmail MCP to search for emails mentioning the company name, last 7 days, not in sent
 3. Classify replies: interview invite -> interview_scheduled; rejection -> rejected; assessment/task -> assessment_received; offer -> offer_received
 4. Update those tracker rows in memory
@@ -52,20 +53,75 @@ MTech/BSc Physics, Federal University of Technology Akure 2016
 
 ## PART B — SEARCH FOR NEW JOBS (posted last 24h)
 
-Use WebSearch with these queries:
-- LLM inference engineer UK site:linkedin.com
-- generative AI engineer UK remote site:linkedin.com
-- ML engineer LLM UK site:greenhouse.io OR site:lever.co OR site:ashbyhq.com
-- AI engineer LLM UK remote job 2026
-- MLOps engineer LLM UK remote
+Search ALL of the following sources. Collect every job URL found.
 
-Also try WebFetch on:
+### LinkedIn
+WebFetch:
 - https://www.linkedin.com/jobs/search/?keywords=LLM+inference+engineer&location=United+Kingdom&f_TPR=r86400
 - https://www.linkedin.com/jobs/search/?keywords=generative+AI+engineer&location=United+Kingdom&f_TPR=r86400&f_WT=2
+- https://www.linkedin.com/jobs/search/?keywords=ML+engineer+LLM&location=United+Kingdom&f_TPR=r86400
+- https://www.linkedin.com/jobs/search/?keywords=AI+engineer+LLM&location=United+Kingdom&f_TPR=r86400
+- https://www.linkedin.com/jobs/search/?keywords=MLOps+LLM+engineer&location=United+Kingdom&f_TPR=r86400&f_WT=2
 
-For each job URL found, WebFetch the full posting page to extract title, company, location, requirements, apply URL.
+### Indeed UK
+WebFetch:
+- https://uk.indeed.com/jobs?q=LLM+inference+engineer&fromage=1&sort=date
+- https://uk.indeed.com/jobs?q=generative+AI+engineer&fromage=1&sort=date
+- https://uk.indeed.com/jobs?q=ML+engineer+LLM&l=United+Kingdom&fromage=1&sort=date
+- https://uk.indeed.com/jobs?q=AI+engineer+LLM&l=United+Kingdom&fromage=1&sort=date
 
-Skip rules: already in tracker (match company+role any status), Mistral AI, security clearance required, no AI/ML component
+### Reed UK
+WebFetch:
+- https://www.reed.co.uk/jobs/llm-engineer-jobs?datecreatedoffset=1
+- https://www.reed.co.uk/jobs/ai-engineer-jobs?datecreatedoffset=1&keywords=LLM
+
+### Totaljobs
+WebFetch:
+- https://www.totaljobs.com/jobs/llm-engineer?postedWithin=1
+- https://www.totaljobs.com/jobs/ai-engineer?postedWithin=1&keywords=LLM
+
+### Greenhouse / Lever / Ashby (ATS portals used by AI startups)
+WebSearch:
+- site:greenhouse.io "LLM" OR "inference" engineer UK 2026
+- site:lever.co "LLM" OR "generative AI" engineer UK 2026
+- site:ashbyhq.com "ML engineer" OR "AI engineer" LLM UK 2026
+- site:workable.com "LLM engineer" UK 2026
+
+### Google Jobs via WebSearch
+WebSearch queries:
+- "LLM inference engineer" UK job site:linkedin.com OR site:greenhouse.io OR site:lever.co
+- "generative AI engineer" UK remote job site:linkedin.com OR site:greenhouse.io
+- "ML engineer" LLM UK remote job posted:today
+- "AI engineer" LLM inference UK 2026 site:linkedin.com OR site:indeed.com
+- "MLOps engineer" LLM UK remote site:linkedin.com OR site:lever.co
+- LLM engineer job UK "apply by email" OR "send CV" OR "email your CV"
+
+### HackerNews Who's Hiring (monthly thread — check if current month thread exists)
+WebFetch: https://news.ycombinator.com/item?id=43986235
+(If that 404s, WebSearch: site:news.ycombinator.com "Ask HN: Who is hiring" 2026 to find the current thread ID)
+Extract remote ML/AI/LLM roles. Many HN jobs have direct email addresses — flag these for auto-apply.
+
+### Remote-first boards
+WebFetch:
+- https://remoteok.com/remote-ml-jobs
+- https://weworkremotely.com/categories/remote-machine-learning-jobs
+
+### Company career pages (check directly for new postings)
+WebFetch each careers page and look for new LLM/ML/AI engineer openings:
+- https://www.anthropic.com/careers
+- https://deepmind.google/careers/
+- https://huggingface.co/jobs
+- https://cohere.com/careers
+- https://mistral.ai/careers (skip if role is same as already applied)
+- https://stability.ai/careers
+- https://wayve.ai/careers
+- https://poly.ai/careers
+- https://faculty.ai/careers
+- https://quantexa.com/careers
+
+For each job URL found across all sources, WebFetch the full posting page to extract: title, company, location, requirements, responsibilities, HOW TO APPLY (very important — check for email address, portal form, or LinkedIn Easy Apply), apply URL or email.
+
+Skip rules: already in tracker (match company+role any status), Mistral AI Applied AI Forward Deployed ML Engineer, security clearance required, no AI/ML, citizenship/PR required.
 
 ---
 
@@ -79,6 +135,11 @@ Score 0-100 on four weighted dimensions:
 
 Location: PASS if remote/hybrid/UK. FAIL if requires leaving UK or security clearance.
 Strong Fit 75+: generate documents. Worth Reviewing 60-74: flag only. Below 60: skip.
+
+For each job also determine the APPLICATION METHOD:
+- EMAIL: the posting provides an email address to send applications to -> can auto-apply
+- PORTAL: requires submitting via a web form, uploading files to ATS, or LinkedIn Easy Apply -> manual required
+- UNKNOWN: no clear method found -> flag as manual
 
 ---
 
@@ -99,15 +160,40 @@ Cover letter file: cover_letters/cover_COMPANY-SLUG_ROLE-SLUG.tex
 - Addressee: Hiring Team at COMPANY
 - Opening paragraph: name the role, state single strongest fit signal
 - Bullet list: 3-4 specific achievements from work history mapped to posting requirements
-- Company paragraph: reference something real and specific about this company (product, research, mission) — never generic
+- Company paragraph: reference something real and specific about this company — never generic
 - Closing: one sentence on working style fit, I look forward to hearing from you
 - Target 1 page
 
+Also write a plain-text email version of the cover letter: cover_letters/cover_COMPANY-SLUG_ROLE-SLUG_email.txt
+This is used for auto-apply. Same content as the LaTeX cover letter but formatted as plain text for an email body. Include at the end: "My CV is available at https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_COMPANY-SLUG_ROLE-SLUG.tex (LaTeX source) — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format."
+
 ---
 
-## PART E — UPDATE TRACKER AND COMMIT
+## PART E — AUTO-APPLY FOR EMAIL JOBS
 
-1. For each 75+ job append row to tracker.csv: date=today, status=drafted, fit_score=number, cv_file and cover_letter_file paths, notes=brief fit reason, last_updated=today
+For each Strong Fit job where APPLICATION METHOD is EMAIL:
+
+1. Use Gmail MCP to send an application email to the posting's email address
+2. Email subject: "Application for [Role Title] — Oluwatosin Ayeni"
+3. Email body: use the content of cover_letters/cover_COMPANY-SLUG_ROLE-SLUG_email.txt
+4. CC: ayenioluwatosinolawale@gmail.com (so there is a sent copy)
+5. Mark auto_applied = true in tracker row
+6. Update tracker status to applied (not just drafted)
+7. Add to notes: "Auto-applied via email to [email address] on [date]"
+
+Do NOT auto-apply to portal jobs — those require manual file upload.
+
+---
+
+## PART F — UPDATE TRACKER AND COMMIT
+
+1. For each 75+ job append row to tracker.csv:
+   - date=today, company, role, status=applied (if auto-applied) or drafted (if manual needed)
+   - fit_score=number, apply_url, cv_file path, cover_letter_file path
+   - auto_applied=true or false
+   - notes=brief fit reason + application method
+   - last_updated=today
+
 2. Run:
    git config user.email ayenioluwatosinolawale@gmail.com
    git config user.name AyeniOluwatosinOlawale
@@ -117,33 +203,43 @@ Cover letter file: cover_letters/cover_COMPANY-SLUG_ROLE-SLUG.tex
 
 ---
 
-## PART F — SEND EMAIL SUMMARY
+## PART G — SEND EMAIL SUMMARY
 
 Use Gmail MCP. Send to: ayenioluwatosinolawale@gmail.com
 Subject: Job Search Daily - [DATE]
 
-Email body sections:
+Email body:
 
 APPLICATION UPDATES
-For each status change: [Company] - [Role] - [old status] -> [NEW STATUS] - brief detail
+For each status change: [Company] - [Role] - [old] -> [NEW] - brief detail
 For follow-ups due: FOLLOW-UP DUE: [Company] - [Role] - Applied [date] - [N] days no response - [URL]
 If no updates: No new responses found for open applications.
 
-NEW STRONG FITS - UPLOAD AND APPLY
-For each 75+: [Score]/100 | [Title] at [Company] | [Location]
-Why strong fit: [2 sentences]
-Apply here: [URL]
-Files at github.com/AyeniOluwatosinOlawale/job-applications:
-  cv/main_[slug].tex and cover_letters/cover_[slug].tex
-ACTION: Download, compile (lualatex for CV, xelatex for cover letter), upload to portal
-If none: No new strong fits today.
+AUTO-APPLIED (done for you)
+For each job where auto_applied=true today:
+  [Score]/100 | [Title] at [Company] | [Location]
+  Sent to: [email address]
+  Why strong fit: [2 sentences]
+  Posting: [URL]
+
+NEW STRONG FITS - MANUAL UPLOAD REQUIRED
+For each 75+ job today that is PORTAL-based (manual):
+  [Score]/100 | [Title] at [Company] | [Location]
+  Why strong fit: [2 sentences]
+  Apply here: [URL]
+  Files at github.com/AyeniOluwatosinOlawale/job-applications:
+    cv/main_[slug].tex and cover_letters/cover_[slug].tex
+  ACTION: Download, compile (lualatex for CV, xelatex for cover letter), upload to portal
 
 WORTH A LOOK (60-74)
-For each: [Score]/100 | [Title] at [Company] | [one-line reason] | [URL]
+For each 60-74 job: [Score]/100 | [Title] at [Company] | one-line reason | [URL]
 If none: None today.
 
-STATS
-Jobs scanned: X | Strong fits prepared: X | Worth reviewing: X | Application updates: X | Follow-ups due: X
+SOURCES SEARCHED TODAY
+List every source that was checked (LinkedIn, Indeed, Reed, Totaljobs, HackerNews, RemoteOK, Anthropic, DeepMind, etc.) and how many jobs were found from each.
 
-If no new jobs found: email with just application updates and note no new roles found in last 24h.
-If search fails entirely: email reporting the failure clearly plus any application updates from Part A.
+STATS
+Total jobs scanned: X | Auto-applied: X | Manual upload needed: X | Worth reviewing: X | Application updates: X | Follow-ups due: X
+
+If no new jobs found: email with just application updates, sources checked, and note no new roles in last 24h.
+If any source fails to load: note it in the Sources section but continue with the rest.
