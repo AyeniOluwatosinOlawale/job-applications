@@ -8,12 +8,18 @@ Phone: 07727305230 | LinkedIn: linkedin.com/in/oluwatosinolawaleayeni | GitHub: 
 LLM Inference Engineer, ML Engineer (LLM), Generative AI Engineer, AI Engineer, MLOps Engineer, AI Research Engineer
 
 ## Skills
-Primary: Python, vLLM, SGLang, TensorRT-LLM, CUDA/NVIDIA Nsight, AWQ, speculative decoding, KV cache optimisation, PyTorch, TensorFlow, LLM fine-tuning (Mistral 7B / Phi-4 / Qwen3 via PEFT/LoRA), LangChain, RAG systems, n8n
-Secondary: TypeScript, SQL, Scikit-learn, NLP, Computer Vision, Pandas, Power BI
+Primary: Python, vLLM, SGLang, TensorRT-LLM, CUDA/NVIDIA Nsight, AWQ, speculative decoding, KV cache optimisation, PyTorch, LLM fine-tuning (Mistral 7B / Phi-4 / Qwen3 / Gemma 2 via PEFT/LoRA), LangChain, RAG systems, n8n, FastAPI, Docker, Kubernetes, Claude API
+Secondary: TypeScript, SQL, Scikit-learn, NLP, Computer Vision, Pandas, Power BI, React, Next.js, PostgreSQL, Redis, GitHub Actions, Vertex AI
+
+## GitHub: 43 public repos — github.com/AyeniOluwatosinOlawale
+## Portfolio: portfolio-ten-brown-40.vercel.app
+## Consulting: vertinab.com | anaai.tech
 
 ## Work History
+- Founder & Lead Engineer, Nexora Academic, Jan 2025-present (Glasgow): multi-tenant AI inference engineering platform (web + desktop + CLI); benchmarking tools for prompt caching, streaming, structured output, batching; full-stack SaaS (Supabase, Next.js, Stripe, Tauri); designed 13-phase AI Inference Engineering curriculum
 - AI Automation Engineer, EduTech Global, Mar 2026-present (remote): student chatbot for ABU and Babcock Univ; n8n AI workflows; LinkedIn auto-poster; Google Sheets automation
-- AI Engineer self-employed, AnaburyAI Technology, Jan 2023-present (Glasgow): 28x LLM cost reduction via vLLM/SGLang on RTX 4090; 3.8x throughput KV cache; 18x latency continuous batching; +22% diagnostic accuracy Mistral 7B fine-tuning; built vertinab.com and nexora-academic.com
+- Founder & AI Consultant, Vertinab / AnaburyAI Technology, Jan 2023-present (Glasgow): 28x LLM cost reduction via vLLM/SGLang on RTX 4090; 3.8x throughput KV cache; 18x latency continuous batching; +22% diagnostic accuracy Mistral 7B radiology fine-tune; AI strategy consulting; built AnaRadiologyAI chatbot, anaai.tech, vertinab.com
+- Senior Software Engineer (Contract), EduTechConnect / Stellar Labs, 2024-present (remote): n8n automation engine WhatsApp Cloud API → Zoho CRM → Supabase; chatbot data-capture for talent management (Purple Squirrel); real-time lead scoring & alert workflows via Meta Cloud API
 - Data Analyst, Bytelab Technologies Ltd, Jan 2018-Jul 2022 (Nigeria)
 - Junior Data Analyst, Ministry of Education Nigeria, Mar-Oct 2017
 
@@ -22,15 +28,31 @@ MSc AI and Applications, Distinction, University of Strathclyde 2023
 MTech/BSc Physics, Federal University of Technology Akure 2016
 
 ## Key Projects
-- Qwen2.5-7B inference benchmarks: 28x cost reduction RTX 4090 (github.com/AyeniOluwatosinOlawale/inference-engineering-labs)
-- CUDA kernel optimisation: KV cache 3.8x, batching 18x (github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive)
-- Offline AI Health Assistant: Mistral 7B radiology fine-tune +22% accuracy (github.com/AyeniOluwatosinOlawale/Offline-AI-Assisted-Health-Diagnosis)
-- Building SLM from scratch: transformer from first principles
-- Nexora Academic: AI learning platform with intelligent agents (nexora-academic.com)
-- EduTech chatbot live: edutechinternalchatbot.vercel.app
-- LangChain Multi-PDF RAG Assistant
-- AI Automation n8n workflows
-- Open source: build-an-llm contributor
+Inference & Serving:
+- open-model-engine: GPU-first inference benchmarking for self-hosted open models — vLLM, SGLang, LayerScale; conventional load sweep + agentic multi-turn workloads (github.com/AyeniOluwatosinOlawale/open-model-engine)
+- inference-engineering-labs: Qwen2.5-7B benchmarks, 28x cost reduction RTX 4090; quantization, speculative decoding, serving optimisation (github.com/AyeniOluwatosinOlawale/inference-engineering-labs)
+- inference-harness: unified benchmarking harness for closed APIs — Anthropic, OpenAI, Gemini; single interface comparing latency/cost/throughput (github.com/AyeniOluwatosinOlawale/inference-harness)
+- inference-optimizer: AI Inference Optimizer — automatically makes LLM API calls faster/cheaper via prompt caching, streaming, structured output, batching (github.com/AyeniOluwatosinOlawale/inference-optimizer)
+- vllm-k8s-stack: production LLM serving on Kubernetes — vLLM, KV-cache-aware routing, HPA autoscaling, GPU node management (github.com/AyeniOluwatosinOlawale/vllm-k8s-stack)
+- lab-vllm-omni: phased inference lab for vLLM-Omni covering all 5 output modalities — text, audio, image, video, structured output (github.com/AyeniOluwatosinOlawale/lab-vllm-omni)
+- CUDA kernel optimisation: KV cache 3.8x throughput, batching 18x latency reduction (github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive)
+
+Fine-tuning & Models:
+- Offline AI Health Assistant: Mistral 7B fine-tuned on radiology data, +22% diagnostic accuracy (github.com/AyeniOluwatosinOlawale/Offline-AI-Assisted-Health-Diagnosis)
+- My_finetuned_Phi-4: Phi-4 LoRA fine-tuned on Cosmopedia dataset — full pipeline: data prep, LoRA, eval, inference (github.com/AyeniOluwatosinOlawale/My_finetuned_Phi-4)
+- Qwen3-TinyStories-Training: complete Qwen3-based LM training pipeline — tokenizer training, architecture, training loop, generation eval (github.com/AyeniOluwatosinOlawale/Qwen3-TinyStories-Tokenizer-Model-Training)
+- embeddinggemma2-local-api: self-hosted EmbeddingGemma 2 API optimised for Apple Silicon — auto-start local embeddings, zero cloud dependency (github.com/AyeniOluwatosinOlawale/embeddinggemma2-local-api)
+- Building SLM from scratch: transformer architecture and training loop from first principles
+
+RAG & Agents:
+- Conversational Multi-PDF RAG Assistant: LangChain-based conversational query across multiple PDFs (github.com/AyeniOluwatosinOlawale/-Conversational-Multi-PDF-RAG-Assistant-using-LangChain)
+- AnaRadiologyAI: domain-specific LLM assistant for radiology Q&A (github.com/AyeniOluwatosinOlawale/AnaRadiologyAI)
+- AI Automation n8n workflows (github.com/AyeniOluwatosinOlawale/AI-Powered-Automation-Workflows-with-n8n)
+
+Research:
+- Multilingual-Emotion-Analyzer: NLP pipeline for multilingual emotion detection — MSc AI research (github.com/AyeniOluwatosinOlawale/-Multilingual-Emotion-Action-Analyzer)
+- PathLoss-ML-mmWave: ML-based path loss prediction for mmWave/Sub-THz 5G/6G networks — MSc AI research (github.com/AyeniOluwatosinOlawale/PathLoss-ML-Predicting-mmWave-Sub-THz-Path-Loss-with-Machine-Learning)
+- Open source contributor: build-an-llm (github.com/thekingslee/build-an-llm)
 
 ## Constraints
 - Location: Glasgow, open to remote, hybrid, London relocation for strong roles
