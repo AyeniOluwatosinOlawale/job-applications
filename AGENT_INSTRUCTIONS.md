@@ -2,7 +2,11 @@
 
 ## Candidate
 Oluwatosin Olawale Ayeni — ayenioluwatosinolawale@gmail.com — Glasgow UK
-Phone: 07727305230 | LinkedIn: linkedin.com/in/oluwatosinolawaleayeni | GitHub: github.com/AyeniOluwatosinOlawale | anaai.tech
+Phone: 07727305230
+LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
+GitHub: https://github.com/AyeniOluwatosinOlawale
+Portfolio: https://portfolio-ten-brown-40.vercel.app/
+Consulting: https://anaai.tech | https://vertinab.com
 
 ## Target Roles
 LLM Inference Engineer, ML Engineer (LLM), Generative AI Engineer, AI Engineer, MLOps Engineer, AI Research Engineer
@@ -58,6 +62,84 @@ Research:
 - Location: Glasgow, open to remote, hybrid, London relocation for strong roles
 - Deal-breakers: security clearance required, pure management, no AI/ML component
 - Always skip: Mistral AI (already applied 2026-10-15)
+
+---
+
+## PART 0 — PROFILE REFRESH (every 3 days)
+
+Run this part FIRST, before anything else.
+
+### 0.1 — Check if refresh is due
+
+Read profile_meta.json. If the file does not exist, create it:
+  {"last_profile_refresh": "2000-01-01", "github_repo_count": 0}
+
+Parse last_profile_refresh. If today minus last_profile_refresh is less than 3 days: skip to Part A (no refresh needed).
+If 3 or more days have passed: proceed with steps 0.2 through 0.6.
+
+### 0.2 — Fetch GitHub repos
+
+WebFetch: https://api.github.com/users/AyeniOluwatosinOlawale/repos?sort=updated&per_page=100
+
+This returns a JSON array. Extract for each repo:
+- name
+- description
+- language
+- updated_at
+- html_url
+- topics (array)
+
+Also WebFetch: https://github.com/AyeniOluwatosinOlawale
+Extract: total public repo count, pinned repos (if visible in the HTML), bio text.
+
+For any repo whose name is NOT already listed anywhere in the "## Key Projects" section of this file:
+- WebFetch the repo's README: https://raw.githubusercontent.com/AyeniOluwatosinOlawale/[REPO_NAME]/main/README.md
+  (If 404, try: /master/README.md)
+- Read the README to understand what the project does, its tech stack, and any quantified results.
+- Decide if it is relevant to LLM inference / ML engineering / AI systems / production AI.
+  If yes: add it to the appropriate Key Projects category below.
+  If not relevant (e.g. a pure web project with no AI component): skip it.
+
+For any NEW skills or technologies found across the new repos that are not already in the ## Skills section: add them.
+
+Update the ## GitHub line to reflect the current repo count.
+
+### 0.3 — Fetch LinkedIn profile
+
+WebFetch: https://www.linkedin.com/in/oluwatosinolawaleayeni/
+LinkedIn returns limited content without login. Extract whatever is visible: headline, about summary, any experience or skills listed in the public view.
+
+Also WebSearch: site:linkedin.com/in/oluwatosinolawaleayeni
+This sometimes surfaces cached snippets with richer text.
+
+If any new role, certification, skill, or achievement is found that is NOT already in the Work History or Skills sections of this file: add it.
+
+### 0.4 — Fetch portfolio
+
+WebFetch: https://portfolio-ten-brown-40.vercel.app/
+Extract any new projects, skills, or experience entries not already in this file and add them.
+
+### 0.5 — Write updates back to this file
+
+Update the relevant sections of AGENT_INSTRUCTIONS.md in place:
+- ## Skills — add any new skills found
+- ## GitHub: N public repos line — update count
+- ## Key Projects — add any new relevant repos with one-line description and GitHub URL
+- ## Work History — update if any new role or promotion found
+
+Important: do NOT remove any existing information. Only add or update.
+
+### 0.6 — Commit the updated profile
+
+Update profile_meta.json:
+  {"last_profile_refresh": "[TODAY YYYY-MM-DD]", "github_repo_count": [N]}
+
+Run:
+  git config user.email ayenioluwatosinolawale@gmail.com
+  git config user.name AyeniOluwatosinOlawale
+  git add AGENT_INSTRUCTIONS.md profile_meta.json
+  git diff --cached --quiet || git commit -m "chore: profile refresh $(date +%Y-%m-%d)"
+  git push origin master 2>/dev/null || git push origin main 2>/dev/null || true
 
 ---
 
