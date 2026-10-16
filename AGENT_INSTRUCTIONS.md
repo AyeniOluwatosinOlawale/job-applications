@@ -356,7 +356,14 @@ For each Strong Fit job (75+):
 
 ## PART D — GENERATE DOCUMENTS FOR STRONG FITS
 
-For each 75+ job, create two files — regardless of whether the application method is EMAIL or PORTAL. Portal jobs require manual upload, but the CV and cover letter must still be generated so the user can compile and submit them. Slugs are lowercase-hyphenated (e.g. deepmind, ml-engineer).
+**HARD RULE: Generate a CV and cover letter for EVERY job scoring 75+, no exceptions.**
+- EMAIL jobs → generate documents + auto-apply in Part E
+- PORTAL jobs (Workday, Greenhouse, Ashby, Lever, LinkedIn Easy Apply) → generate documents + PDF so the user can download and submit manually
+- UNKNOWN method → generate documents anyway and flag as manual
+
+Never skip document generation because a job requires portal submission. The user submits manually — but they need the files ready. No files = no application possible.
+
+Slugs are lowercase-hyphenated (e.g. deepmind, ml-engineer).
 
 CV file: cv/main_COMPANY-SLUG_ROLE-SLUG.tex
 - Use moderncv documentclass, banking style, blue color, 0.80 scale geometry
