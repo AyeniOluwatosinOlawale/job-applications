@@ -1,0 +1,39 @@
+%% Cover Letter — Anthropic Staff Software Engineer Inference
+%% Compile: pdflatex cover_anthropic_staff-inference-engineer.tex
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ 07727305230 \\ ayenioluwatosinolawale@gmail.com}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Anthropic}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the Staff Software Engineer, Inference role at Anthropic. I have spent two years building the kind of inference infrastructure this role is designed to scale — GPU serving stacks, batching pipelines, KV cache optimisation, multi-provider routing, and Kubernetes-based deployment — and I have done it while using Claude as my primary LLM provider. I understand the inference layer from both sides: as a builder and as a user who needs it to be fast and reliable.
+
+Three achievements most relevant to the scope of this role:
+
+\begin{itemize}
+  \item \textbf{Distributed inference at H100 scale:} I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16 with tensor parallelism 2. I measured TTFT, TPOT, throughput, and SLO compliance across concurrency 1--128. Peak: 5,965 tok/s. RadixAttention prefix caching delivered a 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context. Every metric, methodology, and raw result is published live at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm} — this is the level of rigour I bring to performance work.
+
+  \item \textbf{Production inference gateway — batching, caching, routing:} I built \textit{inference-optimizer} — a production AI Inference Gateway implementing 13 optimisation strategies across Claude, GPT-4o, and Gemini: parallel execution (3.87$\times$ faster), prompt caching (61.4\% cost reduction), model routing (64.3\% cheaper), and dynamic concurrency management (14$\times$ throughput). The architecture decisions here map directly to the batching, routing, and caching challenges in serving Claude at scale.
+
+  \item \textbf{Kubernetes GPU serving infrastructure:} I built \textit{vllm-k8s-stack} — production LLM serving on Kubernetes with KV-cache-aware request routing, HPA autoscaling on GPU node pools, and Prometheus/Grafana observability. I also profiled CUDA KV cache kernel access patterns with NVIDIA Nsight, identifying and fixing a memory bandwidth bottleneck that delivered 3.8$\times$ throughput improvement.
+\end{itemize}
+
+Anthropic's mission to build AI that is safe and beneficial is one I take seriously — I use Claude in production and I have written about inference engineering publicly. The Staff role here is a chance to work on the infrastructure that underpins that mission at scale. I bring the technical depth in GPU systems and serving infrastructure, and the communication and ownership mindset that a Staff-level role requires.
+
+I am open to relocating to London and available to interview at your convenience. I am happy to discuss the benchmarks in depth, pair on a systems design problem, or provide additional detail on any aspect of my work.
+
+\closing{Yours sincerely,}
+
+Oluwatosin Ayeni \\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \\
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\end{letter}
+\end{document}

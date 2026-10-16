@@ -1,0 +1,39 @@
+%% Cover Letter — Perplexity AI MTS AI Inference Engineer
+%% Compile: pdflatex cover_perplexity_ai-inference-engineer.tex
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ 07727305230 \\ ayenioluwatosinolawale@gmail.com}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Perplexity AI}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the Member of Technical Staff (AI Inference Engineer) role at Perplexity AI. Perplexity's product is only as good as the inference latency behind it — every query is a race between model quality and response time, and I have spent the last two years making that race faster.
+
+Three achievements that speak directly to Perplexity's inference requirements:
+
+\begin{itemize}
+  \item \textbf{H100 NVL — latency at the microsecond level:} I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. Peak throughput reached 5,965 tok/s. The critical finding: RadixAttention prefix caching reduced TTFT from 55,565 ms to 39 ms — a 1,443$\times$ speedup — at 131K-token context with 100\% SLO compliance at concurrency 128. The full benchmark is live at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+
+  \item \textbf{Production inference gateway — 13 optimisations in one system:} I built \textit{inference-optimizer}, a production-grade AI Inference Gateway across Claude, GPT-4o, and Gemini. It implements parallel execution (3.87$\times$ faster), prompt caching (61.4\% cost reduction), model routing (64.3\% cheaper), and dynamic concurrency (14$\times$ throughput improvement). The same architecture patterns apply directly to high-throughput query serving at Perplexity's scale.
+
+  \item \textbf{GPU profiling and CUDA kernel work:} Using NVIDIA Nsight Systems and Compute, I diagnosed a memory bandwidth bottleneck in KV cache CUDA ops and retuned the kernel, delivering 3.8$\times$ throughput improvement on RTX 4090 hardware. I also achieved 18$\times$ latency reduction through continuous batching pipeline redesign — bringing a research prototype into production-capable territory.
+\end{itemize}
+
+Perplexity's engineering challenge is unique: sub-second answers over a live web index using frontier models, at millions of queries per day. That is the class of inference problem I find most interesting — where the gap between a fast system and a slow one is the product itself. I built \textit{inference-harness} specifically to measure that gap systematically across serving frameworks.
+
+I am happy to discuss my benchmarking methodology, walk through the H100 results, or provide compiled PDF versions of my documents. I look forward to hearing from you.
+
+\closing{Yours sincerely,}
+
+Oluwatosin Ayeni \\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \\
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\end{letter}
+\end{document}

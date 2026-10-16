@@ -1,0 +1,84 @@
+%% CV — Wayve Staff ML Performance Engineer (Inference Optimisation)
+%% Compile: lualatex main_wayve_inference-optimisation.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+AI \& ML Engineer with deep expertise in LLM inference optimisation, CUDA kernel performance, and GPU serving infrastructure. Benchmarked vLLM and SGLang on H100 NVL hardware achieving 5,965 tok/s peak throughput and 1,443$\times$ TTFT improvement via RadixAttention; profiled CUDA memory bandwidth bottlenecks with NVIDIA Nsight to deliver 3.8$\times$ throughput gains and 18$\times$ latency reduction in production. Experienced building production LLM serving stacks on Kubernetes with HPA autoscaling. Eager to apply this inference depth to the unique latency and throughput challenges of deploying large-scale neural driving models at Wayve.
+
+\section{Core Competencies}
+\cvitem{Inference Engines}{vLLM, SGLang, TensorRT-LLM, ONNX Runtime, Hugging Face TGI}
+\cvitem{GPU \& CUDA}{NVIDIA Nsight Systems/Compute, CUDA kernel profiling, memory bandwidth analysis, kernel fusion, KV cache CUDA ops, warp occupancy tuning}
+\cvitem{Optimisation}{Speculative decoding, continuous batching, KV cache optimisation, tensor parallelism (TP=2/4), AWQ/GPTQ quantisation, prefix caching, flash attention}
+\cvitem{ML \& Models}{PyTorch, PEFT/LoRA fine-tuning, Qwen3, Mistral, Phi-4, Gemma 2, BFloat16/FP8, transformer architecture}
+\cvitem{Infrastructure}{Kubernetes (HPA, GPU pools), Docker, Prometheus, Grafana, FastAPI, Python, GitHub Actions}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Ran end-to-end H100 NVL inference benchmarks: vLLM v0.30 vs SGLang v0.5.20, Qwen3-8B BF16, TP=2 — measured 5,965 tok/s peak, 100\% SLO compliance across concurrency 1--128, and 1,443$\times$ TTFT speedup from RadixAttention prefix caching at 131K-token context.
+    \item Built \textit{inference-harness}: a unified benchmarking framework spanning closed APIs (Anthropic, OpenAI, Gemini) and open serving engines (vLLM, SGLang, TensorRT-LLM) with GPU profiling and live results dashboard.
+    \item Built \textit{open-model-engine}: GPU-first inference benchmark suite with CUDA profiling, quantisation (AWQ/GPTQ), speculative decoding experiments, and Pareto latency/throughput analysis.
+    \item Designed 13-phase AI Inference Engineering curriculum covering GPU architecture, CUDA optimisation, serving frameworks, and distributed inference.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Achieved 28$\times$ LLM cost reduction on RTX 4090 via vLLM/SGLang — continuous batching, KV cache tuning, dynamic scheduling.
+    \item Profiled CUDA KV cache kernels with NVIDIA Nsight: identified memory bandwidth bottleneck, delivered 3.8$\times$ throughput improvement without hardware upgrade.
+    \item Reduced inference latency 18$\times$ through continuous batching redesign, enabling production-grade NLP serving on single-GPU hardware.
+    \item Fine-tuned Mistral 7B for radiology NLP with LoRA/PEFT: $+22\%$ diagnostic accuracy, $-35\%$ hallucination rate; deployed as live API serving production queries.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Built real-time NLP classification pipeline (WhatsApp $\to$ n8n $\to$ Zoho CRM $\to$ Supabase) with sub-500 ms end-to-end latency under concurrent load.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item Deployed LLM-backed student chatbots with structured output extraction; handled edge cases in conversational NLP at scale.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{llm-inference-benchmark (H100)}{2$\times$ NVIDIA H100 NVL 94 GB, NVLink 4.0, CUDA 13.4. vLLM v0.30 vs SGLang v0.5.20, Qwen3-8B BF16, TP=2. RadixAttention: 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K context. Peak: 5,965 tok/s. SLO 100\% at concurrency 128. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}}
+
+\cvitem{vllm-k8s-stack}{Production LLM serving on Kubernetes: vLLM backend, KV-cache-aware routing, HPA autoscaling on GPU node pools, Prometheus/Grafana observability stack. \href{https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}{github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}}
+
+\cvitem{open-model-engine}{Comprehensive GPU inference benchmarking: vLLM, SGLang, TensorRT-LLM, LayerScale — CUDA profiling, quantisation, speculative decoding, latency/throughput Pareto curves. \href{https://github.com/AyeniOluwatosinOlawale/open-model-engine}{github.com/AyeniOluwatosinOlawale/open-model-engine}}
+
+\cvitem{inference-optimizer}{Production Inference Gateway: 3.87$\times$ faster (parallel execution), 61.4\% cost reduction (prompt caching), 14$\times$ throughput (concurrency), 64.3\% cheaper (model routing). 13 optimisations, 4 providers. \href{https://github.com/AyeniOluwatosinOlawale/inference-optimizer}{github.com/AyeniOluwatosinOlawale/inference-optimizer}}
+
+\cvitem{inference-harness}{Unified benchmark harness: closed + open APIs, GPU profiling, live dashboard. \href{https://github.com/AyeniOluwatosinOlawale/inference-harness}{github.com/AyeniOluwatosinOlawale/inference-harness}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{Open Source}
+\cvitem{43 public repos}{\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} — inference benchmarks, CUDA labs, Kubernetes serving, fine-tuning pipelines}
+
+\end{document}

@@ -1,0 +1,39 @@
+%% Cover Letter — Wayve Staff ML Performance Engineer (Inference Optimisation)
+%% Compile: pdflatex cover_wayve_inference-optimisation.tex
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ 07727305230 \\ ayenioluwatosinolawale@gmail.com}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Wayve \\ London, UK}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the Staff ML Performance Engineer (Inference Optimisation) role at Wayve. I bring production-grade experience in GPU inference optimisation — CUDA profiling, KV cache tuning, serving framework benchmarking on H100 hardware — and I am genuinely excited about the inference challenges involved in deploying large end-to-end neural driving models at scale.
+
+Three specific achievements relevant to what Wayve is building:
+
+\begin{itemize}
+  \item \textbf{H100 inference benchmarks — production scale:} I benchmarked vLLM v0.30 against SGLang v0.5.20 on 2$\times$ H100 NVL 94 GB GPUs (NVLink 4.0, CUDA 13.4) running Qwen3-8B BF16 at tensor parallelism 2. I measured TTFT, TPOT, and throughput across concurrency 1--128, achieving 5,965 tok/s peak and identifying RadixAttention prefix caching as delivering a 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context — 100\% SLO compliance throughout. Results: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+
+  \item \textbf{CUDA kernel profiling — KV cache bottleneck:} Using NVIDIA Nsight Systems and Compute, I profiled KV cache CUDA operations on RTX 4090 hardware, identified the memory bandwidth bottleneck, and retuned the kernel access pattern to deliver 3.8$\times$ throughput improvement without a hardware change. This required reading warp occupancy reports and memory transaction traces directly — not just running benchmarking scripts.
+
+  \item \textbf{Production serving stack on Kubernetes:} I built \textit{vllm-k8s-stack} — production LLM serving with vLLM, KV-cache-aware request routing, HPA autoscaling on GPU node pools, and Prometheus/Grafana observability. This is the infrastructure pattern I would bring to Wayve's inference deployment challenges.
+\end{itemize}
+
+Wayve's approach of training one end-to-end neural model rather than modular sensor pipelines is what first caught my attention. The inference throughput and latency requirements for real-time autonomous driving decisions are some of the most demanding in the industry — and they sit exactly at the boundary of model architecture and serving infrastructure that I have been building toward.
+
+I would welcome a conversation about how my benchmarking and optimisation work translates to Wayve's production inference stack. I am open to relocating to London.
+
+\closing{Yours sincerely,}
+
+Oluwatosin Ayeni \\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \\
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\end{letter}
+\end{document}

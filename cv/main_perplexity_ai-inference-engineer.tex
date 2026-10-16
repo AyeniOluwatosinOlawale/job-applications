@@ -1,0 +1,84 @@
+%% CV — Perplexity AI Member of Technical Staff (AI Inference Engineer)
+%% Compile: lualatex main_perplexity_ai-inference-engineer.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+AI Inference Engineer with hands-on production experience optimising LLM serving latency and throughput at GPU level. Benchmarked vLLM v0.30 vs SGLang v0.5.20 on H100 NVL hardware — demonstrated 1,443$\times$ TTFT speedup via RadixAttention prefix caching and 5,965 tok/s peak throughput on Qwen3-8B. Built inference gateways delivering 3.87$\times$ latency reduction, 14$\times$ throughput gains, and 61.4\% cost reduction in production. Strong foundation in CUDA profiling, continuous batching, KV cache optimisation, and speculative decoding. Aligned with Perplexity's mission to build the fastest, most accurate AI search — inference speed is the product.
+
+\section{Core Competencies}
+\cvitem{Inference Engines}{vLLM, SGLang, TensorRT-LLM, ONNX Runtime, Hugging Face Transformers}
+\cvitem{GPU \& Performance}{NVIDIA Nsight Systems/Compute, CUDA kernel profiling, memory bandwidth analysis, warp utilisation, kernel fusion}
+\cvitem{Optimisation}{Speculative decoding, continuous batching, prefix/RadixAttention caching, tensor parallelism, AWQ/GPTQ quantisation, flash attention, BFloat16/FP8}
+\cvitem{Benchmarking}{End-to-end LLM serving benchmarks (throughput, TTFT, TPOT, SLO compliance), Pareto latency/cost curves, automated regression testing}
+\cvitem{Infrastructure}{Kubernetes, Docker, FastAPI, Prometheus, Grafana, Python, TypeScript, PostgreSQL, Redis}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Conducted rigorous H100 NVL inference benchmarks: vLLM v0.30 vs SGLang v0.5.20 on Qwen3-8B BF16 with TP=2. Measured TTFT, TPOT, and throughput across concurrency 1--128; achieved 100\% SLO compliance and identified RadixAttention as delivering 1,443$\times$ TTFT speedup at 131K-token context (39 ms vs 55,565 ms).
+    \item Built \textit{inference-optimizer}: production AI Inference Gateway with 13 optimisation strategies — parallel execution (3.87$\times$ faster), prompt caching (61.4\% cost reduction), model routing (64.3\% cheaper), concurrency (14$\times$ throughput). Live at \href{https://inference-web-theta.vercel.app}{inference-web-theta.vercel.app}.
+    \item Built \textit{inference-harness}: benchmarking framework unifying closed APIs and open serving engines (vLLM, SGLang, TensorRT-LLM) with GPU profiling integration and automated live dashboard.
+    \item Designed 13-phase AI Inference Engineering curriculum covering GPU architecture, kernel optimisation, and production deployment patterns.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Deployed vLLM and SGLang on RTX 4090: 28$\times$ cost reduction via continuous batching; profiled CUDA KV cache kernels with Nsight to achieve 3.8$\times$ throughput improvement.
+    \item 18$\times$ inference latency reduction through continuous batching pipeline redesign, enabling real-time NLP query serving.
+    \item Fine-tuned Mistral 7B with LoRA on radiology corpus: $+22\%$ diagnostic accuracy; deployed as low-latency inference API.
+    \item Built \textit{open-model-engine}: GPU-first benchmarking suite for vLLM, SGLang, TensorRT-LLM with quantisation and speculative decoding experiments.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Designed low-latency real-time NLP pipeline with sub-500 ms response under concurrent user load.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item Built LLM inference workflows with structured output extraction and multi-step reasoning over student query streams.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{llm-inference-benchmark (H100)}{2$\times$ H100 NVL 94 GB, CUDA 13.4. vLLM v0.30 vs SGLang v0.5.20, Qwen3-8B BF16, TP=2. RadixAttention: 1,443$\times$ TTFT speedup at 131K context. Peak throughput: 5,965 tok/s. SLO compliance 100\% up to concurrency 128. \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}}
+
+\cvitem{inference-optimizer}{Production Inference Gateway: 13 optimisations, 4 LLM providers, live dashboard. 3.87$\times$ faster, 14$\times$ throughput, 61.4\% cost reduction. \href{https://github.com/AyeniOluwatosinOlawale/inference-optimizer}{github.com/AyeniOluwatosinOlawale/inference-optimizer}}
+
+\cvitem{inference-harness}{Unified benchmarking harness: Anthropic, OpenAI, Gemini + vLLM, SGLang, TensorRT-LLM — GPU profiling, automated reporting. \href{https://github.com/AyeniOluwatosinOlawale/inference-harness}{github.com/AyeniOluwatosinOlawale/inference-harness}}
+
+\cvitem{open-model-engine}{GPU inference benchmarking: CUDA profiling, AWQ/GPTQ quantisation, speculative decoding, throughput/latency Pareto curves. \href{https://github.com/AyeniOluwatosinOlawale/open-model-engine}{github.com/AyeniOluwatosinOlawale/open-model-engine}}
+
+\cvitem{vllm-k8s-stack}{Kubernetes LLM serving: KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana. \href{https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}{github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{Open Source}
+\cvitem{43 public repos}{\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} — inference benchmarks, optimisation labs, serving infrastructure}
+
+\end{document}

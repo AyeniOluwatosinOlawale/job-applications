@@ -352,7 +352,7 @@ For each Strong Fit job (75+):
 
 ## PART D — GENERATE DOCUMENTS FOR STRONG FITS
 
-For each 75+ job, create two files. Slugs are lowercase-hyphenated (e.g. deepmind, ml-engineer).
+For each 75+ job, create two files — regardless of whether the application method is EMAIL or PORTAL. Portal jobs require manual upload, but the CV and cover letter must still be generated so the user can compile and submit them. Slugs are lowercase-hyphenated (e.g. deepmind, ml-engineer).
 
 CV file: cv/main_COMPANY-SLUG_ROLE-SLUG.tex
 - Use moderncv documentclass, banking style, blue color, 0.80 scale geometry

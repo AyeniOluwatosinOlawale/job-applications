@@ -1,0 +1,39 @@
+%% Cover Letter — G-Research NLP Performance Engineer
+%% Compile: pdflatex cover_gresearch_nlp-performance-engineer.tex
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ 07727305230 \\ ayenioluwatosinolawale@gmail.com}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ G-Research \\ London, UK}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the NLP Performance Engineer role at G-Research. With hands-on production experience in vLLM, SGLang, TensorRT-LLM, and CUDA kernel profiling, I am directly aligned with the technical depth this role demands.
+
+Three achievements most relevant to your requirements:
+
+\begin{itemize}
+  \item \textbf{H100 NVL benchmark — vLLM vs SGLang:} I benchmarked vLLM v0.30 against SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4) running Qwen3-8B in BF16 with tensor parallelism 2. I measured peak throughput of 5,965 tok/s, 100\% SLO compliance from concurrency 1 to 128, and a 1,443$\times$ TTFT speedup via RadixAttention prefix caching (39 ms vs 55,565 ms at 131K-token context). Results are live at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+
+  \item \textbf{CUDA-level KV cache optimisation:} Using NVIDIA Nsight Systems and Nsight Compute, I identified a memory bandwidth bottleneck in KV cache ops on RTX 4090 hardware and tuned the kernel access pattern, delivering a 3.8$\times$ throughput improvement without hardware change. I followed this with an 18$\times$ inference latency reduction through continuous batching redesign — bringing production NLP serving into real-time range on single-GPU hardware.
+
+  \item \textbf{Production inference gateway at scale:} I built \textit{inference-optimizer}, a production AI Inference Gateway spanning Claude, GPT-4o, and Gemini — implementing parallel execution (3.87$\times$ faster), prompt caching (61.4\% cost reduction), model routing (64.3\% cheaper), and concurrency management (14$\times$ throughput). This serves as the live benchmark for 13 inference optimisation strategies across providers.
+\end{itemize}
+
+G-Research's reputation for hiring engineers who combine rigorous quantitative thinking with systems depth is exactly the environment I want to work in. The intersection of NLP at scale and the performance engineering discipline required to serve it efficiently is where I have focused my independent work for the past two years.
+
+I am happy to walk through any of the benchmarks in detail, provide compiled PDFs, or discuss my approach to GPU profiling and serving stack design. I look forward to the opportunity to speak.
+
+\closing{Yours sincerely,}
+
+Oluwatosin Ayeni \\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \\
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\end{letter}
+\end{document}
