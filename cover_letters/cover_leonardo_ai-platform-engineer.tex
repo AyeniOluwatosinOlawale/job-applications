@@ -1,0 +1,39 @@
+%% Cover Letter — Leonardo UK AI Platform Engineer
+%% Compile: pdflatex cover_leonardo_ai-platform-engineer.tex
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ 07727305230 \\ ayenioluwatosinolawale@gmail.com}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Leonardo UK \\ Edinburgh / Hybrid}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the AI Platform Engineer role at Leonardo UK. The platform layer you are describing — model serving, inference runtimes, AI gateways, and Kubernetes-based GPU infrastructure — is precisely what I have been building independently, and the Edinburgh hybrid arrangement is ideal from my base in Glasgow.
+
+Three achievements that map directly to what this role requires:
+
+\begin{itemize}
+  \item \textbf{Production Kubernetes LLM serving platform:} I built \textit{vllm-k8s-stack} — production LLM inference on Kubernetes using a vLLM serving engine, KV-cache-aware request routing, HPA autoscaling on GPU node pools, and a Prometheus/Grafana observability stack. This is the same platform layer above managed GPU infrastructure that Leonardo is looking to own and operate. The system was designed for multi-tenant concurrent workloads with appropriate resource controls and availability monitoring. \href{https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}{github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}
+
+  \item \textbf{Production AI Gateway — authentication, routing, rate limiting:} I built \textit{inference-optimizer}, a production AI Inference Gateway spanning Claude, GPT-4o, Gemini, and self-hosted vLLM. It handles authentication, model routing (64.3\% cost reduction), rate limiting, parallel execution (3.87$\times$ faster), and prompt caching (61.4\% cost reduction) — with real-time usage monitoring and audit logging. This is the practical equivalent of LiteLLM or Bifrost deployed as an enterprise AI gateway, which Leonardo explicitly lists as a key area of experience. Live at \href{https://inference-web-theta.vercel.app}{inference-web-theta.vercel.app}.
+
+  \item \textbf{H100 inference platform operations:} I benchmarked and operated vLLM and SGLang on 2$\times$ NVIDIA H100 NVL 94 GB hardware — measuring throughput (5,965 tok/s peak), TTFT, TPOT, and SLO compliance across concurrency 1--128. 100\% SLO compliance. I also profiled GPU utilisation with NVIDIA Nsight Systems to identify and resolve performance bottlenecks — the same GPU performance and utilisation management that this role requires.
+\end{itemize}
+
+Leonardo's focus on making AI capabilities easy to consume for engineering teams while maintaining security, performance, and availability controls resonates with how I have approached building internal AI platform infrastructure. Operating in a secure enterprise environment with restricted internet access is a constraint I have designed around directly — API credential management, offline-capable service design, and air-gap-friendly deployment patterns are part of my operational practice.
+
+I am happy to discuss the architecture of any of these systems in detail, walk through the Kubernetes serving configuration, or demonstrate the gateway observability setup. I look forward to hearing from you.
+
+\closing{Yours sincerely,}
+
+Oluwatosin Ayeni \\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \\
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\end{letter}
+\end{document}

@@ -1,0 +1,83 @@
+%% CV — Leonardo UK AI Platform Engineer
+%% Compile: lualatex main_leonardo_ai-platform-engineer.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+AI Platform Engineer with production experience deploying and operating LLM inference services on Kubernetes, building AI gateway infrastructure, and managing GPU workloads at scale. Benchmarked vLLM and SGLang on H100 NVL hardware achieving 5,965 tok/s peak throughput and 100\% SLO compliance; built KV-cache-aware request routing, HPA autoscaling, and Prometheus/Grafana observability stacks. Experienced designing multi-provider AI gateways with authentication, rate limiting, and model routing — the exact platform layer Leonardo is building. Based in Glasgow; Edinburgh hybrid working is ideal.
+
+\section{Core Competencies}
+\cvitem{Inference \& Serving}{vLLM, SGLang, TensorRT-LLM, LiteLLM-style AI gateways, model routing, rate limiting, multi-provider API management}
+\cvitem{Containers \& Orchestration}{Kubernetes (HPA, GPU node pools, resource quotas), Docker, Helm, container networking, pod security}
+\cvitem{GPU \& Performance}{NVIDIA Nsight Systems/Compute, GPU utilisation monitoring, CUDA kernel profiling, tensor parallelism, KV cache optimisation, BFloat16/FP8}
+\cvitem{Observability \& SRE}{Prometheus, Grafana, distributed tracing, SLO/SLA compliance monitoring, alerting, incident response}
+\cvitem{Platform Engineering}{Python, Bash, FastAPI, PostgreSQL, Redis, GitHub Actions CI/CD, infrastructure as code, secure service design, authentication/access control}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Built and operated \textit{vllm-k8s-stack}: production LLM inference service on Kubernetes — vLLM serving engine, KV-cache-aware request routing, HPA autoscaling on GPU node pools, Prometheus/Grafana observability, GPU utilisation dashboards. Designed for multi-tenant concurrent workloads with appropriate resource controls.
+    \item Built \textit{inference-optimizer}: AI Inference Gateway supporting 4 LLM providers (Claude, GPT-4o, Gemini, self-hosted) — authentication, model routing (64.3\% cost reduction), rate limiting, parallel execution (3.87$\times$ faster), prompt caching (61.4\% cost reduction), real-time usage monitoring. This is the practical equivalent of LiteLLM/Bifrost in production.
+    \item Operated H100 NVL inference platform: benchmarked vLLM v0.30 and SGLang v0.5.20 for throughput (5,965 tok/s peak), latency (TTFT, TPOT), and SLO compliance across concurrency 1--128. 100\% SLO compliance. Live dashboard: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}.
+    \item Designed 13-phase AI Inference Engineering curriculum covering GPU architecture, Kubernetes serving, CUDA optimisation, and production deployment patterns.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Deployed production LLM serving infrastructure on RTX 4090 hardware: vLLM/SGLang with continuous batching and KV cache optimisation — 28$\times$ cost reduction, 18$\times$ latency reduction.
+    \item Profiled GPU utilisation and CUDA kernel performance with NVIDIA Nsight: identified memory bandwidth bottleneck, delivered 3.8$\times$ throughput improvement through kernel tuning.
+    \item Built and operated AI platform services for enterprise clients: model serving APIs, gateway layer, access controls, monitoring — supporting production workloads with reliability requirements.
+    \item Fine-tuned and deployed Mistral 7B (LoRA/PEFT) as a production clinical AI assistant: $+22\%$ diagnostic accuracy; operated as a long-running inference service with monitoring and health checks.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Architected and operated real-time data pipeline (WhatsApp Cloud API $\to$ n8n $\to$ Zoho CRM $\to$ Supabase) within a secure enterprise environment: authentication flows, API key management, rate-limit handling, error recovery, and observability.
+    \item Established engineering standards for AI workflow automation: CI/CD pipelines, credential management, audit logging.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item Deployed and operated LLM-backed automation services with structured output extraction and production monitoring.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{vllm-k8s-stack}{Production Kubernetes LLM serving: vLLM, KV-cache-aware routing, HPA GPU autoscaling, Prometheus/Grafana. \href{https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}{github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}}
+
+\cvitem{inference-optimizer}{Production AI Gateway: 4 providers, authentication, model routing, rate limiting, caching, monitoring. 3.87$\times$ faster, 14$\times$ throughput, 61.4\% cost reduction. \href{https://github.com/AyeniOluwatosinOlawale/inference-optimizer}{github.com/AyeniOluwatosinOlawale/inference-optimizer}}
+
+\cvitem{llm-inference-benchmark (H100)}{vLLM vs SGLang on H100 NVL — throughput, TTFT, TPOT, SLO compliance at concurrency 1--128. 100\% SLO. \href{https://inference-web-theta.vercel.app/benchmarks/llm}{Live dashboard}}
+
+\cvitem{inference-harness}{Unified benchmark harness: closed + open APIs, GPU profiling, automated reporting. \href{https://github.com/AyeniOluwatosinOlawale/inference-harness}{github.com/AyeniOluwatosinOlawale/inference-harness}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{Open Source}
+\cvitem{43 public repos}{\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} — inference benchmarks, Kubernetes serving, AI gateways, GPU optimisation labs}
+
+\end{document}

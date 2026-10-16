@@ -211,6 +211,25 @@ ROLES = [
         ],
     },
     {
+        "slug": "leonardo_ai-platform-engineer",
+        "title": "AI Platform Engineer",
+        "company": "Leonardo UK",
+        "tagline": "AI Platform Engineer with production experience deploying and operating LLM inference services on Kubernetes, building AI gateway infrastructure, and managing GPU workloads at scale. Benchmarked vLLM and SGLang on H100 NVL achieving 5,965 tok/s peak and 100% SLO compliance; built KV-cache-aware routing, HPA autoscaling, and Prometheus/Grafana observability stacks. Experienced designing multi-provider AI gateways with authentication, rate limiting, and model routing. Based in Glasgow — Edinburgh hybrid is ideal.",
+        "competencies": [
+            ("Inference &amp; Serving", "vLLM, SGLang, TensorRT-LLM, LiteLLM-style AI gateways, model routing, rate limiting, multi-provider API management"),
+            ("Containers &amp; Orchestration", "Kubernetes (HPA, GPU node pools, resource quotas), Docker, Helm, container networking, pod security policies"),
+            ("GPU &amp; Performance", "NVIDIA Nsight Systems/Compute, GPU utilisation monitoring, CUDA kernel profiling, tensor parallelism, KV cache optimisation, BFloat16/FP8"),
+            ("Observability &amp; SRE", "Prometheus, Grafana, distributed tracing, SLO/SLA compliance monitoring, alerting, incident response"),
+            ("Platform Engineering", "Python, Bash, FastAPI, PostgreSQL, Redis, GitHub Actions CI/CD, infrastructure as code, secure service design, authentication/access control"),
+        ],
+        "projects": [
+            ("vllm-k8s-stack", "Production Kubernetes LLM serving: vLLM, KV-cache-aware routing, HPA GPU autoscaling, Prometheus/Grafana observability. <a href='https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack'>GitHub</a>"),
+            ("inference-optimizer", "Production AI Gateway: 4 providers, authentication, model routing, rate limiting, caching, monitoring. 3.87× faster, 14× throughput, 61.4% cost reduction. <a href='https://github.com/AyeniOluwatosinOlawale/inference-optimizer'>GitHub</a>"),
+            ("llm-inference-benchmark (H100)", "vLLM vs SGLang, H100 NVL — throughput, TTFT, TPOT, SLO compliance at concurrency 1–128. 100% SLO. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live dashboard</a>"),
+            ("inference-harness", "Unified benchmark harness: closed + open APIs, GPU profiling, automated reporting. <a href='https://github.com/AyeniOluwatosinOlawale/inference-harness'>GitHub</a>"),
+        ],
+    },
+    {
         "slug": "doubleword_inference-systems",
         "title": "Member of Technical Staff: Inference Systems",
         "company": "Doubleword",
@@ -300,6 +319,25 @@ COVER_LETTERS = [
 </ul>
 
 <p>Anthropic's mission to build safe and beneficial AI is one I take seriously — I use Claude in production and I have written about inference engineering publicly. The Staff role here is a chance to work on the infrastructure that underpins that mission at scale. I am open to relocating to London and available to interview at your convenience.</p>
+""",
+    },
+    {
+        "slug": "leonardo_ai-platform-engineer",
+        "company": "Leonardo UK",
+        "recipient": "Leonardo UK, Edinburgh",
+        "body": """
+<p>I am applying for the AI Platform Engineer role at Leonardo UK. The platform layer you are describing — model serving, inference runtimes, AI gateways, and Kubernetes-based GPU infrastructure — is precisely what I have been building independently, and the Edinburgh hybrid arrangement is ideal from my base in Glasgow.</p>
+
+<p>Three achievements that map directly to what this role requires:</p>
+<ul>
+  <li><strong>Production Kubernetes LLM serving platform:</strong> I built <em>vllm-k8s-stack</em> — production LLM inference on Kubernetes using a vLLM serving engine, KV-cache-aware request routing, HPA autoscaling on GPU node pools, and a Prometheus/Grafana observability stack. This is the same platform layer above managed GPU infrastructure that Leonardo is looking to own and operate — designed for multi-tenant concurrent workloads with resource controls and availability monitoring. <a href="https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack">github.com/AyeniOluwatosinOlawale/vllm-k8s-stack</a></li>
+  <li><strong>Production AI Gateway — authentication, routing, rate limiting:</strong> I built <em>inference-optimizer</em>, a production AI Inference Gateway spanning Claude, GPT-4o, Gemini, and self-hosted vLLM. It handles authentication, model routing (64.3% cost reduction), rate limiting, parallel execution (3.87× faster), and prompt caching (61.4% cost reduction) — with real-time usage monitoring and audit logging. This is the practical equivalent of LiteLLM or Bifrost deployed as an enterprise AI gateway, which Leonardo explicitly lists as a key area of experience. Live at <a href="https://inference-web-theta.vercel.app">inference-web-theta.vercel.app</a>.</li>
+  <li><strong>H100 inference platform operations:</strong> I benchmarked and operated vLLM and SGLang on 2× NVIDIA H100 NVL 94 GB hardware — measuring throughput (5,965 tok/s peak), TTFT, TPOT, and SLO compliance across concurrency 1–128. 100% SLO compliance. I also profiled GPU utilisation with NVIDIA Nsight Systems to identify and resolve performance bottlenecks — the same GPU performance and utilisation management this role requires.</li>
+</ul>
+
+<p>Leonardo's focus on making AI capabilities easy to consume for engineering teams while maintaining security, performance, and availability controls resonates with how I have approached building internal AI platform infrastructure. Operating in a secure enterprise environment with restricted internet access is a constraint I have designed around directly — API credential management, offline-capable service design, and air-gap-friendly deployment patterns are part of my operational practice.</p>
+
+<p>I am happy to discuss the architecture of any of these systems in detail, walk through the Kubernetes serving configuration, or demonstrate the gateway observability setup. I look forward to hearing from you.</p>
 """,
     },
     {
