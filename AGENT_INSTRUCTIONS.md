@@ -181,6 +181,7 @@ For each row where:
 Send a follow-up email via Gmail MCP:
   To: the email address recorded in notes (look for "Auto-applied via email to [addr]") or apply_url if it contains an email
   If no email address is recoverable: skip and note "follow_up_skipped — no email address" in notes
+  If the send fails or the contact previously bounced: skip and note "follow_up_skipped — email failed/bounced" in notes
   CC: ayenioluwatosinolawale@gmail.com
 
   Subject: Following up — [Role] at [Company] — Oluwatosin Ayeni
@@ -498,6 +499,7 @@ After sending:
   - Update notes: "Follow-up sent [date]"
 
 Do NOT send a second follow-up after this — one initial + one follow-up is the limit per contact.
+If the follow-up send fails or the row already shows replied=bounced: skip it entirely, do not retry.
 
 ### Target companies for cold outreach (rotate through — never repeat a company already in outreach.csv)
 
@@ -550,6 +552,13 @@ AI-Heavy Product Companies:
    b. If no email is found after two searches: use careers@ or hr@ at their primary domain as a best-effort address.
       Note in outreach.csv: email_found=inferred.
       After sending, the daily A.2b Gmail check will detect any bounce/delivery failure within 24–48 hours and mark replied=bounced automatically — no manual action needed.
+
+   EMAIL FAILURE RULE: If a send attempt fails immediately (Gmail MCP returns an error, or A.2b already shows replied=bounced for this contact from a prior run):
+      - Do NOT retry the same email address.
+      - Mark that outreach.csv row: replied=bounced, notes="FAILED — trying alternative".
+      - Try ONE alternative address for the same company (e.g. if careers@ bounced, try hr@ or talent@; if hr@ bounced, try a named contact found via WebSearch "[company] recruiter LinkedIn").
+      - If the alternative also fails or cannot be found: skip this company entirely and pick the NEXT company from the target list instead.
+      - Never count a failed/bounced contact toward the 3-per-day quota — replace it with a fresh company.
 
    c. Write a cold outreach email using this exact template (personalise the [SLOTS]):
 
