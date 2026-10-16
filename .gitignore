@@ -11,8 +11,10 @@
 *.lof
 *.lot
 
-# Compiled PDFs (generated locally — not committed to keep repo lean)
-*.pdf
+# LaTeX build artifact PDFs inside cv/ and cover_letters/ — not committed
+cv/*.pdf
+cover_letters/*.pdf
+# pdf/ directory IS committed — contains generated application PDFs
 
 # Environment / secrets
 .env

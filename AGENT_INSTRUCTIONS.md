@@ -375,14 +375,16 @@ Cover letter file: cover_letters/cover_COMPANY-SLUG_ROLE-SLUG.tex
 - Closing: one sentence on working style fit, I look forward to hearing from you
 - Target 1 page
 
-After generating the LaTeX files, also generate a PDF of the CV and cover letter using weasyprint:
-  python3 -c "
-from weasyprint import HTML
-import os
-os.makedirs('pdf', exist_ok=True)
-# agent generates HTML content matching the CV/cover letter and saves as pdf/cv_SLUG.pdf and pdf/cover_SLUG.pdf
-"
-If weasyprint is unavailable, skip PDF generation silently — LaTeX source files are the primary deliverable.
+After generating the LaTeX files, ALWAYS generate PDFs. This is mandatory — not optional. Run generate_pdfs.py:
+
+  cd /path/to/repo && python3 generate_pdfs.py
+
+generate_pdfs.py is committed to the repo root. It uses weasyprint (pre-installed) to render professional A4 PDFs for every CV and cover letter. Output goes to pdf/cv_SLUG.pdf and pdf/cover_SLUG.pdf.
+
+If generate_pdfs.py needs updating to include a new role: add the role's data to the ROLES and COVER_LETTERS lists in generate_pdfs.py following the existing pattern, then run it. Every role that appears in tracker.csv must have a matching entry in generate_pdfs.py.
+
+The pdf/ directory must be included in the git commit so PDFs are accessible from the repo.
+Remove the *.pdf exclusion from .gitignore — PDFs in the pdf/ subdirectory should be committed. LaTeX build artifacts (*.aux, *.log, *.out etc in cv/ or cover_letters/) remain excluded.
 
 Also write a plain-text email version of the cover letter: cover_letters/cover_COMPANY-SLUG_ROLE-SLUG_email.txt
 This is used for auto-apply. Same content as the LaTeX cover letter but formatted as plain text for an email body. Include at the end: "My CV is available at https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_COMPANY-SLUG_ROLE-SLUG.tex (LaTeX source) — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format."
