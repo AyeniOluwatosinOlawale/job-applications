@@ -1,1 +1,4 @@
 date,company,contact_name,contact_email,contact_role,company_type,email_sent,follow_up_sent,follow_up_date,replied,notes
+2026-10-16,Google DeepMind,Hiring Team,careers@deepmind.com,unknown,AI Research Lab,true,false,,bounced,BOUNCED — careers@deepmind.com is a closed Google Group. DeepMind is portal-only. No cold email possible. Apply via https://www.google.com/about/careers/applications/jobs/results?company=DeepMind or LinkedIn InMail to named recruiters: Katelyn Cotton / Brandon Harrington / Meredith Pate / Meghan Helton
+2026-10-16,PolyAI,Hiring Team,careers@poly.ai,unknown,UK AI Company,true,false,,,Sent 2026-10-16 07:12. Real-time voice LLM serving — extreme latency requirements
+2026-10-16,Cohere,Hiring Team,careers@cohere.com,unknown,UK AI Company,true,false,,,Sent 2026-10-16 07:12. Enterprise open model serving and on-premise inference

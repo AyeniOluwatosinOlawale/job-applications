@@ -272,6 +272,14 @@ WebFetch: https://news.ycombinator.com/item?id=43986235
 (If that 404s, WebSearch: site:news.ycombinator.com "Ask HN: Who is hiring" 2026 to find the current thread ID)
 Extract remote ML/AI/LLM roles. Many HN jobs have direct email addresses — flag these for auto-apply.
 
+### Ashby job boards (AI companies — reliable when Greenhouse/LinkedIn are blocked)
+WebFetch:
+- https://jobs.ashbyhq.com/wayve (redirects from wayve.ai/careers — use Ashby URL directly)
+- https://jobs.ashbyhq.com/perplexity (use this — NOT greenhouse.io/perplexityai which is outdated)
+- https://jobs.ashbyhq.com/anthropic
+- https://jobs.ashbyhq.com/cohere
+- https://jobs.ashbyhq.com/huggingface
+
 ### Remote-first boards
 WebFetch:
 - https://remoteok.com/remote-ml-jobs
@@ -494,7 +502,7 @@ Do NOT send a second follow-up after this — one initial + one follow-up is the
 ### Target companies for cold outreach (rotate through — never repeat a company already in outreach.csv)
 
 AI Research Labs:
-- DeepMind (deepmind.google) — London
+- DeepMind (deepmind.google) — London — PORTAL ONLY: careers@deepmind.com is a closed Google Group and bounces. Do NOT email. Apply via https://www.google.com/about/careers/applications/jobs/results?company=DeepMind or LinkedIn InMail to: Katelyn Cotton, Brandon Harrington, Meredith Pate, Meghan Helton (all TA Partners at DeepMind on LinkedIn)
 - Anthropic — UK/remote
 - Meta AI (Research) — London
 - Microsoft Research Cambridge
