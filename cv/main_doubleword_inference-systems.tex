@@ -1,0 +1,81 @@
+%% CV — Doubleword MTS Inference Systems
+%% Compile: lualatex main_doubleword_inference-systems.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+AI Inference Systems Engineer with production experience building distributed LLM serving infrastructure, GPU-backed Kubernetes stacks, and high-throughput batching pipelines. Ran H100 NVL inference benchmarks achieving 5,965 tok/s peak and 100\% SLO compliance at concurrency 128; built KV-cache-aware routing and HPA autoscaling on GPU node pools; profiled CUDA kernel bottlenecks to deliver 3.8$\times$ throughput gains. Strong Python background with growing Rust interest; experienced with Kubernetes, Prometheus/Grafana, and PostgreSQL at production scale.
+
+\section{Core Competencies}
+\cvitem{Inference Systems}{vLLM, SGLang, TensorRT-LLM, distributed batch inference, job scheduling, request routing, KV-cache-aware load balancing}
+\cvitem{Infrastructure}{Kubernetes (HPA, GPU node pools), Docker, Prometheus, Grafana, GitHub Actions, FastAPI}
+\cvitem{GPU \& Performance}{NVIDIA Nsight Systems/Compute, CUDA kernel profiling, memory bandwidth analysis, BFloat16/FP8, tensor parallelism}
+\cvitem{Data \& Storage}{PostgreSQL, Supabase, Redis — high-load query optimisation, schema design, real-time observability}
+\cvitem{Languages}{Python (primary), TypeScript, SQL; Rust (learning — building inference tooling)}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Built \textit{vllm-k8s-stack}: production LLM serving on Kubernetes — vLLM backend, KV-cache-aware request routing, HPA autoscaling on GPU node pools, Prometheus/Grafana observability stack. Designed for multi-tenant concurrent batch workloads.
+    \item H100 NVL benchmark across concurrency 1--128: measured TTFT, TPOT, throughput, and SLO compliance for vLLM v0.30 vs SGLang v0.5.20. Peak: 5,965 tok/s; 100\% SLO compliance; RadixAttention: 1,443$\times$ TTFT speedup. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+    \item \textit{inference-optimizer}: production AI Inference Gateway — parallel execution (3.87$\times$ faster), prompt caching (61.4\% cost reduction), dynamic concurrency management (14$\times$ throughput), model routing (64.3\% cheaper). 13 optimisations, 4 providers, real-time dashboard.
+    \item \textit{inference-harness}: unified benchmarking framework spanning closed APIs and self-hosted serving engines with GPU profiling pipeline and automated results reporting.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Deployed vLLM/SGLang on RTX 4090: 28$\times$ cost reduction via continuous batching; profiled CUDA KV cache kernels with Nsight; 3.8$\times$ throughput improvement and 18$\times$ latency reduction.
+    \item Supabase (PostgreSQL) schema design and query optimisation for production AI applications handling concurrent user sessions with sub-500 ms response targets.
+    \item Fine-tuned Mistral 7B with LoRA: $+22\%$ diagnostic accuracy; deployed as low-latency inference API with production monitoring.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Built real-time NLP pipeline (WhatsApp $\to$ n8n $\to$ Zoho CRM $\to$ Supabase/PostgreSQL) with sub-500 ms end-to-end latency; designed for reliability under bursty concurrent load with retry logic and observability hooks.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item LLM-backed automation workflows with structured output extraction; production monitoring and alerting.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{vllm-k8s-stack}{Production Kubernetes LLM serving: vLLM, KV-cache-aware routing, HPA autoscaling on GPU pools, Prometheus/Grafana. \href{https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}{github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}}
+
+\cvitem{llm-inference-benchmark (H100)}{vLLM vs SGLang, H100 NVL, Qwen3-8B BF16 TP=2. Peak: 5,965 tok/s. 1,443$\times$ TTFT speedup. SLO 100\% at concurrency 128. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}}
+
+\cvitem{inference-optimizer}{Production Inference Gateway: 13 optimisations, 4 providers, 3.87$\times$ faster, 14$\times$ throughput, 61.4\% cost reduction. \href{https://github.com/AyeniOluwatosinOlawale/inference-optimizer}{github.com/AyeniOluwatosinOlawale/inference-optimizer}}
+
+\cvitem{inference-harness}{Unified benchmark harness: closed + open serving engines, GPU profiling, live dashboard. \href{https://github.com/AyeniOluwatosinOlawale/inference-harness}{github.com/AyeniOluwatosinOlawale/inference-harness}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{Open Source}
+\cvitem{43 public repos}{\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} — Kubernetes serving, inference benchmarks, CUDA labs}
+
+\end{document}

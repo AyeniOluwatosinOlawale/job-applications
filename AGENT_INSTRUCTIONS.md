@@ -302,9 +302,13 @@ WebFetch each careers page and look for new LLM/ML/AI engineer openings:
 NOTE ON DNS BLOCKING: LinkedIn, Indeed, Reed, RemoteOK, and HackerNews are DNS-blocked in the CCR remote environment. Do not retry these more than once — if blocked, note it in Sources Searched and move on. Prioritise: WebSearch (Google Jobs), Greenhouse/Lever/Ashby via WebSearch, and direct company careers pages — these are reliably accessible.
 
 For each job URL found across all sources:
-1. WebFetch the full posting page. If the fetch returns 404, a generic "jobs home" redirect, "this position is no longer available", or DNS/connection error — mark as DEAD_LINK and skip entirely. Do not generate documents for dead links.
+1. WebFetch the full posting page. If the fetch returns 404, a generic "jobs home" redirect, "this position is no longer available", or DNS/connection error — mark as DEAD_LINK.
+   - Before skipping: WebSearch for "[company] [role title] site:greenhouse.io OR site:ashbyhq.com OR site:lever.co OR site:linkedin.com" to find the current live posting URL.
+   - If a live replacement is found: use the replacement URL and continue.
+   - If no replacement found after one search: skip entirely. Do not generate documents for confirmed dead links.
 2. Extract: title, company, location, requirements, responsibilities, HOW TO APPLY (email address, portal form, or LinkedIn Easy Apply), apply URL or email.
 3. Record link_status = live or dead in tracker notes.
+4. ALWAYS verify the final URL is live immediately before generating any document or sending any email. Never include a URL in an email summary or cover letter that has not been fetched and confirmed live in the same run.
 
 Skip rules: already in tracker (match company+role ANY status), Mistral AI Applied AI Forward Deployed ML Engineer, security clearance required, no AI/ML, citizenship/PR required, DEAD_LINK.
 

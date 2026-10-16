@@ -1,0 +1,84 @@
+%% CV — Doubleword MTS Inference Research
+%% Compile: lualatex main_doubleword_inference-research.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+AI Inference Research Engineer with production experience optimising LLM serving across vLLM, SGLang, and TensorRT-LLM on H100 and RTX 4090 hardware. Benchmarked 1,443$\times$ TTFT speedup via RadixAttention prefix caching; profiled CUDA KV cache kernels to deliver 3.8$\times$ throughput improvement; built speculative decoding and quantisation experiments end-to-end. Deep interest in multi-LoRA serving, memory-constrained GPU inference, and the research-to-production pipeline for inference systems. MSc AI with Distinction, University of Strathclyde 2023.
+
+\section{Core Competencies}
+\cvitem{Inference Engines}{vLLM, SGLang, TensorRT-LLM, ONNX Runtime, Hugging Face Transformers/TGI}
+\cvitem{GPU \& CUDA}{NVIDIA Nsight Systems/Compute, CUDA kernel profiling, memory bandwidth analysis, kernel fusion, warp occupancy, BFloat16/FP8}
+\cvitem{Inference Research}{Speculative decoding, RadixAttention / prefix caching, AWQ/GPTQ quantisation, KV cache compression, multi-LoRA serving, flash attention, continuous batching}
+\cvitem{LLM Training \& Fine-tuning}{PyTorch, PEFT/LoRA, Mistral 7B, Qwen3, Phi-4, Gemma 2 — full pipeline: data prep, training, eval, inference}
+\cvitem{Infrastructure}{Kubernetes, Docker, FastAPI, Prometheus, Grafana, Python, GitHub Actions}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item H100 NVL benchmark: vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ H100 NVL 94 GB (NVLink 4.0, CUDA 13.4) — Qwen3-8B BF16, TP=2. Measured TTFT, TPOT, throughput across concurrency 1--128. RadixAttention: 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 5,965 tok/s peak; 100\% SLO compliance. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+    \item \textit{open-model-engine}: GPU-first inference benchmarking for vLLM, SGLang, TensorRT-LLM — CUDA profiling, AWQ/GPTQ quantisation, speculative decoding, throughput/latency Pareto analysis.
+    \item \textit{inference-optimizer}: production AI Inference Gateway — 3.87$\times$ faster (parallel execution), 61.4\% cost reduction (prompt caching), 14$\times$ throughput (concurrency), 64.3\% cheaper (model routing). 13 optimisations, 4 providers.
+    \item Designed 13-phase AI Inference Engineering curriculum covering GPU architecture, CUDA kernel optimisation, serving framework internals, and production deployment.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item 28$\times$ LLM cost reduction on RTX 4090 via vLLM/SGLang continuous batching and KV cache optimisation.
+    \item CUDA KV cache kernel profiling with Nsight: identified memory bandwidth bottleneck; 3.8$\times$ throughput improvement; 18$\times$ latency reduction via continuous batching redesign.
+    \item Fine-tuned Mistral 7B with LoRA/PEFT on radiology corpus: $+22\%$ diagnostic accuracy, $-35\%$ hallucination rate; deployed as low-latency production inference API.
+    \item Built \textit{lab-vllm-omni}: phased inference lab for vLLM-Omni covering all 5 output modalities — text, audio, image, video, structured output.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Architected real-time NLP pipeline with sub-500 ms end-to-end latency under concurrent load; error handling, retries, observability.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item LLM inference workflows with structured output extraction and multi-step reasoning.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{llm-inference-benchmark (H100)}{vLLM vs SGLang, H100 NVL, Qwen3-8B BF16 TP=2. RadixAttention: 1,443$\times$ TTFT speedup. Peak: 5,965 tok/s. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}}
+
+\cvitem{open-model-engine}{Inference benchmarking: vLLM, SGLang, TensorRT-LLM — CUDA profiling, quantisation, speculative decoding. \href{https://github.com/AyeniOluwatosinOlawale/open-model-engine}{github.com/AyeniOluwatosinOlawale/open-model-engine}}
+
+\cvitem{inference-harness}{Unified benchmarking harness: closed + open serving engines, GPU profiling, automated dashboard. \href{https://github.com/AyeniOluwatosinOlawale/inference-harness}{github.com/AyeniOluwatosinOlawale/inference-harness}}
+
+\cvitem{lab-vllm-omni}{vLLM-Omni: phased inference lab for all 5 output modalities. \href{https://github.com/AyeniOluwatosinOlawale/lab-vllm-omni}{github.com/AyeniOluwatosinOlawale/lab-vllm-omni}}
+
+\cvitem{My\_finetuned\_Phi-4}{Phi-4 LoRA fine-tuning: full pipeline — data prep, LoRA config, training, eval, inference. \href{https://github.com/AyeniOluwatosinOlawale/My_finetuned_Phi-4}{github.com/AyeniOluwatosinOlawale/My\_finetuned\_Phi-4}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{Open Source}
+\cvitem{43 public repos}{\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} — inference benchmarks, CUDA labs, fine-tuning pipelines}
+
+\end{document}

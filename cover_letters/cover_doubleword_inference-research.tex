@@ -1,0 +1,39 @@
+%% Cover Letter — Doubleword MTS Inference Research
+%% Compile: pdflatex cover_doubleword_inference-research.tex
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ 07727305230 \\ ayenioluwatosinolawale@gmail.com}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Doubleword \\ London, UK}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the Member of Technical Staff: Inference Research role at Doubleword. Your focus on multi-LoRA serving, GPU architecture, and speculative decoding is exactly the class of problem I have been building toward — and I have the benchmarks to prove it.
+
+Three specific achievements relevant to this role:
+
+\begin{itemize}
+  \item \textbf{H100 NVL inference research — RadixAttention and prefix caching:} I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. The critical finding was the impact of RadixAttention prefix caching in memory-constrained long-context settings: 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context, with 100\% SLO compliance at concurrency 128 and peak throughput of 5,965 tok/s. Results are live at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+
+  \item \textbf{CUDA kernel profiling and speculative decoding experiments:} Using NVIDIA Nsight Systems and Compute, I profiled KV cache CUDA ops on RTX 4090 hardware — identified memory bandwidth as the bottleneck and retuned kernel access patterns for 3.8$\times$ throughput improvement. I also ran speculative decoding experiments across vLLM and SGLang to characterise speedup vs draft model overhead tradeoffs, documented in \textit{open-model-engine} (\href{https://github.com/AyeniOluwatosinOlawale/open-model-engine}{github.com/AyeniOluwatosinOlawale/open-model-engine}).
+
+  \item \textbf{Multi-modal LLM inference — vLLM-Omni:} I built \textit{lab-vllm-omni}, a phased inference lab covering all 5 output modalities of vLLM-Omni (text, audio, image, video, structured output) — characterising throughput, memory pressure, and scheduling behaviour across modalities. This is directly relevant to serving diverse inference workloads efficiently as Doubleword scales.
+\end{itemize}
+
+Doubleword's approach — small team, deep technical work, research-to-production focus — is exactly what I want. I am based in Glasgow and happy to relocate to London for the right role; Farringdon 2--3 days/week is workable.
+
+My CV is available at \href{https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_doubleword_inference-research.tex}{github.com/AyeniOluwatosinOlawale/job-applications} — I am happy to provide a compiled PDF on request.
+
+\closing{Yours sincerely,}
+
+Oluwatosin Ayeni \\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \\
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\end{letter}
+\end{document}
