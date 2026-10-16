@@ -62,7 +62,8 @@ Research:
 
 ## Constraints
 - Location: Glasgow, open to remote, hybrid, London relocation for strong roles
-- Deal-breakers: security clearance required, pure management, no AI/ML component
+- Deal-breakers: pure management with no AI/ML component, citizenship/PR required
+- Note: security clearance roles are acceptable — include them, note "security clearance required" in tracker notes, and still generate CV + cover letter
 - Always skip: Mistral AI (already applied 2026-10-15)
 
 ---
