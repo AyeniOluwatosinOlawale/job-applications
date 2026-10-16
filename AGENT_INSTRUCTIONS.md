@@ -375,6 +375,15 @@ Cover letter file: cover_letters/cover_COMPANY-SLUG_ROLE-SLUG.tex
 - Closing: one sentence on working style fit, I look forward to hearing from you
 - Target 1 page
 
+After generating the LaTeX files, also generate a PDF of the CV and cover letter using weasyprint:
+  python3 -c "
+from weasyprint import HTML
+import os
+os.makedirs('pdf', exist_ok=True)
+# agent generates HTML content matching the CV/cover letter and saves as pdf/cv_SLUG.pdf and pdf/cover_SLUG.pdf
+"
+If weasyprint is unavailable, skip PDF generation silently — LaTeX source files are the primary deliverable.
+
 Also write a plain-text email version of the cover letter: cover_letters/cover_COMPANY-SLUG_ROLE-SLUG_email.txt
 This is used for auto-apply. Same content as the LaTeX cover letter but formatted as plain text for an email body. Include at the end: "My CV is available at https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_COMPANY-SLUG_ROLE-SLUG.tex (LaTeX source) — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format."
 
