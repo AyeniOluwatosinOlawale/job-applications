@@ -290,8 +290,10 @@ WebFetch each careers page and look for new LLM/ML/AI engineer openings:
 - https://faculty.ai/careers
 - https://quantexa.com/careers
 
+NOTE ON DNS BLOCKING: LinkedIn, Indeed, Reed, RemoteOK, and HackerNews are DNS-blocked in the CCR remote environment. Do not retry these more than once — if blocked, note it in Sources Searched and move on. Prioritise: WebSearch (Google Jobs), Greenhouse/Lever/Ashby via WebSearch, and direct company careers pages — these are reliably accessible.
+
 For each job URL found across all sources:
-1. WebFetch the full posting page. If the fetch returns 404, a generic "jobs home" redirect, or "this position is no longer available" — mark as DEAD_LINK and skip entirely. Do not generate documents for dead links.
+1. WebFetch the full posting page. If the fetch returns 404, a generic "jobs home" redirect, "this position is no longer available", or DNS/connection error — mark as DEAD_LINK and skip entirely. Do not generate documents for dead links.
 2. Extract: title, company, location, requirements, responsibilities, HOW TO APPLY (email address, portal form, or LinkedIn Easy Apply), apply URL or email.
 3. Record link_status = live or dead in tracker notes.
 
@@ -559,9 +561,11 @@ AI-Heavy Product Companies:
       I'm actively looking for LLM inference, ML engineering, or AI systems roles — open to remote, hybrid, or Glasgow/London-based.
 
       My profiles:
-      • GitHub (43 repos, inference benchmarks, fine-tuning pipelines): https://github.com/AyeniOluwatosinOlawale
+      • GitHub ([CURRENT_REPO_COUNT] repos, inference benchmarks, fine-tuning pipelines): https://github.com/AyeniOluwatosinOlawale
       • LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
       • CV (LaTeX source): https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_example.tex
+
+      IMPORTANT: The CV link above must ALWAYS be main_example.tex for cold outreach — NEVER use a role-specific CV path like main_gresearch_nlp-performance-engineer.tex here. Role-specific CVs are only linked in auto-apply cover letter emails (Part E).
 
       [ONE SENTENCE SPECIFIC TO THIS COMPANY — e.g. for Wayve: "I'm particularly drawn to Wayve's approach of training end-to-end neural driving models — the inference throughput challenges at that scale are exactly the class of problem I want to work on." For DeepMind: "DeepMind's work on Gemini's architecture and the inference optimisation research coming out of the systems team is what pulled me into this field." For Cohere: "Cohere's focus on enterprise-grade open models and the serving infrastructure needed to run them at scale aligns exactly with what I've been building independently."]
 
