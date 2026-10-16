@@ -1,0 +1,29 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.lof
+*.lot
+
+# Compiled PDFs (generated locally — not committed to keep repo lean)
+*.pdf
+
+# Environment / secrets
+.env
+.env.*
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp

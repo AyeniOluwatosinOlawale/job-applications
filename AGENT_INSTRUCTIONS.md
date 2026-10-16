@@ -33,11 +33,13 @@ MTech/BSc Physics, Federal University of Technology Akure 2016
 
 ## Key Projects
 Inference & Serving:
-- open-model-engine: GPU-first inference benchmarking for self-hosted open models — vLLM, SGLang, LayerScale; conventional load sweep + agentic multi-turn workloads (github.com/AyeniOluwatosinOlawale/open-model-engine)
-- inference-engineering-labs: Qwen2.5-7B benchmarks, 28x cost reduction RTX 4090; quantization, speculative decoding, serving optimisation (github.com/AyeniOluwatosinOlawale/inference-engineering-labs)
-- inference-harness: unified benchmarking harness for closed APIs — Anthropic, OpenAI, Gemini; single interface comparing latency/cost/throughput (github.com/AyeniOluwatosinOlawale/inference-harness)
-- inference-optimizer: AI Inference Optimizer — automatically makes LLM API calls faster/cheaper via prompt caching, streaming, structured output, batching (github.com/AyeniOluwatosinOlawale/inference-optimizer)
-- vllm-k8s-stack: production LLM serving on Kubernetes — vLLM, KV-cache-aware routing, HPA autoscaling, GPU node management (github.com/AyeniOluwatosinOlawale/vllm-k8s-stack)
+- llm-inference-benchmark (H100): vLLM v0.30 vs SGLang v0.5.20 on 2× NVIDIA H100 NVL 94GB (NVLink 4.0, CUDA 13.4) — Qwen3-8B BF16; TP=2 peak: SGLang 5,646 tok/s, vLLM 5,965 tok/s; RadixAttention prefix cache delivers 1,443x TTFT speedup (39ms vs 55,565ms) at 131K-token context; 100% SLO compliance at concurrency 1–128; live results at https://inference-web-theta.vercel.app/benchmarks/llm (github.com/AyeniOluwatosinOlawale/llm-inference-benchmark)
+- inference-optimizer: production AI Inference Gateway — 3.87x faster via parallel execution, 61.4% cost reduction via prompt caching, 64.3% cheaper with model routing, 14x throughput via concurrency; 13 optimisations; multi-provider (Claude, GPT, Gemini); live at https://inference-web-theta.vercel.app (github.com/AyeniOluwatosinOlawale/inference-optimizer)
+- inference-harness: unified benchmarking harness for closed + open model APIs (Anthropic, OpenAI, Gemini, vLLM, SGLang, TensorRT-LLM) with GPU profiling and live web dashboard (github.com/AyeniOluwatosinOlawale/inference-harness)
+- inference-optimizer-lab2: LLM inference benchmarking, bottleneck classification, and optimisation feedback loop (github.com/AyeniOluwatosinOlawale/inference-optimizer-lab2)
+- open-model-engine: GPU-first inference benchmarking for self-hosted open models — vLLM, SGLang, TensorRT-LLM, LayerScale; CUDA profiling, quantization, speculative decoding (github.com/AyeniOluwatosinOlawale/open-model-engine)
+- inference-engineering-labs: Qwen2.5-7B benchmarks on RTX 4090, 28x cost reduction; quantization, speculative decoding, serving optimisation (github.com/AyeniOluwatosinOlawale/inference-engineering-labs)
+- vllm-k8s-stack: production LLM serving on Kubernetes — vLLM, KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana monitoring (github.com/AyeniOluwatosinOlawale/vllm-k8s-stack)
 - lab-vllm-omni: phased inference lab for vLLM-Omni covering all 5 output modalities — text, audio, image, video, structured output (github.com/AyeniOluwatosinOlawale/lab-vllm-omni)
 - CUDA kernel optimisation: KV cache 3.8x throughput, batching 18x latency reduction (github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive)
 
@@ -150,7 +152,7 @@ Read tracker.csv. Header must be:
   date,company,role,status,fit_score,apply_url,cv_file,cover_letter_file,auto_applied,follow_up_sent,notes,last_updated
 If follow_up_sent column is missing, add it after auto_applied (default empty for existing rows).
 
-### A.2 — Check for email replies
+### A.2 — Check for email replies (tracker applications)
 For each open row (status not in: rejected, offer_accepted, offer_received):
   Search Gmail: company name in subject or body, last 7 days, NOT from ayenioluwatosinolawale@gmail.com
   Classify any reply found:
@@ -159,6 +161,16 @@ For each open row (status not in: rejected, offer_accepted, offer_received):
   - Assessment or task → status = assessment_received, note details
   - Offer → status = offer_received, mark URGENT in notes
   - No reply → keep current status unchanged
+
+### A.2b — Check for cold outreach replies (outreach.csv)
+Read outreach.csv. For each row where replied is empty or false:
+  Search Gmail: FROM [contact_email] OR subject containing [company name], last 30 days
+  Classify:
+  - Any reply (positive, negative, or auto-reply) → set replied = true, note date and brief content in notes column
+  - Bounce / delivery failure (subject contains "Delivery Status Notification", "Mail Delivery Failed", "undeliverable") → set replied = bounced, note in outreach notes
+  - No reply found → leave replied empty
+
+This populates the response rate data used in the weekly digest.
 
 ### A.3 — Send auto follow-up emails
 For each row where:
@@ -278,9 +290,12 @@ WebFetch each careers page and look for new LLM/ML/AI engineer openings:
 - https://faculty.ai/careers
 - https://quantexa.com/careers
 
-For each job URL found across all sources, WebFetch the full posting page to extract: title, company, location, requirements, responsibilities, HOW TO APPLY (very important — check for email address, portal form, or LinkedIn Easy Apply), apply URL or email.
+For each job URL found across all sources:
+1. WebFetch the full posting page. If the fetch returns 404, a generic "jobs home" redirect, or "this position is no longer available" — mark as DEAD_LINK and skip entirely. Do not generate documents for dead links.
+2. Extract: title, company, location, requirements, responsibilities, HOW TO APPLY (email address, portal form, or LinkedIn Easy Apply), apply URL or email.
+3. Record link_status = live or dead in tracker notes.
 
-Skip rules: already in tracker (match company+role any status), Mistral AI Applied AI Forward Deployed ML Engineer, security clearance required, no AI/ML, citizenship/PR required.
+Skip rules: already in tracker (match company+role ANY status), Mistral AI Applied AI Forward Deployed ML Engineer, security clearance required, no AI/ML, citizenship/PR required, DEAD_LINK.
 
 ---
 
@@ -513,7 +528,7 @@ AI-Heavy Product Companies:
 
 1. Read outreach.csv. Collect all companies already contacted (column: company).
 
-2. Pick 3 companies from the target list above that are NOT already in outreach.csv and NOT already in tracker.csv as applied/drafted.
+2. Pick 3 companies from the target list above that are NOT already in outreach.csv (any row) and NOT already in tracker.csv (any status — applied, drafted, interview_scheduled, assessment_received, offer_received, rejected, offer_accepted). Never cold-email a company already in your pipeline.
 
 3. For each of the 3 companies:
 
@@ -524,6 +539,7 @@ AI-Heavy Product Companies:
 
    b. If no email is found after two searches: use careers@ or hr@ at their primary domain as a best-effort address.
       Note in outreach.csv: email_found=inferred.
+      After sending, the daily A.2b Gmail check will detect any bounce/delivery failure within 24–48 hours and mark replied=bounced automatically — no manual action needed.
 
    c. Write a cold outreach email using this exact template (personalise the [SLOTS]):
 
@@ -572,19 +588,31 @@ AI-Heavy Product Companies:
 
 ## PART G — UPDATE TRACKER AND COMMIT
 
-1. For each 75+ job append row to tracker.csv:
-   - date=today, company, role, status=applied (if auto-applied) or drafted (if manual needed)
-   - fit_score=number, apply_url, cv_file path, cover_letter_file path
-   - auto_applied=true or false
-   - notes=brief fit reason + application method
-   - last_updated=today
+1. For each 75+ job append row to tracker.csv. Column order must match the header exactly:
+   date,company,role,status,fit_score,apply_url,cv_file,cover_letter_file,auto_applied,follow_up_sent,notes,last_updated
+
+   Values:
+   - date = today YYYY-MM-DD
+   - company = company name
+   - role = role title
+   - status = applied (if auto-applied via email) or drafted (if portal/manual)
+   - fit_score = number only (e.g. 87)
+   - apply_url = job posting URL (confirmed live in Part B)
+   - cv_file = cv/main_SLUG.tex
+   - cover_letter_file = cover_letters/cover_SLUG.tex
+   - auto_applied = true or false
+   - follow_up_sent = (leave empty — populated by Part A.3 when follow-up is sent)
+   - notes = fit reason + application method + ATS gaps if any + link_status=live
+   - last_updated = today YYYY-MM-DD
 
 2. Run:
    git config user.email ayenioluwatosinolawale@gmail.com
    git config user.name AyeniOluwatosinOlawale
-   git add .
+   git add tracker.csv outreach.csv cv/ cover_letters/ interview_prep/ profile_meta.json AGENT_INSTRUCTIONS.md
    git diff --cached --quiet || git commit -m "chore: daily job search $(date +%Y-%m-%d)"
    git push origin master 2>/dev/null || git push origin main 2>/dev/null || true
+
+   Note: .gitignore excludes *.pdf, *.aux, *.log, and .env files — never stage these.
 
 ---
 
