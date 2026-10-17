@@ -230,25 +230,8 @@ For each warm connection found:
 
 Search ALL of the following sources. Collect every job URL found.
 
-### LinkedIn
-WebFetch:
-- https://www.linkedin.com/jobs/search/?keywords=LLM+inference+engineer&location=United+Kingdom&f_TPR=r86400
-- https://www.linkedin.com/jobs/search/?keywords=generative+AI+engineer&location=United+Kingdom&f_TPR=r86400&f_WT=2
-- https://www.linkedin.com/jobs/search/?keywords=ML+engineer+LLM&location=United+Kingdom&f_TPR=r86400
-- https://www.linkedin.com/jobs/search/?keywords=AI+engineer+LLM&location=United+Kingdom&f_TPR=r86400
-- https://www.linkedin.com/jobs/search/?keywords=MLOps+LLM+engineer&location=United+Kingdom&f_TPR=r86400&f_WT=2
-
-### Indeed UK
-WebFetch:
-- https://uk.indeed.com/jobs?q=LLM+inference+engineer&fromage=1&sort=date
-- https://uk.indeed.com/jobs?q=generative+AI+engineer&fromage=1&sort=date
-- https://uk.indeed.com/jobs?q=ML+engineer+LLM&l=United+Kingdom&fromage=1&sort=date
-- https://uk.indeed.com/jobs?q=AI+engineer+LLM&l=United+Kingdom&fromage=1&sort=date
-
-### Reed UK
-WebFetch:
-- https://www.reed.co.uk/jobs/llm-engineer-jobs?datecreatedoffset=1
-- https://www.reed.co.uk/jobs/ai-engineer-jobs?datecreatedoffset=1&keywords=LLM
+### LinkedIn / Indeed / Reed
+SKIP — DNS-blocked in CCR. Do not attempt. Go straight to WebSearch below.
 
 ### Totaljobs
 WebFetch:
@@ -271,10 +254,8 @@ WebSearch queries:
 - "MLOps engineer" LLM UK remote site:linkedin.com OR site:lever.co
 - LLM engineer job UK "apply by email" OR "send CV" OR "email your CV"
 
-### HackerNews Who's Hiring (monthly thread — check if current month thread exists)
-WebFetch: https://news.ycombinator.com/item?id=43986235
-(If that 404s, WebSearch: site:news.ycombinator.com "Ask HN: Who is hiring" 2026 to find the current thread ID)
-Extract remote ML/AI/LLM roles. Many HN jobs have direct email addresses — flag these for auto-apply.
+### HackerNews Who's Hiring
+SKIP — DNS-blocked in CCR. Use WebSearch instead: site:news.ycombinator.com "who is hiring" 2026 ML inference
 
 ### Ashby job boards (AI companies — reliable when Greenhouse/LinkedIn are blocked)
 WebFetch:
@@ -302,7 +283,15 @@ WebFetch each careers page and look for new LLM/ML/AI engineer openings:
 - https://faculty.ai/careers
 - https://quantexa.com/careers
 
-NOTE ON DNS BLOCKING: LinkedIn, Indeed, Reed, RemoteOK, and HackerNews are DNS-blocked in the CCR remote environment. Do not retry these more than once — if blocked, note it in Sources Searched and move on. Prioritise: WebSearch (Google Jobs), Greenhouse/Lever/Ashby via WebSearch, and direct company careers pages — these are reliably accessible.
+NOTE ON DNS BLOCKING: LinkedIn, Indeed, Reed, RemoteOK, and HackerNews are DNS-blocked in the CCR remote environment. Do NOT attempt these at all — skip them entirely without trying. They will always fail and waste context budget.
+
+RELIABLE SOURCES ONLY (use these, in this order):
+1. WebSearch queries (Google Jobs) — most reliable, use first
+2. site:greenhouse.io / site:ashbyhq.com / site:lever.co via WebSearch
+3. Direct company careers pages listed below
+4. Totaljobs and Weworkremotely (sometimes accessible)
+
+Do not spend more than 2 WebFetch attempts on any single source. If it fails twice, note it and move on immediately.
 
 For each job URL found across all sources:
 1. WebFetch the full posting page. If the fetch returns 404, a generic "jobs home" redirect, "this position is no longer available", or DNS/connection error — mark as DEAD_LINK.
