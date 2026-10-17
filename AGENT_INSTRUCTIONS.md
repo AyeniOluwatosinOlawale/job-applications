@@ -714,6 +714,10 @@ For each job where auto_applied=true today:
   Why strong fit: [2 sentences]
   Posting: [URL]
 
+If no new auto-applied jobs today: show ALL previously auto-applied jobs from tracker.csv (any date):
+  [Score]/100 | [Title] at [Company] | Applied [date] | Status: [current status]
+  Sent to: [email address]
+
 === NEW STRONG FITS — MANUAL UPLOAD REQUIRED ===
 For each 75+ job today that is PORTAL-based:
   [Score]/100 | [Title] at [Company] | [Location]
@@ -722,6 +726,12 @@ For each 75+ job today that is PORTAL-based:
   Apply here: [URL]
   Files: github.com/AyeniOluwatosinOlawale/job-applications
     cv/main_[slug].tex and cover_letters/cover_[slug].tex
+
+If no new portal jobs found today: show ALL previously drafted portal jobs from tracker.csv that still have status=drafted (not yet submitted):
+  [Score]/100 | [Title] at [Company] | Drafted [date] — STILL PENDING SUBMISSION
+  Apply here: [URL]
+  CV: pdf/cv_[slug].pdf | Cover letter: pdf/cover_[slug].pdf
+  (These are ready and waiting — just upload to the portal)
   ACTION: Download, compile (lualatex for CV, pdflatex for cover letter), upload to portal
 
 === WORTH A LOOK (60-74) ===
