@@ -630,6 +630,21 @@ AI-Heavy Product Companies:
 
 ---
 
+## CONTEXT BUDGET RULE — READ BEFORE STARTING
+
+The daily email summary (Part H) is the single most important output of every run. Without it, the user has no visibility into what happened.
+
+**If at any point you are running low on context or have been running for more than 10 minutes:**
+- Stop the current part immediately
+- Skip any remaining work in Parts B, C, D, E, F
+- Jump straight to Part G (commit what you have) then Part H (send the email)
+- In the email, note which parts were completed and which were skipped due to context limits
+
+**Part H must execute on every single run. It is non-negotiable.**
+**Part G (git commit) and Part H (email summary) are the only two parts that can never be skipped.**
+
+---
+
 ## PART G — UPDATE TRACKER AND COMMIT
 
 1. For each 75+ job append row to tracker.csv. Column order must match the header exactly:
@@ -662,8 +677,12 @@ AI-Heavy Product Companies:
 
 ## PART H — SEND EMAIL SUMMARY
 
+**THIS PART MUST ALWAYS RUN.** If earlier parts were skipped, still send this email with whatever data you have.
+
 Use Gmail MCP. Send to: ayenioluwatosinolawale@gmail.com
 Subject: Job Search Daily - [DATE]
+
+If the Gmail MCP send_message call fails on the first attempt: retry once immediately. If it fails again: try sending a shorter plain-text version with just the stats line and a note that the full report failed. Do not silently skip — always make at least two attempts to send something.
 
 Email body:
 
