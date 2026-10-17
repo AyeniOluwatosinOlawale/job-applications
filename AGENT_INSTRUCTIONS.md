@@ -13,9 +13,9 @@ LLM Inference Engineer, ML Engineer (LLM), Generative AI Engineer, AI Engineer, 
 
 ## Skills
 Primary: Python, vLLM, SGLang, TensorRT-LLM, CUDA/NVIDIA Nsight, AWQ, speculative decoding, KV cache optimisation, PyTorch, LLM fine-tuning (Mistral 7B / Phi-4 / Qwen3 / Gemma 2 via PEFT/LoRA), LangChain, RAG systems, n8n, FastAPI, Docker, Kubernetes, Claude API
-Secondary: TypeScript, SQL, Scikit-learn, NLP, Computer Vision, Pandas, Power BI, React, Next.js, PostgreSQL, Redis, GitHub Actions, Vertex AI
+Secondary: TypeScript, SQL, Scikit-learn, NLP, Computer Vision, Pandas, Power BI, React, Next.js, PostgreSQL, Redis, GitHub Actions, Vertex AI, LiteLLM, KEDA, Loki, AlertManager, Velero, RunPod, Vast.ai, Ollama, MoE (Mixture of Experts), GQA/MQA (grouped/multi-query attention)
 
-## GitHub: 43 public repos — github.com/AyeniOluwatosinOlawale
+## GitHub: 42 public repos — github.com/AyeniOluwatosinOlawale
 ## Portfolio: portfolio-ten-brown-40.vercel.app
 ## Consulting: vertinab.com | anaai.tech
 
@@ -41,6 +41,8 @@ Inference & Serving:
 - inference-engineering-labs: Qwen2.5-7B benchmarks on RTX 4090, 28x cost reduction; quantization, speculative decoding, serving optimisation (github.com/AyeniOluwatosinOlawale/inference-engineering-labs)
 - vllm-k8s-stack: production LLM serving on Kubernetes — vLLM, KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana monitoring (github.com/AyeniOluwatosinOlawale/vllm-k8s-stack)
 - lab-vllm-omni: phased inference lab for vLLM-Omni covering all 5 output modalities — text, audio, image, video, structured output (github.com/AyeniOluwatosinOlawale/lab-vllm-omni)
+- llm-inference-platform: production LLM inference on RunPod and Vast.ai — vLLM v0.30.0 + SGLang v0.5.20 serving Llama 3.1 8B and Qwen3 8B, LiteLLM gateway, KEDA autoscaling, Prometheus + Grafana + Loki + AlertManager, Velero backup (github.com/AyeniOluwatosinOlawale/llm-inference-platform)
+- phase3-model-architecture: model architecture labs — transformer internals, MHA/GQA/MLA attention variants, Dense vs MoE, VRAM calculator; Phase 3 of AI Inference Engineering Roadmap 2026 (github.com/AyeniOluwatosinOlawale/phase3-model-architecture)
 - CUDA kernel optimisation: KV cache 3.8x throughput, batching 18x latency reduction (github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive)
 
 Fine-tuning & Models:

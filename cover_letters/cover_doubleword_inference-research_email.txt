@@ -1,0 +1,21 @@
+Dear Hiring Team,
+
+I am writing to apply for the Member of Technical Staff: Inference Research role at Doubleword. Your focus on multi-LoRA serving, GPU architecture, and speculative decoding is exactly the class of problem I have been building toward — and I have the benchmarks to prove it.
+
+Three specific achievements relevant to this role:
+
+• H100 NVL inference research — RadixAttention and prefix caching: I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2x NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. The critical finding was the impact of RadixAttention prefix caching in memory-constrained long-context settings: 1,443x TTFT speedup (39 ms vs 55,565 ms) at 131K-token context, with 100% SLO compliance at concurrency 128 and peak throughput of 5,965 tok/s. Results are live at https://inference-web-theta.vercel.app/benchmarks/llm.
+
+• CUDA kernel profiling and speculative decoding experiments: Using NVIDIA Nsight Systems and Compute, I profiled KV cache CUDA ops on RTX 4090 hardware — identified memory bandwidth as the bottleneck and retuned kernel access patterns for 3.8x throughput improvement. I also ran speculative decoding experiments across vLLM and SGLang to characterise speedup vs draft model overhead tradeoffs, documented in open-model-engine (github.com/AyeniOluwatosinOlawale/open-model-engine).
+
+• Multi-modal LLM inference — vLLM-Omni: I built lab-vllm-omni, a phased inference lab covering all 5 output modalities of vLLM-Omni (text, audio, image, video, structured output) — characterising throughput, memory pressure, and scheduling behaviour across modalities. This is directly relevant to serving diverse inference workloads efficiently as Doubleword scales.
+
+Doubleword's approach — small team, deep technical work, research-to-production focus — is exactly what I want. I am based in Glasgow and happy to relocate to London for the right role; Farringdon 2-3 days/week is workable.
+
+My CV is available at https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_doubleword_inference-research.tex (LaTeX source) — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format.
+
+Yours sincerely,
+Oluwatosin Ayeni
+07727305230 | ayenioluwatosinolawale@gmail.com
+GitHub: https://github.com/AyeniOluwatosinOlawale
+LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/

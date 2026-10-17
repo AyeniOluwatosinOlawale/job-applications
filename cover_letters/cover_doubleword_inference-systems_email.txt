@@ -1,0 +1,21 @@
+Dear Hiring Team,
+
+I am writing to apply for the Member of Technical Staff: Inference Systems role at Doubleword. Building a distributed batch inference platform that handles high load with low latency is exactly the kind of systems problem I find most interesting — and I have built the closest equivalent I could as an independent engineer.
+
+Three achievements directly relevant to what this role requires:
+
+• Kubernetes LLM serving platform — production grade: I built vllm-k8s-stack — production LLM serving on Kubernetes with a vLLM backend, KV-cache-aware request routing, HPA autoscaling on GPU node pools, and a Prometheus/Grafana observability stack. The system was designed around the constraint that KV cache state cannot be migrated mid-request — so routing decisions must account for prefix reuse. This is the core challenge in a batch inference platform. github.com/AyeniOluwatosinOlawale/vllm-k8s-stack
+
+• Database optimisation under concurrent load: I run Supabase (PostgreSQL) as the primary data layer for multi-tenant production applications. I have designed schemas for concurrent session workloads, tuned query plans for hot paths, and instrumented with real-time observability. Sub-500 ms end-to-end latency under bursty concurrent load is a constraint I have engineered around directly.
+
+• H100 serving benchmarks — SLO compliance at scale: I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2x H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), measuring throughput, TTFT, TPOT, and SLO compliance across concurrency 1-128. Peak: 5,965 tok/s; 100% SLO compliance at concurrency 128. Understanding where a serving system breaks its SLO guarantees is as important as peak throughput. Live results: https://inference-web-theta.vercel.app/benchmarks/llm.
+
+I write primarily in Python but am actively building Rust tooling for inference systems — I understand why Rust is the right choice for a low-latency inference platform. I am open to relocating to London; Farringdon 2-3 days/week is workable.
+
+My CV is available at https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_doubleword_inference-systems.tex (LaTeX source) — happy to provide a compiled PDF on request, or please let me know if you need it in another format.
+
+Yours sincerely,
+Oluwatosin Ayeni
+07727305230 | ayenioluwatosinolawale@gmail.com
+GitHub: https://github.com/AyeniOluwatosinOlawale
+LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
