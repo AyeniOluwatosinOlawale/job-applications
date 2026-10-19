@@ -4,4 +4,7 @@ date,company,contact_name,contact_email,contact_role,company_type,email_sent,fol
 2026-10-16,Cohere,Hiring Team,careers@cohere.com,unknown,UK AI Company,true,false,,,Sent 2026-10-16 07:12. Enterprise open model serving and on-premise inference
 2026-10-17,CoreWeave,Hiring Team,careers.eu@coreweave.com,unknown,UK AI Company / GPU Cloud,true,false,,,Sent 2026-10-17. GPU cloud infrastructure for LLM inference at hyperscale. email_found=confirmed
 2026-10-17,Stability AI,Hiring Team,careers@stability.ai,unknown,UK AI Company,true,false,,,Sent 2026-10-17. Open generative models + inference infrastructure. email_found=inferred
-2026-10-17,Fireworks AI,Hiring Team,careers@fireworks.ai,unknown,AI Company / Inference,true,false,,,Sent 2026-10-17. Serverless LLM inference platform multi-LoRA serving. email_found=inferred
+2026-10-17,Fireworks AI,Hiring Team,careers@fireworks.ai,unknown,AI Company / Inference,true,false,,auto-reply,Sent 2026-10-17. Auto-reply received 2026-10-17: "We will follow-up with you should there be a fit." Serverless LLM inference platform multi-LoRA serving. email_found=inferred
+2026-10-19,Groq,Hiring Team,careers@groq.com,unknown,AI Inference Hardware/Software,true,false,,,Sent 2026-10-19. LPU inference hardware+software stack — hardware-native serving layer optimisation. email_found=inferred
+2026-10-19,Modal Labs,Hiring Team,careers@modal.com,unknown,AI Infrastructure / Serverless GPU,true,false,,,Sent 2026-10-19. Serverless GPU compute for ML — cold-start and scheduling challenges. email_found=inferred
+2026-10-19,Faculty,Hiring Team,careers@faculty.ai,unknown,UK AI Company / Applied AI,true,false,,,Sent 2026-10-19. Applied AI for enterprise/government — production LLM reliability and cost-efficiency. email_found=inferred

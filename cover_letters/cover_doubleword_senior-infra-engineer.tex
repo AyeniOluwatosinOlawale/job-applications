@@ -1,0 +1,41 @@
+%% Cover Letter — Doubleword Senior Infrastructure Engineer
+\documentclass[11pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Doubleword \\ London, UK}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the Senior Infrastructure Engineer (LLM Inference Systems) role at Doubleword. Designing and operating the infrastructure that makes LLM inference fast and economical at scale — batch throughput, request routing, GPU cluster management — is precisely the problem I have been building toward.
+
+Three contributions directly relevant to what this role needs:
+
+\begin{itemize}
+  \item \textbf{Production LLM infrastructure, full lifecycle:} I built \textit{llm-inference-platform} — vLLM + SGLang serving Llama 3.1 8B and Qwen3 8B on RunPod and Vast.ai, with a LiteLLM gateway, KEDA autoscaling, Prometheus/Grafana/Loki/AlertManager observability, and Velero backup. I also built \textit{vllm-k8s-stack} — Kubernetes LLM serving with KV-cache-aware routing and HPA autoscaling on GPU node pools, designed around the constraint that routing must account for prefix-cache state. These are not prototype stacks — they are engineered for production reliability under concurrent load.
+
+  \item \textbf{Batch throughput optimisation and CUDA profiling:} On an RTX 4090 with vLLM and SGLang, I achieved a 28$\times$ cost reduction via continuous batching and a 3.8$\times$ throughput gain and 18$\times$ latency reduction through CUDA kernel profiling with NVIDIA Nsight Systems/Compute, targeting KV cache operations. On 2$\times$H100 NVL, I benchmarked peak throughput at 5,965 tok/s with 100\% SLO compliance at concurrency 128 and a 1,443$\times$ TTFT speedup from RadixAttention prefix caching.
+
+  \item \textbf{Intelligent request routing:} My \textit{inference-optimizer} gateway handles dynamic routing across providers and models — routing logic that drives a 64.3\% cost reduction alongside a 3.87$\times$ latency improvement through parallel execution. The routing layer must balance cost, latency, and load; engineering that tradeoff in production has been a core focus.
+\end{itemize}
+
+Doubleword's approach — building focused, well-engineered inference infrastructure rather than a general-purpose platform — is exactly where I want to work. The constraint of high-throughput batch inference with tight cost and latency targets is the class of problem I find most technically compelling.
+
+I write primarily in Python and am actively building Rust tooling for inference systems — I understand why a low-latency inference platform benefits from Rust. Relocation to London is feasible; hybrid 2--3 days/week in Farringdon is workable.
+
+I look forward to hearing from you.
+
+\closing{Yours sincerely,}
+
+\vspace{0.5cm}
+Oluwatosin Ayeni \\
+07727305230 | ayenioluwatosinolawale@gmail.com \\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \\
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\end{letter}
+\end{document}

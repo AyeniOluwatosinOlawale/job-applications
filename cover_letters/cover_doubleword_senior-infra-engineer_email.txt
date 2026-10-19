@@ -1,0 +1,21 @@
+Dear Hiring Team,
+
+I am writing to apply for the Senior Infrastructure Engineer (LLM Inference Systems) role at Doubleword. Designing and operating infrastructure that makes LLM inference fast and economical at scale — batch throughput, request routing, GPU cluster management — is precisely the problem I have been building toward.
+
+Three contributions directly relevant to what this role needs:
+
+• Production LLM infrastructure, full lifecycle: I built llm-inference-platform — vLLM + SGLang serving Llama 3.1 8B and Qwen3 8B on RunPod and Vast.ai, with a LiteLLM gateway, KEDA autoscaling, Prometheus/Grafana/Loki/AlertManager observability, and Velero backup. I also built vllm-k8s-stack — Kubernetes LLM serving with KV-cache-aware routing and HPA autoscaling on GPU node pools, engineered around the constraint that routing must account for prefix-cache state. github.com/AyeniOluwatosinOlawale/llm-inference-platform and github.com/AyeniOluwatosinOlawale/vllm-k8s-stack
+
+• Batch throughput optimisation and CUDA profiling: On RTX 4090 with vLLM/SGLang, I achieved 28x cost reduction via continuous batching and 3.8x throughput gain through CUDA kernel profiling with Nsight Systems/Compute targeting KV cache operations. On 2xH100 NVL: peak 5,965 tok/s, 100% SLO compliance at concurrency 128, 1,443x TTFT speedup from RadixAttention prefix caching. Live results: https://inference-web-theta.vercel.app/benchmarks/llm
+
+• Intelligent request routing: My inference-optimizer gateway handles dynamic routing across providers and models — delivering 64.3% cost reduction alongside 3.87x latency improvement through parallel execution and smart model selection. github.com/AyeniOluwatosinOlawale/inference-optimizer
+
+Doubleword's focused approach to LLM inference infrastructure is exactly where I want to work. I write primarily in Python and am actively building Rust tooling for inference systems. Relocation to London is feasible; hybrid 2-3 days/week in Farringdon is workable.
+
+My CV is available at https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_doubleword_senior-infra-engineer.tex (LaTeX source) — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format.
+
+Yours sincerely,
+Oluwatosin Ayeni
+07727305230 | ayenioluwatosinolawale@gmail.com
+GitHub: https://github.com/AyeniOluwatosinOlawale
+LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
