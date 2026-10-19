@@ -230,8 +230,25 @@ For each warm connection found:
 
 Search ALL of the following sources. Collect every job URL found.
 
-### LinkedIn / Indeed / Reed
-SKIP — DNS-blocked in CCR. Do not attempt. Go straight to WebSearch below.
+### LinkedIn
+Direct WebFetch of LinkedIn URLs is DNS-blocked in CCR — do NOT fetch linkedin.com URLs directly.
+Instead use these WebSearch queries to find LinkedIn job listings:
+- WebSearch: "LLM inference engineer" UK site:linkedin.com/jobs 2026
+- WebSearch: "ML engineer" LLM UK site:linkedin.com/jobs 2026
+- WebSearch: "AI inference engineer" UK site:linkedin.com/jobs 2026
+- WebSearch: "generative AI engineer" UK site:linkedin.com/jobs 2026
+- WebSearch: "MLOps engineer" LLM UK site:linkedin.com/jobs 2026
+
+For each LinkedIn job found in search results:
+1. Extract company name + job title from the search snippet
+2. WebSearch: "[company name] [job title] site:greenhouse.io OR site:ashbyhq.com OR site:lever.co OR site:workable.com"
+   — most companies post the same role on their own ATS alongside LinkedIn
+3. If a direct ATS link is found: use that URL (it will be fetchable)
+4. If no ATS link found: WebFetch the company's careers page directly to find the role
+5. Only skip if the role truly cannot be found anywhere other than LinkedIn
+
+### Indeed / Reed
+SKIP — DNS-blocked in CCR. Do not attempt.
 
 ### Totaljobs
 WebFetch:
