@@ -230,6 +230,26 @@ ROLES = [
         ],
     },
     {
+        "slug": "msr-cambridge_ml-research-engineer",
+        "title": "Senior Machine Learning Research Engineer",
+        "company": "Microsoft Research Cambridge",
+        "tagline": "AI &amp; ML Engineer specialising in LLM training, fine-tuning, inference, and evaluation at GPU scale. Full pipeline experience: LoRA/PEFT on Phi-4, Qwen3, Mistral 7B — data prep, training loop, evaluation, production deployment. H100 NVL benchmarks: 5,965 tok/s peak, 1,443× TTFT speedup via RadixAttention, 100% SLO compliance. Built automated benchmark harness spanning closed APIs and open serving engines. MSc Artificial Intelligence, Distinction, University of Strathclyde 2023. Open to relocating to Cambridge.",
+        "competencies": [
+            ("ML Training &amp; Fine-tuning", "PyTorch, PEFT/LoRA, Mistral 7B, Phi-4, Qwen3, Gemma 2 — full pipeline: data prep, training loop, eval, serving; multi-GPU (TP=2/4)"),
+            ("Inference &amp; Serving", "vLLM, SGLang, TensorRT-LLM, KV cache optimisation, speculative decoding, continuous batching, prefix caching, AWQ/GPTQ"),
+            ("Evaluation &amp; Benchmarking", "Automated harness across closed/open APIs; TTFT, TPOT, throughput, SLO metrics; GPU profiling with NVIDIA Nsight"),
+            ("GPU &amp; Systems", "CUDA kernel profiling, memory bandwidth analysis, warp occupancy, BFloat16/FP8, multi-GPU parallelism, RTX 4090 and H100 NVL"),
+            ("Infrastructure", "Kubernetes (HPA, GPU pools), Docker, Prometheus, Grafana, FastAPI, Python, GitHub Actions CI/CD"),
+        ],
+        "projects": [
+            ("llm-inference-benchmark (H100)", "vLLM v0.30 vs SGLang v0.5.20 on 2× H100 NVL 94 GB, Qwen3-8B BF16, TP=2. RadixAttention: 1,443× TTFT speedup. Peak: 5,965 tok/s. SLO 100% at concurrency 128. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live results</a>"),
+            ("My_finetuned_Phi-4", "Phi-4 LoRA fine-tuning on Cosmopedia: full pipeline — data prep, LoRA adapter training, evaluation metrics, inference benchmarking. <a href='https://github.com/AyeniOluwatosinOlawale/My_finetuned_Phi-4'>GitHub</a>"),
+            ("Qwen3-TinyStories", "Complete Qwen3-based LM: tokeniser training, architecture config, training loop, generation evaluation. <a href='https://github.com/AyeniOluwatosinOlawale/Qwen3-TinyStories-Tokenizer-Model-Training'>GitHub</a>"),
+            ("Offline AI Health Assist.", "Mistral 7B fine-tuned on radiology corpus: +22% diagnostic accuracy, −35% hallucination rate; production clinical inference API. <a href='https://github.com/AyeniOluwatosinOlawale/Offline-AI-Assisted-Health-Diagnosis'>GitHub</a>"),
+            ("inference-harness", "Unified benchmark harness: closed + open serving engines (vLLM, SGLang, TensorRT-LLM), GPU profiling (Nsight), automated evaluation dashboard. <a href='https://github.com/AyeniOluwatosinOlawale/inference-harness'>GitHub</a>"),
+        ],
+    },
+    {
         "slug": "doubleword_inference-systems",
         "title": "Member of Technical Staff: Inference Systems",
         "company": "Doubleword",
@@ -355,6 +375,23 @@ COVER_LETTERS = [
 </ul>
 
 <p>Doubleword's approach — small team, deep technical work, research-to-production focus — is exactly what I want. I am based in Glasgow and happy to relocate to London; Farringdon 2–3 days/week is workable.</p>
+""",
+    },
+    {
+        "slug": "msr-cambridge_ml-research-engineer",
+        "company": "Microsoft Research Cambridge",
+        "recipient": "Research Engineering, Microsoft Research Cambridge, Cambridge, UK",
+        "body": """
+<p>I am writing to apply for the Senior Machine Learning Research Engineer position at Microsoft Research Cambridge. MSR's work at the intersection of foundational research and large-scale systems is exactly the environment I am seeking — a place where rigorous benchmarking, novel training approaches, and production deployment are all part of the same conversation.</p>
+
+<p>Three achievements most relevant to this role:</p>
+<ul>
+  <li><strong>Full ML training pipeline at GPU scale:</strong> I have fine-tuned Mistral 7B with LoRA/PEFT on a radiology corpus — complete pipeline: dataset curation, tokenisation, training, evaluation, and production API deployment (+22% diagnostic accuracy, −35% hallucination rate). I subsequently fine-tuned Phi-4 on the Cosmopedia dataset and trained a Qwen3-based language model from scratch — tokeniser, architecture configuration, training loop, and generation evaluation. These are end-to-end pipelines, not isolated scripts.</li>
+  <li><strong>H100 NVL benchmarking — inference at scale:</strong> I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2× NVIDIA H100 NVL 94 GB (CUDA 13.4, TP=2) — 576+ measurement records across 9 context lengths and 8 concurrency levels. Key finding: RadixAttention prefix caching delivers a 1,443× TTFT speedup (39 ms vs 55,565 ms) at 131K-token context, with 100% SLO compliance at concurrency 128. Peak throughput: 5,965 tok/s. Live: <a href="https://inference-web-theta.vercel.app/benchmarks/llm">inference-web-theta.vercel.app/benchmarks/llm</a>.</li>
+  <li><strong>Automated evaluation harness — closed and open engines:</strong> I built <em>inference-harness</em>, a unified benchmark framework spanning closed APIs (Claude, GPT, Gemini) and open serving engines (vLLM, SGLang, TensorRT-LLM) with GPU profiling via NVIDIA Nsight and automated evaluation reporting. Rigorous evaluation methodology — not just latency but SLO compliance, throughput/cost Pareto, and regression detection across versions.</li>
+</ul>
+
+<p>What draws me to MSR Cambridge specifically is the combination of research depth and engineering rigour. The work published on model training, evaluation methodology, and inference systems is reference material for decisions I make week to week. I hold an MSc in AI with Distinction from the University of Strathclyde (2023) and am open to relocating to Cambridge.</p>
 """,
     },
     {

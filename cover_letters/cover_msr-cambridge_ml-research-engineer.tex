@@ -1,0 +1,52 @@
+%% Cover Letter — Microsoft Research Cambridge, Senior Machine Learning Research Engineer
+%% Compile: lualatex cover_msr-cambridge_ml-research-engineer.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\today
+
+\vspace{1em}
+Hiring Team\\
+Research Engineering, Microsoft Research Cambridge\\
+Cambridge, UK
+
+\vspace{1em}
+\textbf{Re: Senior Machine Learning Research Engineer — Research Engineering, MSR Cambridge}
+
+\vspace{1em}
+Dear Hiring Team,
+
+I am writing to apply for the Senior Machine Learning Research Engineer position at Microsoft Research Cambridge. MSR's work at the intersection of foundational research and large-scale systems is exactly the environment I am seeking — a place where rigorous benchmarking, novel training approaches, and production deployment are all part of the same conversation.
+
+My experience spans the full ML pipeline at GPU scale: from tokeniser and architecture design to training loop, evaluation, and production inference deployment. At Nexora Academic I conducted a head-to-head benchmark of vLLM v0.30 and SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94\,GB under TP=2 — producing 576+ measurement records across 9 context lengths and 8 concurrency levels. The headline result was a 1,443$\times$ TTFT speedup (39\,ms vs 55,565\,ms) via SGLang's RadixAttention prefix caching at 131K-token context, with 100\% SLO compliance at concurrency 1--128. I built the full benchmarking harness that produced these results: automated metric collection (TTFT, TPOT, throughput, SLO), live dashboard, and comparative reporting across closed and open serving engines.
+
+On the training side, I have fine-tuned Mistral 7B on a radiology corpus using LoRA/PEFT — managing the complete pipeline from dataset curation and tokenisation through training, evaluation, and production API deployment, achieving +22\% diagnostic accuracy and $-$35\% hallucination rate. I subsequently fine-tuned Phi-4 on the Cosmopedia dataset with LoRA and trained a Qwen3-based language model from scratch — tokeniser, architecture configuration, training loop, and generation evaluation. These are not isolated experiments; each one ended with a deployable artefact and a set of evaluation metrics I could defend.
+
+My GPU systems work sits alongside the modelling: CUDA KV cache profiling with NVIDIA Nsight that identified a memory bandwidth bottleneck and yielded a 3.8$\times$ throughput improvement; continuous batching pipeline redesign that reduced inference latency 18$\times$; and a 28$\times$ LLM cost reduction achieved by deploying Qwen2.5-7B on RTX 4090 hardware via vLLM/SGLang. I understand what happens between the Python API call and the GPU kernel, and I can profile and fix it at both levels.
+
+What draws me to MSR Cambridge specifically is the combination of research depth and engineering rigour. The work you publish on model training, evaluation methodology, and inference systems is work I engage with directly — not as background reading but as reference material for decisions I am making week to week. I am open to relocating to Cambridge.
+
+I would welcome the opportunity to discuss how my experience aligns with the team's current research engineering priorities.
+
+Yours sincerely,
+
+\textbf{Oluwatosin Ayeni}\\
+\href{mailto:ayenioluwatosinolawale@gmail.com}{ayenioluwatosinolawale@gmail.com}\\
+07727305230
+
+\end{document}

@@ -1,0 +1,23 @@
+Subject: Application — Senior Machine Learning Research Engineer, MSR Cambridge
+
+Dear Hiring Team,
+
+I am applying for the Senior Machine Learning Research Engineer position at Microsoft Research Cambridge (posted July 2026).
+
+My background covers the full ML pipeline at GPU scale — from training and fine-tuning to inference, benchmarking, and production deployment. Recent highlights:
+
+- H100 NVL benchmark (576+ records): vLLM v0.30 vs SGLang v0.5.20, Qwen3-8B BF16, TP=2 — 5,965 tok/s peak; 1,443× TTFT speedup via RadixAttention at 131K-token context; 100% SLO compliance at concurrency 1–128.
+- Fine-tuned Mistral 7B (LoRA/PEFT, radiology corpus) — full pipeline: dataset curation, tokenisation, training, eval, production API. Result: +22% diagnostic accuracy, −35% hallucination rate.
+- Fine-tuned Phi-4 on Cosmopedia dataset; trained Qwen3-based LM from scratch (tokeniser, architecture, training loop, generation eval).
+- CUDA KV cache profiling (NVIDIA Nsight): 3.8× throughput improvement, 18× latency reduction via continuous batching.
+
+I hold an MSc in Artificial Intelligence with Distinction from the University of Strathclyde (2023) and am open to relocating to Cambridge.
+
+CV and cover letter are attached. Live benchmark results: https://inference-web-theta.vercel.app/benchmarks/llm
+
+Best regards,
+Oluwatosin Ayeni
+ayenioluwatosinolawale@gmail.com
+07727305230
+https://github.com/AyeniOluwatosinOlawale
+https://www.linkedin.com/in/oluwatosinolawaleayeni/

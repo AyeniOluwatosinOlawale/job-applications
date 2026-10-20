@@ -1,0 +1,87 @@
+%% CV — Microsoft Research Cambridge, Senior Machine Learning Research Engineer
+%% Compile: lualatex main_msr-cambridge_ml-research-engineer.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+AI \& ML Engineer specialising in LLM training, fine-tuning, inference, and evaluation at GPU scale. Benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94\,GB (CUDA 13.4, TP=2) — 5,965\,tok/s peak, 1,443$\times$ TTFT speedup via RadixAttention at 131K-token context, 100\% SLO compliance. Full fine-tuning pipeline experience: LoRA/PEFT on Phi-4, Qwen3, Mistral 7B — data preparation, training, evaluation, and production inference deployment. Built a unified benchmarking harness spanning closed APIs and open serving engines (vLLM, SGLang, TensorRT-LLM) with automated evaluation reporting. MSc Artificial Intelligence, Distinction, University of Strathclyde 2023. Open to relocating to Cambridge.
+
+\section{Core Competencies}
+\cvitem{ML Training \& Fine-tuning}{PyTorch, PEFT/LoRA, Mistral 7B, Phi-4, Qwen3, Gemma 2 — full pipeline: data prep, training loop, eval, serving; multi-GPU (TP=2/4)}
+\cvitem{Inference \& Serving}{vLLM, SGLang, TensorRT-LLM, KV cache optimisation, speculative decoding, continuous batching, prefix caching, AWQ/GPTQ}
+\cvitem{Evaluation \& Benchmarking}{Automated benchmark harness across closed/open APIs; TTFT, TPOT, throughput, SLO metrics; GPU profiling with NVIDIA Nsight}
+\cvitem{GPU \& Systems}{CUDA kernel profiling, memory bandwidth analysis, warp occupancy, BFloat16/FP8, multi-GPU parallelism, RTX 4090 and H100 NVL}
+\cvitem{Infrastructure}{Kubernetes (HPA, GPU pools), Docker, Prometheus, Grafana, FastAPI, Python, GitHub Actions CI/CD}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item H100 NVL benchmark (576+ measurement records): vLLM v0.30 vs SGLang v0.5.20, Qwen3-8B BF16, TP=2 — peak 5,965\,tok/s; RadixAttention: 1,443$\times$ TTFT speedup (39\,ms vs 55,565\,ms) at 131K-token context; 100\% SLO compliance at concurrency 1--128. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}
+    \item Built \textit{inference-harness}: unified benchmark framework spanning closed APIs (Claude, GPT, Gemini) and open engines (vLLM, SGLang, TensorRT-LLM) with GPU profiling and automated evaluation dashboard.
+    \item Built \textit{inference-optimizer}: production AI Inference Gateway — 3.87$\times$ faster (parallel execution), 61.4\% cost reduction (prompt caching), 14$\times$ throughput (concurrency), 64.3\% cheaper (model routing).
+    \item Designed 13-phase AI Inference Engineering curriculum: GPU architecture, CUDA optimisation, serving frameworks, distributed inference, evaluation methodology.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Fine-tuned Mistral 7B with LoRA/PEFT on radiology corpus — full pipeline: dataset curation, tokenisation, training, eval, production inference API. Result: +22\% diagnostic accuracy, $-$35\% hallucination rate.
+    \item Fine-tuned Phi-4 on Cosmopedia dataset with LoRA — complete training pipeline including data prep, LoRA adapter training, evaluation metrics, and inference benchmarking.
+    \item Trained Qwen3-based language model from scratch: tokeniser, architecture, training loop, generation evaluation.
+    \item CUDA KV cache profiling with NVIDIA Nsight: identified memory bandwidth bottleneck; 3.8$\times$ throughput improvement; 18$\times$ latency reduction via continuous batching.
+    \item 28$\times$ LLM cost reduction deploying Qwen2.5-7B on RTX 4090 via vLLM/SGLang.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item LLM-backed student chatbots with structured output extraction and multi-step reasoning.
+    \item Built n8n AI workflows automating data pipelines and multi-system integrations.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Real-time NLP pipeline (WhatsApp $\to$ Zoho CRM $\to$ Supabase): sub-500\,ms end-to-end latency under concurrent load.
+  \end{itemize}
+}
+
+\cventry{2018--2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{inference-harness}{Unified benchmark harness: closed + open serving engines (vLLM, SGLang, TensorRT-LLM), GPU profiling (Nsight), automated evaluation dashboard. \href{https://github.com/AyeniOluwatosinOlawale/inference-harness}{GitHub}}
+
+\cvitem{llm-inference-benchmark}{2$\times$ H100 NVL 94\,GB — 576+ records, 9 context lengths, 8 concurrency levels. Peak 5,965\,tok/s; 1,443$\times$ TTFT speedup via RadixAttention. \href{https://inference-web-theta.vercel.app/benchmarks/llm}{Live results}}
+
+\cvitem{My\_finetuned\_Phi-4}{Phi-4 LoRA fine-tuning on Cosmopedia: full pipeline — data prep, LoRA training, eval, inference. \href{https://github.com/AyeniOluwatosinOlawale/My_finetuned_Phi-4}{GitHub}}
+
+\cvitem{Qwen3-TinyStories}{Complete Qwen3-based LM: tokeniser training, architecture, training loop, generation evaluation. \href{https://github.com/AyeniOluwatosinOlawale/Qwen3-TinyStories-Tokenizer-Model-Training}{GitHub}}
+
+\cvitem{Offline AI Health Assist.}{Mistral 7B fine-tuned on radiology data: +22\% diagnostic accuracy, deployed as production clinical API. \href{https://github.com/AyeniOluwatosinOlawale/Offline-AI-Assisted-Health-Diagnosis}{GitHub}}
+
+\section{Education}
+
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{References}
+Available on request.
+
+\end{document}
