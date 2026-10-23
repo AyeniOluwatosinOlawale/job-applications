@@ -1,0 +1,85 @@
+%% CV — Anthropic Staff Software Engineer, AI Reliability Engineering
+%% Compile: lualatex main_anthropic_reliability-engineer.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+Staff-calibre AI Reliability Engineer with deep expertise in LLM serving infrastructure, distributed systems observability, and production GPU stack reliability. Designed and operated full monitoring stacks (Prometheus, Grafana, Loki, AlertManager) for production LLM serving platforms — including SLO compliance measurement at concurrency 1--128 on H100 hardware. Achieved 100\% SLO compliance across throughput, TTFT, and TPOT at concurrency 128 on a live H100 benchmark. Built incident-response-ready Kubernetes inference platforms with automated alerting, distributed tracing, and Velero backup/restore. Deeply aligned with Anthropic's mission: I build the reliability layer that keeps LLM serving fast, observable, and trustworthy.
+
+\section{Core Competencies}
+\cvitem{Observability \& Monitoring}{Prometheus, Grafana, Loki, AlertManager — end-to-end stack for LLM serving; SLO/SLI definition, alerting, distributed tracing, GPU profiling}
+\cvitem{Reliability Engineering}{SLO design and measurement, incident response, on-call infrastructure, Velero backup/restore, failure mode analysis, chaos-style benchmarking}
+\cvitem{LLM Serving Infrastructure}{vLLM, SGLang, TensorRT-LLM — production deployment, KV-cache-aware routing, HPA autoscaling, batching strategies}
+\cvitem{Distributed Systems}{Kubernetes (HPA, GPU node pools, KEDA autoscaling), Docker, multi-node GPU orchestration, RunPod, Vast.ai, FastAPI, GitHub Actions}
+\cvitem{GPU \& CUDA}{NVIDIA Nsight Systems/Compute, memory bandwidth profiling, CUDA kernel analysis, BFloat16/FP8 precision, H100 NVL hardware}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Designed and deployed full observability stack for production LLM serving: Prometheus metrics collection, Grafana dashboards (throughput, TTFT, TPOT, queue depth, GPU utilisation), Loki log aggregation, AlertManager with paging rules for latency SLO violations.
+    \item Measured 100\% SLO compliance across concurrency 1--128 on 2$\times$ H100 NVL hardware running vLLM v0.30 and SGLang v0.5.20 — TTFT p99 tracked across all concurrency levels; results published live at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+    \item Built \textit{inference-optimizer}: production AI Inference Gateway with circuit-breaker routing, provider fallback logic, retry handling, and multi-provider observability — 3.87$\times$ latency improvement and 14$\times$ throughput via reliability-aware concurrency management.
+    \item Built \textit{vllm-k8s-stack}: Kubernetes LLM serving with KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana observability, and Velero backup/restore for stateful serving components.
+    \item Built \textit{llm-inference-platform}: production LLM platform on RunPod and Vast.ai — Loki + AlertManager for on-call alerting, Velero for disaster recovery; KEDA for GPU-aware scale-to-zero.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Diagnosed and resolved production inference reliability incident: CUDA KV cache kernel causing memory bandwidth saturation under concurrency; profiled with NVIDIA Nsight, identified bottleneck, delivered 3.8$\times$ throughput improvement without hardware change.
+    \item 28$\times$ LLM cost reduction and 18$\times$ latency improvement via continuous batching redesign and KV cache optimisation — implemented with full observability for before/after comparison.
+    \item Fine-tuned Mistral 7B (LoRA/PEFT) on radiology data: $+22\%$ diagnostic accuracy; deployed as production clinical API with monitoring for hallucination rate and latency SLOs.
+    \item Maintained $<5$\% error rate on production AI services via proactive alerting, rolling deployments, and canary testing of new model versions.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Built real-time NLP pipeline (WhatsApp $\to$ n8n $\to$ Zoho CRM $\to$ Supabase) with observability hooks, error handling, and sub-500 ms end-to-end latency SLO.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item Deployed LLM-backed automation workflows with structured output monitoring and production reliability guarantees.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{llm-inference-benchmark (H100)}{2$\times$ H100 NVL 94 GB, CUDA 13.4. vLLM v0.30 vs SGLang v0.5.20, Qwen3-8B BF16, TP=2. 100\% SLO compliance at concurrency 128. RadixAttention: 1,443$\times$ TTFT speedup. Observability: full latency percentile tracking (p50/p90/p99). Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}}
+
+\cvitem{llm-inference-platform}{Production LLM serving on RunPod + Vast.ai: vLLM + SGLang, Loki + AlertManager alerting, Velero backup, KEDA GPU-aware autoscaling. Full incident-response-ready reliability stack. \href{https://github.com/AyeniOluwatosinOlawale/llm-inference-platform}{github.com/.../llm-inference-platform}}
+
+\cvitem{vllm-k8s-stack}{Kubernetes LLM serving: vLLM, KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana full observability stack. \href{https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}{github.com/.../vllm-k8s-stack}}
+
+\cvitem{inference-optimizer}{Production Inference Gateway: circuit-breaker routing, provider failover, 14$\times$ throughput, 3.87$\times$ latency, 61.4\% cost reduction. \href{https://github.com/AyeniOluwatosinOlawale/inference-optimizer}{github.com/.../inference-optimizer}}
+
+\cvitem{inference-harness}{Unified benchmark harness: closed + open APIs, GPU profiling, SLO measurement, automated results dashboard. \href{https://github.com/AyeniOluwatosinOlawale/inference-harness}{github.com/.../inference-harness}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2016}{MTech/BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{References}
+Available on request.
+
+\end{document}

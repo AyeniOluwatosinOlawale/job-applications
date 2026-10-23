@@ -1,0 +1,39 @@
+%% Cover Letter — Anthropic Staff Software Engineer, AI Reliability Engineering
+%% Compile: pdflatex cover_anthropic_reliability-engineer.tex
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ 07727305230 \\ ayenioluwatosinolawale@gmail.com}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Anthropic}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the Staff Software Engineer, AI Reliability Engineering role at Anthropic. I have spent two years designing and operating the reliability layer for production LLM serving systems — monitoring stacks, SLO measurement, incident response infrastructure, and production debugging under GPU load. The token path from SDK through network, API, serving infrastructure, and accelerators is exactly the scope I work in daily.
+
+Three achievements directly relevant to this role:
+
+\begin{itemize}
+  \item \textbf{SLO measurement at H100 scale:} I benchmarked vLLM and SGLang on 2$\times$ NVIDIA H100 NVL hardware across concurrency 1--128, tracking TTFT, TPOT, and throughput with full percentile instrumentation. Result: 100\% SLO compliance at every concurrency level. RadixAttention prefix caching delivered 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context. Live results at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app} — this is the kind of rigour I apply to SLO work.
+
+  \item \textbf{Full observability stack for LLM serving:} I built \textit{llm-inference-platform} — production LLM serving with Prometheus metrics, Grafana dashboards (GPU utilisation, queue depth, per-request latency), Loki log aggregation, AlertManager paging, and Velero backup/restore. I also built \textit{vllm-k8s-stack} with KV-cache-aware routing and HPA autoscaling, and configured KEDA for GPU-aware scale-to-zero. Every component is wired for observability-first operations.
+
+  \item \textbf{Production incident diagnosis and resolution:} I identified and fixed a CUDA KV cache kernel memory bandwidth saturation issue under concurrent inference load — using NVIDIA Nsight Systems/Compute to trace the bottleneck, then redesigning the access pattern to deliver 3.8$\times$ throughput improvement without hardware change. Diagnosing unfamiliar systems under production pressure is a working mode, not an edge case for me.
+\end{itemize}
+
+Anthropic's reliability team sits at the intersection of systems engineering and mission-critical AI delivery. I have been a Claude API user throughout my inference engineering work, and I understand concretely what latency spikes, timeout cascades, and routing failures cost the people relying on the API. I want to work on the infrastructure that prevents those failures at scale.
+
+I am open to relocating to London and available to interview at your convenience.
+
+\closing{Yours sincerely,}
+
+Oluwatosin Ayeni \\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \\
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\end{letter}
+\end{document}

@@ -1,0 +1,23 @@
+Dear Hiring Team,
+
+I am applying for the Staff Software Engineer, AI Reliability Engineering role at Anthropic. I have spent two years designing and operating the reliability layer for production LLM serving systems — monitoring stacks, SLO measurement, incident response infrastructure, and production debugging under GPU load. The token path from SDK through network, API, serving infrastructure, and accelerators is exactly the scope I work in daily.
+
+Three achievements directly relevant to this role:
+
+• SLO measurement at H100 scale: I benchmarked vLLM and SGLang on 2× NVIDIA H100 NVL hardware across concurrency 1–128, tracking TTFT, TPOT, and throughput with full percentile instrumentation. Result: 100% SLO compliance at every concurrency level. RadixAttention prefix caching delivered 1,443× TTFT speedup (39 ms vs 55,565 ms) at 131K-token context. Live results at https://inference-web-theta.vercel.app/benchmarks/llm — this is the kind of rigour I apply to SLO work.
+
+• Full observability stack for LLM serving: I built llm-inference-platform — production LLM serving with Prometheus metrics, Grafana dashboards (GPU utilisation, queue depth, per-request latency), Loki log aggregation, AlertManager paging, and Velero backup/restore. I also built vllm-k8s-stack with KV-cache-aware routing and HPA autoscaling, with KEDA for GPU-aware scale-to-zero. Every component is wired for observability-first operations.
+
+• Production incident diagnosis and resolution: I identified and fixed a CUDA KV cache kernel memory bandwidth saturation issue under concurrent inference load — using NVIDIA Nsight Systems/Compute to trace the bottleneck, then redesigning the access pattern to deliver 3.8× throughput improvement without hardware change. Diagnosing unfamiliar systems under production pressure is a working mode, not an edge case for me.
+
+Anthropic's reliability team sits at the intersection of systems engineering and mission-critical AI delivery. I have been a Claude API user throughout my inference engineering work, and I understand concretely what latency spikes, timeout cascades, and routing failures cost the people relying on the API.
+
+I am open to relocating to London and available to interview at your convenience.
+
+My CV is available at https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_example.tex (LaTeX source) — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format.
+
+Best regards,
+Oluwatosin Ayeni
+07727305230 | ayenioluwatosinolawale@gmail.com
+GitHub: https://github.com/AyeniOluwatosinOlawale
+LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/

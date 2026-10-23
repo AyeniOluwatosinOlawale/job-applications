@@ -268,6 +268,46 @@ ROLES = [
             ("inference-harness", "Unified benchmark harness: closed + open serving engines, GPU profiling. <a href='https://github.com/AyeniOluwatosinOlawale/inference-harness'>GitHub</a>"),
         ],
     },
+    {
+        "slug": "anthropic_reliability-engineer",
+        "title": "Staff Software Engineer, AI Reliability Engineering",
+        "company": "Anthropic",
+        "tagline": "Staff-calibre AI Reliability Engineer with deep expertise in LLM serving infrastructure, distributed systems observability, and production GPU stack reliability. Designed and operated full monitoring stacks (Prometheus, Grafana, Loki, AlertManager) for production LLM serving. Measured 100% SLO compliance at concurrency 128 on H100 hardware. Built incident-response-ready Kubernetes inference platforms with KEDA autoscaling, Velero backup, and distributed tracing. Deep experience with CUDA profiling and production bottleneck diagnosis.",
+        "competencies": [
+            ("Observability &amp; Monitoring", "Prometheus, Grafana, Loki, AlertManager — end-to-end LLM serving stack; SLO/SLI definition, distributed tracing, GPU profiling"),
+            ("Reliability Engineering", "SLO design and measurement, incident response, Velero backup/restore, failure mode analysis, 100% SLO compliance at concurrency 128"),
+            ("LLM Serving Infrastructure", "vLLM, SGLang, TensorRT-LLM — production deployment, KV-cache-aware routing, HPA/KEDA autoscaling, batching strategies"),
+            ("Distributed Systems", "Kubernetes (HPA, GPU node pools, KEDA), Docker, multi-node GPU orchestration, RunPod, Vast.ai, FastAPI, GitHub Actions"),
+            ("GPU &amp; CUDA", "NVIDIA Nsight Systems/Compute, memory bandwidth profiling, CUDA kernel analysis, BFloat16/FP8, H100 NVL hardware"),
+        ],
+        "projects": [
+            ("llm-inference-benchmark (H100)", "2× H100 NVL 94 GB, CUDA 13.4. 100% SLO compliance at concurrency 128. RadixAttention: 1,443× TTFT speedup. Prometheus/Grafana observability. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live</a>"),
+            ("llm-inference-platform", "Production serving on RunPod + Vast.ai: vLLM + SGLang, Loki + AlertManager alerting, Velero disaster recovery, KEDA GPU autoscaling. <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-platform'>GitHub</a>"),
+            ("vllm-k8s-stack", "Kubernetes LLM serving: vLLM, KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana. <a href='https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack'>GitHub</a>"),
+            ("inference-optimizer", "Production Inference Gateway: circuit-breaker routing, provider failover, 14× throughput, 3.87× latency, 61.4% cost reduction. <a href='https://github.com/AyeniOluwatosinOlawale/inference-optimizer'>GitHub</a>"),
+            ("inference-harness", "Unified benchmark harness: closed + open APIs, GPU profiling, SLO measurement, automated dashboard. <a href='https://github.com/AyeniOluwatosinOlawale/inference-harness'>GitHub</a>"),
+        ],
+    },
+    {
+        "slug": "inworld_ml-serving-engineer",
+        "title": "Staff/Principal Machine Learning Engineer, Serving",
+        "company": "Inworld AI",
+        "tagline": "Staff-calibre ML Engineer specialising in multimodal LLM serving systems, GPU performance engineering, and multi-node inference optimisation. Benchmarked production serving stacks on 2× H100 NVL hardware — peak 5,965 tok/s, 1,443× TTFT speedup via RadixAttention, 100% SLO compliance at concurrency 128. Delivered 28× cost reduction and 18× latency improvement via vLLM/SGLang continuous batching and KV cache optimisation. Built production multi-node LLM serving platforms on Kubernetes with KEDA autoscaling and CUDA kernel profiling.",
+        "competencies": [
+            ("Serving &amp; Inference Engines", "vLLM, SGLang, TensorRT-LLM, LayerScale — production deployment, multi-node serving, KV-cache-aware routing, speculative decoding, continuous batching"),
+            ("GPU Performance Engineering", "CUDA kernel profiling (NVIDIA Nsight), memory bandwidth analysis, warp occupancy, kernel fusion, AWQ/GPTQ quantisation, BFloat16/FP8/INT8"),
+            ("Multi-node Orchestration", "Kubernetes (HPA, KEDA GPU-aware autoscaling), Ray, Docker, RunPod, Vast.ai, multi-GPU TP/PP parallelism"),
+            ("Observability &amp; Reliability", "Prometheus, Grafana, Loki, AlertManager, Velero backup/restore, SLO/SLI instrumentation, distributed tracing"),
+            ("Languages &amp; Stack", "Python, CUDA C, TypeScript, FastAPI, PostgreSQL, Redis, Supabase, GitHub Actions, n8n"),
+        ],
+        "projects": [
+            ("llm-inference-benchmark (H100)", "2× H100 NVL 94 GB, TP=2. vLLM vs SGLang. Peak: 5,965 tok/s. RadixAttention: 1,443× TTFT speedup. 100% SLO at concurrency 128. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live</a>"),
+            ("llm-inference-platform", "RunPod + Vast.ai production serving: vLLM + SGLang, LiteLLM gateway, KEDA GPU autoscaling, Prometheus + Grafana + Loki + AlertManager, Velero. <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-platform'>GitHub</a>"),
+            ("open-model-engine", "GPU-first benchmarking: vLLM, SGLang, TensorRT-LLM, LayerScale; CUDA profiling, quantisation, speculative decoding. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
+            ("vllm-k8s-stack", "Kubernetes LLM serving: KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana. <a href='https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack'>GitHub</a>"),
+            ("phase3-model-architecture", "Transformer internals: MHA/GQA/MLA, Dense vs MoE, VRAM calculator, multimodal architecture study. <a href='https://github.com/AyeniOluwatosinOlawale/phase3-model-architecture'>GitHub</a>"),
+        ],
+    },
 ]
 
 COVER_LETTERS = [
@@ -409,6 +449,44 @@ COVER_LETTERS = [
 </ul>
 
 <p>I write primarily in Python but am actively building Rust tooling for inference systems — I understand why Rust is the right choice for a low-latency inference platform. I am open to relocating to London; Farringdon 2–3 days/week is workable.</p>
+""",
+    },
+    {
+        "slug": "anthropic_reliability-engineer",
+        "company": "Anthropic",
+        "recipient": "Anthropic, London, UK",
+        "body": """
+<p>I am applying for the Staff Software Engineer, AI Reliability Engineering role at Anthropic. I have spent two years designing and operating the reliability layer for production LLM serving systems — monitoring stacks, SLO measurement, incident response infrastructure, and production debugging under GPU load. The token path from SDK through network, API, serving infrastructure, and accelerators is exactly the scope I work in daily.</p>
+
+<p>Three achievements directly relevant to this role:</p>
+<ul>
+  <li><strong>SLO measurement at H100 scale:</strong> I benchmarked vLLM and SGLang on 2× NVIDIA H100 NVL hardware across concurrency 1–128, tracking TTFT, TPOT, and throughput with full percentile instrumentation. Result: 100% SLO compliance at every concurrency level. RadixAttention prefix caching delivered 1,443× TTFT speedup (39 ms vs 55,565 ms) at 131K-token context. Live results at <a href="https://inference-web-theta.vercel.app/benchmarks/llm">inference-web-theta.vercel.app/benchmarks/llm</a> — this is the kind of rigour I apply to SLO work.</li>
+  <li><strong>Full observability stack for LLM serving:</strong> I built <em>llm-inference-platform</em> — production LLM serving with Prometheus metrics, Grafana dashboards (GPU utilisation, queue depth, per-request latency), Loki log aggregation, AlertManager paging, and Velero backup/restore. I also built <em>vllm-k8s-stack</em> with KV-cache-aware routing and HPA autoscaling, with KEDA for GPU-aware scale-to-zero. Every component is wired for observability-first operations.</li>
+  <li><strong>Production incident diagnosis and resolution:</strong> I identified and fixed a CUDA KV cache kernel memory bandwidth saturation issue under concurrent inference load — using NVIDIA Nsight Systems/Compute to trace the bottleneck, then redesigning the access pattern to deliver 3.8× throughput improvement without hardware change. Diagnosing unfamiliar systems under production pressure is a working mode, not an edge case for me.</li>
+</ul>
+
+<p>Anthropic's reliability team sits at the intersection of systems engineering and mission-critical AI delivery. I have been a Claude API user throughout my inference engineering work, and I understand concretely what latency spikes, timeout cascades, and routing failures cost the people relying on the API. I want to work on the infrastructure that prevents those failures at scale.</p>
+
+<p>I am open to relocating to London and available to interview at your convenience.</p>
+""",
+    },
+    {
+        "slug": "inworld_ml-serving-engineer",
+        "company": "Inworld AI",
+        "recipient": "Inworld AI",
+        "body": """
+<p>I am applying for the Staff/Principal Machine Learning Engineer, Serving role at Inworld AI. I have spent two years doing exactly what this role describes: optimising and scaling ML inference systems in production, profiling GPU performance, and building multi-node serving infrastructure for large language models. Inworld's focus on real-time AI for consumer-facing applications is one of the hardest latency and throughput problems in the field — it is the class of problem I have been training for.</p>
+
+<p>Three achievements most relevant to your serving infrastructure challenges:</p>
+<ul>
+  <li><strong>Multi-node LLM serving on H100 hardware:</strong> I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2× NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4) — Qwen3-8B BF16, tensor parallelism 2. Peak throughput: 5,965 tok/s. RadixAttention prefix caching delivered a 1,443× TTFT speedup (39 ms vs 55,565 ms) at 131K-token context, with 100% SLO compliance at concurrency 128. Live results at <a href="https://inference-web-theta.vercel.app/benchmarks/llm">inference-web-theta.vercel.app/benchmarks/llm</a>.</li>
+  <li><strong>GPU performance profiling and CUDA kernel optimisation:</strong> I identified a memory bandwidth saturation bottleneck in a production CUDA KV cache kernel using NVIDIA Nsight Systems/Compute — traced memory access patterns under concurrent inference load, redesigned the access order, and delivered 3.8× throughput improvement without hardware change. This is the kind of diagnosis that requires reading CUDA profiler output, not just tuning hyperparameters.</li>
+  <li><strong>Production multi-node serving platform:</strong> I built <em>llm-inference-platform</em> — production LLM serving on RunPod and Vast.ai with vLLM + SGLang, LiteLLM gateway, KEDA GPU-aware autoscaling, and Prometheus/Grafana/Loki/AlertManager for full observability. I also built <em>vllm-k8s-stack</em> — Kubernetes serving with KV-cache-aware routing and HPA autoscaling on GPU node pools. Alongside this, I built <em>open-model-engine</em> benchmarking across vLLM, SGLang, TensorRT-LLM, and LayerScale with CUDA profiling.</li>
+</ul>
+
+<p>Inworld's approach to real-time AI — where inference latency directly affects user experience in interactive, multimodal applications — is precisely the serving challenge that demands the depth of systems knowledge I have built. The intersection of GPU performance engineering and production reliability is where I do my best work.</p>
+
+<p>I have existing UK work authorisation and can start promptly. I am open to remote working within the UK and available to interview at your convenience.</p>
 """,
     },
 ]

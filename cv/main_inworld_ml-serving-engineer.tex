@@ -1,0 +1,86 @@
+%% CV — Inworld AI Staff/Principal Machine Learning Engineer, Serving
+%% Compile: lualatex main_inworld_ml-serving-engineer.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+Staff-calibre ML Engineer specialising in LLM serving systems, multimodal inference optimisation, and GPU performance engineering. Benchmarked production serving stacks on 2$\times$ H100 NVL hardware — peak 5,965 tok/s throughput, 1,443$\times$ TTFT speedup via RadixAttention, 100\% SLO compliance at concurrency 128. Delivered 28$\times$ cost reduction and 18$\times$ latency improvement on RTX 4090 serving via vLLM/SGLang continuous batching and KV cache optimisation. Built production multi-node LLM serving platforms on Kubernetes with KEDA autoscaling, CUDA kernel profiling, and full observability. Hands-on with Python, CUDA, and multi-node GPU orchestration across vLLM, SGLang, TensorRT-LLM, and LayerScale.
+
+\section{Core Competencies}
+\cvitem{Serving \& Inference Engines}{vLLM, SGLang, TensorRT-LLM, LayerScale — production deployment, multi-node serving, KV-cache-aware routing, batching (continuous, dynamic, chunked prefill), speculative decoding}
+\cvitem{GPU Performance Engineering}{CUDA kernel profiling (NVIDIA Nsight Systems/Compute), memory bandwidth analysis, warp occupancy, kernel fusion, AWQ/GPTQ quantisation, BFloat16/FP8/INT8 precision}
+\cvitem{Multi-node Orchestration}{Kubernetes (HPA, KEDA GPU-aware autoscaling, GPU node pools), Ray, Docker, RunPod, Vast.ai, multi-GPU TP/PP parallelism}
+\cvitem{Observability \& Reliability}{Prometheus, Grafana, Loki, AlertManager, Velero backup/restore, distributed tracing, SLO/SLI instrumentation}
+\cvitem{Languages \& Stack}{Python, CUDA C, TypeScript, FastAPI, PostgreSQL, Redis, Supabase, GitHub Actions, n8n}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Ran production multi-node serving benchmark: vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, tensor parallelism 2. Peak throughput: 5,965 tok/s; RadixAttention prefix caching delivered 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 100\% SLO compliance at concurrency 128. Live at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}.
+    \item Built \textit{llm-inference-platform}: production LLM serving on RunPod and Vast.ai — vLLM v0.30 + SGLang v0.5.20 serving Llama 3.1 8B and Qwen3 8B, LiteLLM gateway for multi-provider routing, KEDA autoscaling for GPU-aware scale-to-zero, Prometheus + Grafana + Loki + AlertManager, Velero backup.
+    \item Built \textit{vllm-k8s-stack}: Kubernetes LLM serving — KV-cache-aware routing, HPA autoscaling on GPU node pools, Prometheus/Grafana observability, production incident-ready design.
+    \item Built \textit{open-model-engine}: GPU-first inference benchmarking for vLLM, SGLang, TensorRT-LLM, and LayerScale — CUDA profiling pipeline, quantisation studies, speculative decoding evaluation.
+    \item Designed 13-phase AI Inference Engineering curriculum: GPU architecture, CUDA optimisation, transformer internals (MHA/GQA/MLA/MoE), distributed serving, and production deployment.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item 28$\times$ LLM cost reduction: deployed Qwen2.5-7B on RTX 4090 with vLLM/SGLang — continuous batching, KV cache optimisation, request routing.
+    \item CUDA KV cache kernel profiling with NVIDIA Nsight: identified memory bandwidth bottleneck; 3.8$\times$ throughput improvement without hardware change.
+    \item 18$\times$ inference latency reduction via continuous batching pipeline redesign and dynamic batch sizing.
+    \item Fine-tuned Mistral 7B (LoRA/PEFT) on radiology data: $+22\%$ diagnostic accuracy; deployed as production clinical assistant API.
+    \item Built production RAG serving infrastructure (AnaRadiologyAI) with embedding model serving and hybrid search pipeline.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Built real-time NLP inference pipeline (WhatsApp $\to$ n8n $\to$ Zoho CRM $\to$ Supabase) with sub-500 ms latency SLO and production reliability.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item Deployed multimodal LLM-backed workflows with structured output extraction and production monitoring.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{llm-inference-benchmark (H100)}{2$\times$ H100 NVL 94 GB, CUDA 13.4. vLLM v0.30 vs SGLang v0.5.20, Qwen3-8B BF16, TP=2. RadixAttention: 1,443$\times$ TTFT speedup. Peak: 5,965 tok/s. 100\% SLO compliance concurrency 128. \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}}
+
+\cvitem{llm-inference-platform}{RunPod + Vast.ai production serving: vLLM + SGLang, LiteLLM gateway, KEDA GPU autoscaling, Prometheus + Grafana + Loki + AlertManager, Velero. \href{https://github.com/AyeniOluwatosinOlawale/llm-inference-platform}{github.com/.../llm-inference-platform}}
+
+\cvitem{open-model-engine}{GPU-first inference benchmarking: vLLM, SGLang, TensorRT-LLM, LayerScale; CUDA profiling, quantisation, speculative decoding. \href{https://github.com/AyeniOluwatosinOlawale/open-model-engine}{github.com/.../open-model-engine}}
+
+\cvitem{vllm-k8s-stack}{Kubernetes LLM serving: KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana. \href{https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}{github.com/.../vllm-k8s-stack}}
+
+\cvitem{phase3-model-architecture}{Transformer internals: MHA/GQA/MLA attention variants, Dense vs MoE, VRAM calculator, multimodal architecture study. \href{https://github.com/AyeniOluwatosinOlawale/phase3-model-architecture}{github.com/.../phase3-model-architecture}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2016}{MTech/BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{References}
+Available on request.
+
+\end{document}

@@ -1,0 +1,39 @@
+%% Cover Letter — Inworld AI Staff/Principal ML Engineer, Serving
+%% Compile: pdflatex cover_inworld_ml-serving-engineer.tex
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ 07727305230 \\ ayenioluwatosinolawale@gmail.com}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Inworld AI}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the Staff/Principal Machine Learning Engineer, Serving role at Inworld AI. I have spent two years doing exactly what this role describes: optimising and scaling ML inference systems in production, profiling GPU performance, and building multi-node serving infrastructure for large language models. Inworld's focus on real-time AI for consumer-facing applications is one of the hardest latency and throughput problems in the field — it is the class of problem I have been training for.
+
+Three achievements most relevant to your serving infrastructure challenges:
+
+\begin{itemize}
+  \item \textbf{Multi-node LLM serving on H100 hardware:} I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4) — Qwen3-8B BF16, tensor parallelism 2. Peak throughput: 5,965 tok/s. RadixAttention prefix caching delivered a 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context, with 100\% SLO compliance at concurrency 128. Live results at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}.
+
+  \item \textbf{GPU performance profiling and CUDA kernel optimisation:} I identified a memory bandwidth saturation bottleneck in a production CUDA KV cache kernel using NVIDIA Nsight Systems/Compute — traced memory access patterns under concurrent inference load, redesigned the access order, and delivered 3.8$\times$ throughput improvement without hardware change. This is the kind of diagnosis that requires reading CUDA profiler output, not just tuning hyperparameters.
+
+  \item \textbf{Production multi-node serving platform:} I built \textit{llm-inference-platform} — production LLM serving on RunPod and Vast.ai with vLLM + SGLang, LiteLLM gateway, KEDA GPU-aware autoscaling, and Prometheus/Grafana/Loki/AlertManager for full observability. I also built \textit{vllm-k8s-stack} — Kubernetes serving with KV-cache-aware routing and HPA autoscaling on GPU node pools. Alongside this, I built \textit{open-model-engine} benchmarking across vLLM, SGLang, TensorRT-LLM, and LayerScale with CUDA profiling.
+\end{itemize}
+
+Inworld's approach to real-time AI — where inference latency directly affects user experience in interactive, multimodal applications — is precisely the serving challenge that demands the depth of systems knowledge I have built. The intersection of GPU performance engineering and production reliability is where I do my best work.
+
+I have existing UK work authorisation and can start promptly. I am open to remote working within the UK and available to interview at your convenience.
+
+\closing{Yours sincerely,}
+
+Oluwatosin Ayeni \\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \\
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\end{letter}
+\end{document}
