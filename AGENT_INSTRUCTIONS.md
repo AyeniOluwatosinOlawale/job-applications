@@ -176,39 +176,7 @@ Read outreach.csv. For each row where replied is empty or false:
 This populates the response rate data used in the weekly digest.
 
 ### A.3 — Send auto follow-up emails
-For each row where:
-  - status = applied
-  - today minus date >= 7 days
-  - follow_up_sent is empty (not already sent)
-
-Send a follow-up email via Gmail MCP:
-  To: the email address recorded in notes (look for "Auto-applied via email to [addr]") or apply_url if it contains an email
-  If no email address is recoverable: skip and note "follow_up_skipped — no email address" in notes
-  If the send fails or the contact previously bounced: skip and note "follow_up_skipped — email failed/bounced" in notes
-  CC: ayenioluwatosinolawale@gmail.com
-
-  Subject: Following up — [Role] at [Company] — Oluwatosin Ayeni
-
-  Body:
-  Hi [Hiring Team / name if known],
-
-  I wanted to briefly follow up on my application for the [Role] position I submitted on [date].
-
-  I remain very interested in [Company] — [one sentence specific to the company, drawn from the notes or cover letter context]. My key relevant experience: [pull the single strongest bullet from the original cover letter content in notes].
-
-  I'd be happy to provide any additional information, a compiled PDF of my CV, or schedule a call at your convenience.
-
-  GitHub: https://github.com/AyeniOluwatosinOlawale
-  LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
-
-  Best regards,
-  Oluwatosin Ayeni
-  07727305230 | ayenioluwatosinolawale@gmail.com
-
-After sending:
-  - Set follow_up_sent = today's date in that tracker row
-  - Set last_updated = today
-  - Append to notes: "Follow-up sent [date]"
+**DISABLED — follow-up emails are turned off. Once a message has been sent, do not send any follow-up. Skip this section entirely.**
 
 ### A.4 — Warm intro detector
 Search Gmail for messages that suggest a warm connection to any company in the cold outreach target list or tracker.csv:
@@ -497,40 +465,7 @@ If the file does not exist, create it with just the header.
 If the file exists but is missing follow_up_sent, follow_up_date, or replied columns, add them (default empty).
 
 ### F.0 — Send follow-up emails for unanswered outreach (7 days)
-Before sending new outreach, check for contacts needing a follow-up:
-
-For each row in outreach.csv where:
-  - email_sent = true
-  - replied is empty or false
-  - follow_up_sent is empty
-  - today minus date >= 7 days
-
-Send one follow-up via Gmail MCP:
-  To: contact_email
-  CC: ayenioluwatosinolawale@gmail.com
-  Subject: Re: LLM Inference Engineer — Open to Opportunities at [Company]
-
-  Body:
-  Hi [contact_name / Hiring Team],
-
-  Just a brief follow-up on my note from [date] — I wanted to make sure it didn't get buried.
-
-  I'm still very keen on [Company] and available for a quick call whenever suits. My latest work is at:
-  https://github.com/AyeniOluwatosinOlawale
-
-  Happy to answer any questions or provide more detail.
-
-  Best,
-  Oluwatosin Ayeni
-  07727305230
-
-After sending:
-  - Set follow_up_sent = true
-  - Set follow_up_date = today
-  - Update notes: "Follow-up sent [date]"
-
-Do NOT send a second follow-up after this — one initial + one follow-up is the limit per contact.
-If the follow-up send fails or the row already shows replied=bounced: skip it entirely, do not retry.
+**DISABLED — follow-up emails are turned off. Once a cold outreach message has been sent, do not send any follow-up. Skip this section entirely.**
 
 ### Target companies for cold outreach (rotate through — never repeat a company already in outreach.csv)
 
@@ -770,7 +705,7 @@ List every source checked and how many new jobs found from each.
 
 === STATS ===
 Jobs scanned: X | Auto-applied: X | Manual needed: X | Worth reviewing: X
-Status changes: X | Follow-ups sent: X | Warm intros: X | Cold outreach: 3
+Status changes: X | Warm intros: X | Cold outreach: 3
 ATS gaps detected across all roles today: [list unique missing keywords]
 
 ---
