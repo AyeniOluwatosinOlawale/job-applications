@@ -1,0 +1,43 @@
+\documentclass[12pt]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\address{Oluwatosin Ayeni \\ Glasgow, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{26 October 2026}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Inworld AI}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the Staff / Principal Machine Learning Engineer (Serving/Inference) role at Inworld AI.
+The clearest signal that this role is right for me: I have already built and benchmarked the exact technology stack it demands — vLLM, SGLang, TensorRT-LLM, and CUDA-optimised inference pipelines on H100 and RTX 4090 hardware — and I am ready to take those learnings into Inworld's production realtime serving environment at scale.
+
+Three achievements that map directly to this role:
+
+\begin{itemize}
+  \item \textbf{H100 benchmarking at production scale.} On dual NVIDIA H100 NVL 94GB (NVLink 4.0, CUDA 13.4) I benchmarked vLLM v0.30 vs SGLang v0.5.20 serving Qwen3-8B BF16 with TP=2. SGLang's RadixAttention prefix caching delivered a \textbf{1,443$\times$ TTFT speedup} at 131K-token context. I built the live results dashboard at inference-web-theta.vercel.app/benchmarks/llm — this is the level of rigour I bring to serving infrastructure decisions.
+
+  \item \textbf{Multimodal inference on vLLM-Omni.} My \textit{lab-vllm-omni} project built a phased inference lab across all five output modalities — text, audio, image, video, and structured output. Inworld serves speech models and LLMs together in a realtime consumer-facing loop; I have worked through the exact latency and scheduling tradeoffs that makes hard.
+
+  \item \textbf{Production serving from cloud to Kubernetes.} My \textit{llm-inference-platform} deploys vLLM + SGLang + LiteLLM gateway on RunPod and Vast.ai with KEDA autoscaling, Prometheus/Grafana/Loki/AlertManager observability, and Velero backup — a complete production inference stack, not a demo.
+\end{itemize}
+
+Inworld AI sits at the intersection of realtime AI and consumer-grade low latency — building first-party speech models and serving multimodal LLMs as modular APIs for high-volume workloads.
+That combination of speech, LLM, and production reliability is exactly the class of problem I have been building toward.
+The latency constraints on a voice-first AI product are unforgiving, and I am drawn to working where the gap between a good model and a good user experience is almost entirely a serving engineering problem.
+
+I enjoy working in small, technically deep teams where shipping reliable systems matters more than process.
+I look forward to the possibility of discussing how I can contribute to Inworld's inference infrastructure.
+
+\closing{Best regards,}
+
+\vspace{1em}
+Oluwatosin Ayeni \\
+07727305230 $|$ ayenioluwatosinolawale@gmail.com \\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} $|$
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\end{letter}
+\end{document}

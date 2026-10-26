@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper,banking]{moderncv}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage[utf8]{inputenc}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \httplink{linkedin.com/in/oluwatosinolawaleayeni} \quad
+  \httplink{github.com/AyeniOluwatosinOlawale}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+Production-focused ML engineer with deep hands-on experience in LLM inference optimisation, GPU serving infrastructure, and multimodal AI systems.
+Benchmarked vLLM v0.30 and SGLang v0.5.20 on dual NVIDIA H100 NVL 94GB hardware — achieving 5,965 tok/s throughput and 1,443$\times$ TTFT speedup via RadixAttention prefix caching at 131K-token context.
+Delivered 28$\times$ cost reduction and 18$\times$ latency improvement on RTX 4090 with Qwen2.5-7B through continuous batching and KV-cache optimisation.
+Passionate about building reliable, low-latency inference at the infrastructure layer — from CUDA kernel profiling to production Kubernetes serving stacks.
+
+\section{Core Competencies}
+\cvitem{Inference Serving}{vLLM, SGLang, TensorRT-LLM, LiteLLM — multi-modal serving pipelines (text, audio, image, structured output)}
+\cvitem{GPU / Systems}{CUDA kernel optimisation, NVIDIA Nsight, KV-cache tuning, speculative decoding, continuous batching, quantisation (AWQ)}
+\cvitem{MLOps / K8s}{Kubernetes, KEDA autoscaling, Prometheus/Grafana/Loki, HPA, Velero backup, RunPod, Vast.ai}
+\cvitem{LLM / Frameworks}{PyTorch, PEFT/LoRA fine-tuning (Mistral 7B, Phi-4, Qwen3, Gemma 2), RAG, LangChain, Claude API}
+\cvitem{Engineering}{Python, FastAPI, Docker, Redis, PostgreSQL, n8n, GitHub Actions, Next.js, TypeScript}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{%
+\begin{itemize}
+  \item Designed and built a multi-tenant AI inference engineering platform (web + desktop + CLI) benchmarking prompt caching, streaming, structured output, and dynamic batching across providers.
+  \item Created 13-phase AI Inference Engineering curriculum covering transformer internals, GQA/MQA/MLA attention variants, MoE architectures, and production GPU serving.
+  \item Full-stack SaaS deployment: Supabase, Next.js, Stripe, Tauri — zero-downtime multi-region.
+\end{itemize}}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{%
+\begin{itemize}
+  \item Built AI-powered student chatbot for ABU and Babcock University using n8n workflow orchestration.
+  \item Developed LinkedIn auto-poster and Google Sheets automation pipelines reducing manual effort by 90\%.
+\end{itemize}}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{%
+\begin{itemize}
+  \item Achieved \textbf{28$\times$ cost reduction} deploying Qwen2.5-7B on RTX 4090 with vLLM/SGLang; \textbf{3.87$\times$ throughput} via parallel execution and prompt caching on inference-optimizer gateway.
+  \item \textbf{3.8$\times$ KV-cache throughput} and \textbf{18$\times$ latency improvement} via continuous batching — profiled with CUDA/NVIDIA Nsight; CUDA kernel-level KV-cache optimisation.
+  \item Fine-tuned Mistral 7B on radiology data: \textbf{+22\% diagnostic accuracy}, $-$35\% hallucination rate — deployed as live clinical assistant (AnaRadiologyAI).
+  \item Deployed production LLM serving on RunPod and Vast.ai: vLLM v0.30.0 + SGLang v0.5.20 serving Llama 3.1 8B and Qwen3 8B with LiteLLM gateway, KEDA autoscaling, Prometheus + Grafana + Loki + AlertManager, Velero backup.
+\end{itemize}}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{%
+\begin{itemize}
+  \item Built n8n automation pipeline: WhatsApp Cloud API $\rightarrow$ Zoho CRM $\rightarrow$ Supabase with real-time lead scoring.
+  \item Delivered AI chatbot for Purple Squirrel talent management with Meta Cloud API integration.
+\end{itemize}}
+
+\section{Key Projects}
+
+\cvitem{llm-inference-benchmark}{vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ H100 NVL 94GB (NVLink 4.0, CUDA 13.4) — Qwen3-8B BF16, TP=2; SGLang peak 5,646 tok/s, vLLM 5,965 tok/s; 1,443$\times$ TTFT speedup via RadixAttention at 131K context; 100\% SLO compliance at concurrency 1–128. Live: inference-web-theta.vercel.app/benchmarks/llm}
+
+\cvitem{inference-optimizer}{Production AI Inference Gateway — 3.87$\times$ speed via parallel execution, 61.4\% cost reduction via prompt caching, 64.3\% cheaper with model routing, 14$\times$ throughput via concurrency; 13 optimisations; multi-provider (Claude, GPT, Gemini). github.com/AyeniOluwatosinOlawale/inference-optimizer}
+
+\cvitem{llm-inference-platform}{Production serving on RunPod and Vast.ai: vLLM + SGLang + LiteLLM gateway, KEDA autoscaling, Prometheus/Grafana/Loki/AlertManager, Velero backup. github.com/AyeniOluwatosinOlawale/llm-inference-platform}
+
+\cvitem{lab-vllm-omni}{Phased inference lab for vLLM-Omni covering all 5 output modalities — text, audio, image, video, structured output — directly relevant to Inworld's multimodal serving stack. github.com/AyeniOluwatosinOlawale/lab-vllm-omni}
+
+\cvitem{open-model-engine}{GPU-first inference benchmarking for vLLM, SGLang, TensorRT-LLM, LayerScale; CUDA profiling, quantization (AWQ), speculative decoding. github.com/AyeniOluwatosinOlawale/open-model-engine}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2011--2016}{MTech/BSc Physics (First Class)}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{References}
+Available on request.
+
+\end{document}

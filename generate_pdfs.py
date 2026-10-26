@@ -3,7 +3,7 @@
 import os
 from weasyprint import HTML, CSS
 
-OUTPUT = "/tmp/job-applications/pdf"
+OUTPUT = "/home/user/job-applications/pdf"
 os.makedirs(OUTPUT, exist_ok=True)
 
 CSS_CV = """
@@ -250,6 +250,45 @@ ROLES = [
         ],
     },
     {
+        "slug": "doubleword_senior-infra-engineer",
+        "title": "Senior Infrastructure Engineer (LLM Inference Systems)",
+        "company": "Doubleword",
+        "tagline": "Infrastructure Engineer specialising in LLM serving systems: batch inference throughput, request routing, and GPU cluster operations. Built and operated production Kubernetes LLM stacks achieving 5,965 tok/s peak on 2× H100 NVL with 100% SLO compliance at concurrency 128; KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana/Loki/AlertManager. Profiled CUDA kernel bottlenecks for 3.8× throughput gains and 18× latency reduction.",
+        "competencies": [
+            ("Inference Infrastructure", "vLLM, SGLang, TensorRT-LLM, batch inference pipelines, request scheduling, KV-cache-aware load balancing, KEDA autoscaling"),
+            ("Kubernetes &amp; Platform", "Kubernetes (HPA, GPU node pools), Docker, Velero backup, Prometheus/Grafana/Loki/AlertManager, KEDA, GitHub Actions"),
+            ("GPU &amp; Performance", "CUDA kernel profiling (NVIDIA Nsight Systems/Compute), memory bandwidth, tensor parallelism, BFloat16/FP8, continuous batching"),
+            ("Cloud &amp; Serving", "RunPod, Vast.ai, LiteLLM gateway, FastAPI, multi-provider model routing, structured output"),
+            ("Languages", "Python (primary), TypeScript, SQL; Rust (in progress — building inference tooling)"),
+        ],
+        "projects": [
+            ("llm-inference-platform", "Production LLM serving on RunPod and Vast.ai: vLLM + SGLang + LiteLLM gateway, KEDA autoscaling, Prometheus/Grafana/Loki/AlertManager, Velero backup. <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-platform'>GitHub</a>"),
+            ("vllm-k8s-stack", "Production Kubernetes LLM serving: KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana. <a href='https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack'>GitHub</a>"),
+            ("llm-inference-benchmark (H100)", "vLLM vs SGLang, H100 NVL — 5,965 tok/s peak, 100% SLO compliance. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live results</a>"),
+            ("inference-optimizer", "Production Inference Gateway: 3.87× faster, 14× throughput, 61.4% cost reduction. <a href='https://github.com/AyeniOluwatosinOlawale/inference-optimizer'>GitHub</a>"),
+        ],
+    },
+    {
+        "slug": "inworldai_ml-engineer-serving",
+        "title": "Staff/Principal Machine Learning Engineer (Serving/Inference)",
+        "company": "Inworld AI",
+        "tagline": "Production-focused ML engineer with deep hands-on experience in LLM inference optimisation, GPU serving infrastructure, and multimodal AI systems. Benchmarked vLLM v0.30 and SGLang v0.5.20 on dual NVIDIA H100 NVL 94GB — 5,965 tok/s throughput and 1,443× TTFT speedup via RadixAttention at 131K-token context. Delivered 28× cost reduction via continuous batching and KV-cache optimisation. Built multimodal inference lab covering all 5 output modalities. UK Remote.",
+        "competencies": [
+            ("Inference Serving", "vLLM, SGLang, TensorRT-LLM, LiteLLM — multi-modal serving pipelines (text, audio, image, structured output)"),
+            ("GPU / Systems", "CUDA kernel optimisation, NVIDIA Nsight, KV-cache tuning, speculative decoding, continuous batching, quantisation (AWQ)"),
+            ("MLOps / K8s", "Kubernetes, KEDA autoscaling, Prometheus/Grafana/Loki, HPA, Velero backup, RunPod, Vast.ai"),
+            ("LLM / Frameworks", "PyTorch, PEFT/LoRA fine-tuning (Mistral 7B, Phi-4, Qwen3, Gemma 2), RAG, LangChain, Claude API"),
+            ("Engineering", "Python, FastAPI, Docker, Redis, PostgreSQL, n8n, GitHub Actions, Next.js, TypeScript"),
+        ],
+        "projects": [
+            ("llm-inference-benchmark (H100)", "vLLM v0.30 vs SGLang v0.5.20, 2× H100 NVL 94GB, Qwen3-8B BF16 TP=2. RadixAttention: 1,443× TTFT speedup. Peak: 5,965 tok/s. 100% SLO at concurrency 128. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live results</a>"),
+            ("lab-vllm-omni", "vLLM-Omni phased inference lab: all 5 output modalities — text, audio, image, video, structured output. <a href='https://github.com/AyeniOluwatosinOlawale/lab-vllm-omni'>GitHub</a>"),
+            ("llm-inference-platform", "Production serving on RunPod and Vast.ai: vLLM + SGLang + LiteLLM gateway, KEDA autoscaling, Prometheus/Grafana/Loki. <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-platform'>GitHub</a>"),
+            ("inference-optimizer", "Production Inference Gateway: 3.87× speed, 61.4% cost reduction, 64.3% cheaper routing, 14× throughput. <a href='https://github.com/AyeniOluwatosinOlawale/inference-optimizer'>GitHub</a>"),
+            ("open-model-engine", "GPU-first inference benchmarking: CUDA profiling, quantization, speculative decoding. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
+        ],
+    },
+    {
         "slug": "doubleword_inference-systems",
         "title": "Member of Technical Staff: Inference Systems",
         "company": "Doubleword",
@@ -409,6 +448,42 @@ COVER_LETTERS = [
 </ul>
 
 <p>I write primarily in Python but am actively building Rust tooling for inference systems — I understand why Rust is the right choice for a low-latency inference platform. I am open to relocating to London; Farringdon 2–3 days/week is workable.</p>
+""",
+    },
+    {
+        "slug": "doubleword_senior-infra-engineer",
+        "company": "Doubleword",
+        "recipient": "Doubleword, London, UK",
+        "body": """
+<p>I am writing to apply for the Senior Infrastructure Engineer (LLM Inference Systems) role at Doubleword. Designing and operating the infrastructure layer that keeps a GPU inference cluster running at throughput — batch job scheduling, request routing, SLO compliance under load — is exactly the systems problem I have been building toward independently.</p>
+
+<p>Three achievements directly relevant to what this role requires:</p>
+<ul>
+  <li><strong>Production LLM Inference Platform on Kubernetes:</strong> I built <em>llm-inference-platform</em> — vLLM + SGLang + LiteLLM gateway deployed on RunPod and Vast.ai GPU cloud, with KEDA event-driven autoscaling, Prometheus/Grafana/Loki/AlertManager observability, and Velero backup. The platform handles multi-tenant request routing and GPU pool management — a complete production inference infrastructure stack. <a href="https://github.com/AyeniOluwatosinOlawale/llm-inference-platform">GitHub</a></li>
+  <li><strong>H100 GPU cluster operations and SLO compliance:</strong> I benchmarked and operated vLLM v0.30 and SGLang v0.5.20 on 2× NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), measuring throughput, TTFT, TPOT, and SLO compliance across concurrency 1–128. Peak: 5,965 tok/s; 100% SLO compliance at concurrency 128. RadixAttention prefix caching: 1,443× TTFT speedup at 131K-token context. This is the level of rigor I apply to serving infrastructure decisions. <a href="https://inference-web-theta.vercel.app/benchmarks/llm">Live results</a>.</li>
+  <li><strong>KV-cache-aware routing and GPU profiling:</strong> I designed KV-cache-aware request routing for vllm-k8s-stack — routing decisions account for prefix reuse so cache state is not wasted across GPU nodes. I also profiled CUDA KV cache ops with NVIDIA Nsight Systems and Compute, identified a memory bandwidth bottleneck, and retuned kernel access patterns for a 3.8× throughput improvement. Infrastructure-level thinking, not just configuration.</li>
+</ul>
+
+<p>I am based in Glasgow and open to London 2–3 days/week. I write primarily in Python with active Rust tooling work; I understand why low-latency infrastructure demands Rust for the hot path.</p>
+""",
+    },
+    {
+        "slug": "inworldai_ml-engineer-serving",
+        "company": "Inworld AI",
+        "recipient": "Inworld AI",
+        "body": """
+<p>I am writing to apply for the Staff / Principal Machine Learning Engineer (Serving/Inference) role at Inworld AI. The clearest signal that this role is right for me: I have already built and benchmarked the exact technology stack it demands — vLLM, SGLang, TensorRT-LLM, and CUDA-optimised inference pipelines on H100 and RTX 4090 hardware — and I am ready to take those learnings into Inworld's production realtime serving environment at scale.</p>
+
+<p>Three achievements that map directly to this role:</p>
+<ul>
+  <li><strong>H100 benchmarking at production scale:</strong> On dual NVIDIA H100 NVL 94GB (NVLink 4.0, CUDA 13.4) I benchmarked vLLM v0.30 vs SGLang v0.5.20 serving Qwen3-8B BF16 with TP=2. SGLang's RadixAttention prefix caching delivered a <strong>1,443× TTFT speedup</strong> at 131K-token context. I built the live results dashboard at <a href="https://inference-web-theta.vercel.app/benchmarks/llm">inference-web-theta.vercel.app/benchmarks/llm</a> — this is the level of rigour I bring to serving infrastructure decisions.</li>
+  <li><strong>Multimodal inference on vLLM-Omni:</strong> My <em>lab-vllm-omni</em> project built a phased inference lab across all five output modalities — text, audio, image, video, and structured output. Inworld serves speech models and LLMs together in a realtime consumer-facing loop; I have worked through the exact latency and scheduling tradeoffs that makes hard.</li>
+  <li><strong>Production serving from cloud to Kubernetes:</strong> My <em>llm-inference-platform</em> deploys vLLM + SGLang + LiteLLM gateway on RunPod and Vast.ai with KEDA autoscaling, Prometheus/Grafana/Loki/AlertManager observability, and Velero backup — a complete production inference stack, not a demo.</li>
+</ul>
+
+<p>Inworld AI sits at the intersection of realtime AI and consumer-grade low latency — building first-party speech models and serving multimodal LLMs as modular APIs for high-volume workloads. That combination of speech, LLM, and production reliability is exactly the class of problem I have been building toward. The latency constraints on a voice-first AI product are unforgiving, and I am drawn to working where the gap between a good model and a good user experience is almost entirely a serving engineering problem.</p>
+
+<p>I enjoy working in small, technically deep teams where shipping reliable systems matters more than process. I look forward to the possibility of discussing how I can contribute to Inworld's inference infrastructure.</p>
 """,
     },
 ]
