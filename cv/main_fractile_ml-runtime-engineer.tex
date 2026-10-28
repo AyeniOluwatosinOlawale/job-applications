@@ -1,0 +1,84 @@
+%% CV — Fractile ML Runtime Engineer
+%% Compile: lualatex main_fractile_ml-runtime-engineer.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+ML Runtime Engineer with deep hands-on experience integrating and optimising vLLM and SGLang serving engines, implementing KV cache strategies, and profiling paged attention workloads at GPU level. Benchmarked vLLM vs SGLang on 2$\times$ H100 NVL with tensor parallelism; characterised RadixAttention prefix caching (1,443$\times$ TTFT speedup), continuous batching behaviour, and speculative decoding tradeoffs. Strong understanding of transformer internals, memory management, and inference stack architecture. Excited by Fractile's approach of building a hardware-native ML runtime that co-designs the software stack with the accelerator. MSc AI with Distinction, University of Strathclyde 2023.
+
+\section{Core Competencies}
+\cvitem{Inference Engines}{vLLM, SGLang, TensorRT-LLM — integration, benchmarking, kernel-level profiling, runtime configuration}
+\cvitem{GPU \& Systems}{NVIDIA Nsight Systems/Compute, CUDA kernel profiling, KV cache paged attention, memory bandwidth, continuous batching, flash attention, speculative decoding}
+\cvitem{Inference Techniques}{RadixAttention/prefix caching, AWQ/GPTQ quantisation, multi-LoRA serving, GQA/MQA/MLA attention variants, tensor parallelism, speculative decoding}
+\cvitem{LLM Architecture}{Transformer internals (attention, FFN, MoE), VRAM modelling, tokenisation, sampling algorithms, model architecture labs (phase3-model-architecture)}
+\cvitem{Infrastructure}{Python, PyTorch, Kubernetes, Docker, FastAPI, Prometheus, Grafana, GitHub Actions, SQL}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item H100 NVL runtime benchmark: vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ H100 NVL 94 GB (NVLink 4.0, CUDA 13.4) — Qwen3-8B BF16, TP=2. Measured TTFT, TPOT, throughput across concurrency 1--128. Characterised paged attention and KV cache scheduling under memory pressure at long context (131K tokens). RadixAttention: 1,443$\times$ TTFT speedup; peak 5,965 tok/s; 100\% SLO compliance.
+    \item \textit{open-model-engine}: GPU-first inference benchmarking for vLLM, SGLang, TensorRT-LLM — CUDA profiling, AWQ/GPTQ quantisation, speculative decoding.
+    \item Designed and built \textit{inference-harness}: unified benchmarking harness for closed + open serving engines with GPU profiling and live dashboard.
+    \item 13-phase AI Inference Engineering curriculum: GPU architecture, CUDA kernel optimisation, serving framework internals, production deployment.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item 28$\times$ LLM cost reduction via vLLM/SGLang continuous batching and KV cache optimisation on RTX 4090.
+    \item Profiled CUDA KV cache kernels with Nsight: identified memory bandwidth bottleneck; tuned access patterns for 3.8$\times$ throughput improvement; 18$\times$ latency reduction via continuous batching redesign.
+    \item Built \textit{vllm-k8s-stack}: production LLM serving on Kubernetes — KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana monitoring.
+    \item Phase 3 model architecture labs: transformer internals, MHA/GQA/MLA, Dense vs MoE, VRAM calculator.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Real-time NLP pipeline: sub-500 ms end-to-end latency under concurrent load; error handling, retries, observability.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item LLM inference workflows integrating structured output extraction and multi-step reasoning pipelines.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{llm-inference-benchmark (H100)}{vLLM vs SGLang, 2$\times$ H100 NVLink, TP=2, Qwen3-8B BF16. RadixAttention: 1,443$\times$ TTFT speedup; 100\% SLO compliance at concurrency 128. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}}
+
+\cvitem{open-model-engine}{GPU-first inference benchmarking — vLLM, SGLang, TRT-LLM, quantisation, speculative decoding, KV cache profiling. \href{https://github.com/AyeniOluwatosinOlawale/open-model-engine}{github.com/AyeniOluwatosinOlawale/open-model-engine}}
+
+\cvitem{phase2-llm-inference-deep-dive}{CUDA kernel optimisation: KV cache 3.8$\times$ throughput, continuous batching 18$\times$ latency reduction, speculative decoding benchmarks. \href{https://github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive}{github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive}}
+
+\cvitem{phase3-model-architecture}{Transformer internals, MHA/GQA/MLA, Dense vs MoE — serving implications and VRAM modelling. \href{https://github.com/AyeniOluwatosinOlawale/phase3-model-architecture}{github.com/AyeniOluwatosinOlawale/phase3-model-architecture}}
+
+\cvitem{vllm-k8s-stack}{Production vLLM serving on Kubernetes: KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana. \href{https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}{github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{Open Source}
+\cvitem{45 public repos}{\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} — inference benchmarks, CUDA labs, runtime experiments, K8s serving}
+
+\end{document}

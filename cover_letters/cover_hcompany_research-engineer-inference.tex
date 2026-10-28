@@ -1,0 +1,31 @@
+%% Cover Letter — H Company Research Engineer, Model Inference & Serving
+\documentclass[a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ H Company}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the Research Engineer, Model Inference \& Serving role at H Company. The challenge of owning the end-to-end inference stack for multimodal agentic models — optimising latency, throughput, and cost simultaneously — is exactly the problem class I have been building toward, and H Company's focus on frontier agentic AI makes this a uniquely compelling opportunity.
+
+Three specific achievements directly relevant to this role:
+
+\begin{itemize}
+  \item \textbf{End-to-end inference stack ownership:} I benchmarked and tuned vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2 — measuring TTFT, TPOT, and throughput across concurrency 1--128. RadixAttention prefix caching: 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 5,965 tok/s peak throughput; 100\% SLO compliance. This was complete inference stack ownership from hardware selection through kernel profiling to live production dashboard.
+  \item \textbf{Multimodal inference characterisation:} I built \textit{lab-vllm-omni}, a phased inference lab for vLLM-Omni covering all 5 output modalities — text, audio, image, video, structured output. I characterised throughput, memory pressure, and scheduling behaviour across modalities, which directly informs the serving challenges for multimodal agentic systems.
+  \item \textbf{Production cost and latency reduction at scale:} Via vLLM/SGLang optimisation on RTX 4090, I achieved 28$\times$ LLM cost reduction and 3.8$\times$ throughput improvement. I also built the \textit{inference-optimizer} production gateway delivering 3.87$\times$ throughput, 61.4\% cost reduction, and 64.3\% cheaper routing across four providers — the multi-provider routing pattern that underpins agentic inference at scale.
+\end{itemize}
+
+H Company is building multimodal agentic models at the frontier — models that need to reason, act, and produce outputs across modalities in real time. The inference serving challenges at that level (handling diverse output modalities, long contexts, agentic call chains, concurrent sessions) are among the hardest in the field. I'm genuinely excited to work on them. I'm happy to be in the London office 3 days/week and am open to relocation.
+
+I look forward to hearing from you.
+
+\closing{Yours sincerely,}
+
+\end{letter}
+\end{document}

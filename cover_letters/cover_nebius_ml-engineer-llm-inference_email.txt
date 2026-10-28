@@ -1,0 +1,22 @@
+Dear Hiring Team,
+
+I am writing to apply for the ML Engineer, LLM Training & Inference Optimization role at Nebius.
+
+Three specific achievements directly relevant to this role:
+
+• H100 NVL inference: I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2x NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. RadixAttention prefix caching: 1,443x TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 5,965 tok/s peak; 100% SLO compliance at concurrency 1-128. Live results: https://inference-web-theta.vercel.app/benchmarks/llm
+
+• Production cost and throughput: Via vLLM/SGLang continuous batching and KV cache optimisation on RTX 4090, I achieved 28x LLM cost reduction and 3.8x throughput improvement. CUDA KV cache kernel profiling with Nsight identified memory bandwidth as bottleneck; 18x latency reduction via continuous batching redesign.
+
+• Full LLM lifecycle: Fine-tuning pipelines (Mistral 7B, Phi-4, Qwen3 via LoRA/PEFT), trained LM from scratch (Qwen3-TinyStories), AWQ/GPTQ quantisation, model architecture labs (MHA/GQA/MLA, Dense vs MoE, VRAM modelling).
+
+Nebius's applied AI platform and Token Factory's focus on efficient open model deployment is exactly where I want to contribute. Open to London, Amsterdam, or remote-Europe.
+
+My profiles:
+• GitHub (45 repos, inference benchmarks, fine-tuning pipelines): https://github.com/AyeniOluwatosinOlawale
+• LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
+• CV (LaTeX source): https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_example.tex
+
+Best regards,
+Oluwatosin Ayeni
+07727305230 | ayenioluwatosinolawale@gmail.com

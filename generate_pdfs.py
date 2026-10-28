@@ -307,6 +307,66 @@ ROLES = [
             ("inference-harness", "Unified benchmark harness: closed + open serving engines, GPU profiling. <a href='https://github.com/AyeniOluwatosinOlawale/inference-harness'>GitHub</a>"),
         ],
     },
+    {
+        "slug": "nebius_ml-engineer-llm-inference",
+        "title": "ML Engineer, LLM Training &amp; Inference Optimization",
+        "company": "Nebius",
+        "tagline": "ML Engineer with production experience in LLM training, fine-tuning, and inference optimisation across H100 NVL and RTX 4090 hardware. Benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2× H100 NVL — 1,443× TTFT speedup via RadixAttention, 5,965 tok/s peak, 100% SLO compliance at concurrency 128. Full LLM lifecycle: LoRA/PEFT fine-tuning (Mistral 7B, Phi-4, Qwen3), trained LM from scratch, AWQ/GPTQ quantisation, CUDA KV cache profiling. Open to London, Amsterdam, or remote-Europe.",
+        "competencies": [
+            ("LLM Inference &amp; Training", "vLLM, SGLang, TensorRT-LLM, ONNX Runtime; PyTorch, PEFT/LoRA, Transformers; BFloat16/FP8"),
+            ("GPU &amp; CUDA Optimisation", "NVIDIA Nsight Systems/Compute, CUDA kernel profiling, memory bandwidth analysis, warp occupancy, KV cache ops"),
+            ("Inference Research", "Speculative decoding, continuous batching, RadixAttention/prefix caching, AWQ/GPTQ quantisation, flash attention, tensor parallelism"),
+            ("LLM Architecture", "MHA/GQA/MLA, Dense vs MoE, VRAM modelling, tokeniser training, Qwen3, Mistral, Phi-4, Gemma 2"),
+            ("Infrastructure &amp; Serving", "Kubernetes (HPA, GPU pools), Docker, Prometheus, Grafana, FastAPI, Python, GitHub Actions"),
+        ],
+        "projects": [
+            ("llm-inference-benchmark (H100)", "vLLM v0.30 vs SGLang v0.5.20 on 2× H100 NVL 94 GB, Qwen3-8B BF16, TP=2. RadixAttention: 1,443× TTFT speedup. Peak: 5,965 tok/s. SLO 100% at concurrency 128. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live results</a>"),
+            ("inference-harness", "Unified benchmark harness spanning closed APIs + vLLM/SGLang/TensorRT-LLM with GPU profiling and live dashboard. <a href='https://github.com/AyeniOluwatosinOlawale/inference-harness'>GitHub</a>"),
+            ("phase3-model-architecture", "Model architecture labs: transformer internals, GQA/MQA/MLA, Dense vs MoE, VRAM modelling, speculative decoding. <a href='https://github.com/AyeniOluwatosinOlawale/phase3-model-architecture'>GitHub</a>"),
+            ("Qwen3-TinyStories", "LM trained from scratch: tokeniser training, architecture config, training loop, generation evaluation. <a href='https://github.com/AyeniOluwatosinOlawale/Qwen3-TinyStories-Tokenizer-Model-Training'>GitHub</a>"),
+            ("My_finetuned_Phi-4", "Phi-4 LoRA fine-tuning on Cosmopedia: full pipeline — data prep, training, evaluation, inference. <a href='https://github.com/AyeniOluwatosinOlawale/My_finetuned_Phi-4'>GitHub</a>"),
+        ],
+    },
+    {
+        "slug": "fractile_ml-runtime-engineer",
+        "title": "ML Runtime Engineer",
+        "company": "Fractile",
+        "tagline": "ML Runtime Engineer with deep hands-on experience in vLLM and SGLang runtime integration, KV cache kernel profiling, and paged attention characterisation. Benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2× H100 NVL — 1,443× TTFT speedup, 5,965 tok/s peak, 100% SLO compliance. Profiled CUDA KV cache ops on RTX 4090 with NVIDIA Nsight: identified memory bandwidth bottleneck, 3.8× throughput improvement, 18× latency reduction. Open to London or Bristol relocation.",
+        "competencies": [
+            ("Inference Runtimes", "vLLM, SGLang, TensorRT-LLM, ONNX Runtime — integration, profiling, KV cache management, paged attention"),
+            ("GPU &amp; CUDA", "NVIDIA Nsight Systems/Compute, CUDA kernel profiling, memory bandwidth analysis, warp occupancy, kernel access patterns, BFloat16/FP8"),
+            ("KV Cache &amp; Attention", "Paged attention scheduling, KV block eviction, prefix/RadixAttention caching, memory pressure characterisation, flash attention"),
+            ("Inference Research", "Speculative decoding, continuous batching, AWQ/GPTQ quantisation, tensor parallelism, GQA/MQA/MLA architectures"),
+            ("Infrastructure", "Kubernetes (HPA, GPU pools), Docker, Prometheus, Grafana, FastAPI, Python"),
+        ],
+        "projects": [
+            ("llm-inference-benchmark (H100)", "vLLM v0.30 vs SGLang v0.5.20, 2× H100 NVL 94 GB, Qwen3-8B BF16, TP=2. Characterised paged attention and KV cache scheduling under memory pressure at 131K-token context. RadixAttention: 1,443× TTFT speedup. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live results</a>"),
+            ("open-model-engine", "GPU inference benchmarking: CUDA profiling, AWQ/GPTQ, speculative decoding experiments. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
+            ("phase2-llm-inference-deep-dive", "CUDA KV cache kernel profiling: memory bandwidth bottleneck identification, 3.8× throughput improvement, 18× latency reduction. <a href='https://github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive'>GitHub</a>"),
+            ("phase3-model-architecture", "Transformer internals, GQA/MQA/MLA attention variants, VRAM modelling, speculative decoding experiments. <a href='https://github.com/AyeniOluwatosinOlawale/phase3-model-architecture'>GitHub</a>"),
+            ("vllm-k8s-stack", "Production Kubernetes LLM serving: KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana. <a href='https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack'>GitHub</a>"),
+        ],
+    },
+    {
+        "slug": "hcompany_research-engineer-inference",
+        "title": "Research Engineer, Model Inference &amp; Serving",
+        "company": "H Company",
+        "tagline": "Research Engineer specialising in end-to-end LLM inference stack ownership and multimodal serving. Benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2× H100 NVL — 1,443× TTFT speedup via RadixAttention, 5,965 tok/s peak. Built lab-vllm-omni covering all 5 output modalities; inference-optimizer production gateway (3.87× throughput, 61.4% cost reduction). Excited by frontier multimodal agentic inference challenges. Happy to be in London office 3 days/week; open to relocation.",
+        "competencies": [
+            ("Inference Engines", "vLLM, SGLang, TensorRT-LLM, ONNX Runtime — benchmarking, profiling, production deployment"),
+            ("Multimodal Serving", "vLLM-Omni, all 5 modalities (text, audio, image, video, structured output); memory pressure and scheduling characterisation"),
+            ("GPU &amp; CUDA", "NVIDIA Nsight Systems/Compute, CUDA kernel profiling, memory bandwidth analysis, KV cache ops, tensor parallelism"),
+            ("Inference Techniques", "RadixAttention/prefix caching, continuous batching, speculative decoding, AWQ/GPTQ, flash attention, KV-cache-aware routing"),
+            ("Infrastructure", "Kubernetes (HPA, GPU pools), Docker, Prometheus, Grafana, FastAPI, Python — production inference platforms"),
+        ],
+        "projects": [
+            ("lab-vllm-omni", "vLLM-Omni phased inference lab: all 5 output modalities — text, audio, image, video, structured output. Characterised throughput, memory pressure, and scheduling behaviour across modalities. <a href='https://github.com/AyeniOluwatosinOlawale/lab-vllm-omni'>GitHub</a>"),
+            ("llm-inference-benchmark (H100)", "vLLM v0.30 vs SGLang v0.5.20, 2× H100 NVL 94 GB, Qwen3-8B BF16, TP=2. RadixAttention: 1,443× TTFT speedup (39 ms vs 55,565 ms). Peak: 5,965 tok/s. SLO 100% at concurrency 128. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live results</a>"),
+            ("inference-optimizer", "Production Inference Gateway: 3.87× throughput, 61.4% cost reduction, 64.3% cheaper multi-provider routing. <a href='https://github.com/AyeniOluwatosinOlawale/inference-optimizer'>GitHub</a>"),
+            ("llm-inference-platform", "Production LLM serving: vLLM + SGLang + LiteLLM gateway on RunPod/Vast.ai, KEDA autoscaling, Prometheus/Grafana/Loki. <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-platform'>GitHub</a>"),
+            ("open-model-engine", "GPU-first inference benchmarking: CUDA profiling, quantisation, speculative decoding. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
+        ],
+    },
 ]
 
 COVER_LETTERS = [
@@ -465,6 +525,57 @@ COVER_LETTERS = [
 </ul>
 
 <p>I am based in Glasgow and open to London 2–3 days/week. I write primarily in Python with active Rust tooling work; I understand why low-latency infrastructure demands Rust for the hot path.</p>
+""",
+    },
+    {
+        "slug": "nebius_ml-engineer-llm-inference",
+        "company": "Nebius",
+        "recipient": "Nebius",
+        "body": """
+<p>I am writing to apply for the ML Engineer, LLM Training &amp; Inference Optimization role at Nebius. Nebius's applied AI platform and Token Factory's focus on efficient open model deployment is exactly where I want to contribute.</p>
+
+<p>Three specific achievements directly relevant to this role:</p>
+<ul>
+  <li><strong>H100 NVL inference:</strong> I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2× NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. RadixAttention prefix caching: 1,443× TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 5,965 tok/s peak; 100% SLO compliance at concurrency 1–128. Live: <a href="https://inference-web-theta.vercel.app/benchmarks/llm">inference-web-theta.vercel.app/benchmarks/llm</a></li>
+  <li><strong>Production cost and throughput:</strong> Via vLLM/SGLang continuous batching and KV cache optimisation on RTX 4090, I achieved 28× LLM cost reduction and 3.8× throughput improvement. CUDA KV cache kernel profiling with Nsight identified memory bandwidth as bottleneck; 18× latency reduction via continuous batching redesign.</li>
+  <li><strong>Full LLM lifecycle:</strong> Fine-tuning pipelines (Mistral 7B, Phi-4, Qwen3 via LoRA/PEFT), trained LM from scratch (Qwen3-TinyStories), AWQ/GPTQ quantisation, model architecture labs (MHA/GQA/MLA, Dense vs MoE, VRAM modelling).</li>
+</ul>
+
+<p>I look forward to hearing from you.</p>
+""",
+    },
+    {
+        "slug": "fractile_ml-runtime-engineer",
+        "company": "Fractile",
+        "recipient": "Fractile",
+        "body": """
+<p>I am writing to apply for the ML Runtime Engineer role at Fractile. I have deep hands-on experience integrating vLLM and SGLang inference engines, implementing and profiling KV cache strategies, and characterising paged attention behaviour at GPU level — which makes Fractile's mission of co-designing a hardware-native ML runtime with custom AI accelerators a natural next step for me.</p>
+
+<p>Three specific achievements relevant to this role:</p>
+<ul>
+  <li><strong>vLLM and SGLang runtime characterisation:</strong> I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2× NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. Characterised paged attention and KV cache scheduling under memory pressure at 131K-token context: RadixAttention prefix caching delivered a 1,443× TTFT speedup (39 ms vs 55,565 ms), with 100% SLO compliance at concurrency 1–128. Live: <a href="https://inference-web-theta.vercel.app/benchmarks/llm">inference-web-theta.vercel.app/benchmarks/llm</a></li>
+  <li><strong>CUDA KV cache kernel profiling:</strong> Using NVIDIA Nsight Systems and Compute, I profiled CUDA KV cache operations on RTX 4090 hardware, identified memory bandwidth as the primary bottleneck, and retuned kernel access patterns for a 3.8× throughput improvement — and 18× latency reduction via continuous batching redesign. Documented in <a href="https://github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive">phase2-llm-inference-deep-dive</a>.</li>
+  <li><strong>Speculative decoding and quantisation:</strong> Ran speculative decoding experiments across vLLM and SGLang; implemented AWQ/GPTQ pipelines; built model architecture labs (transformer internals, GQA/MQA/MLA, VRAM modelling).</li>
+</ul>
+
+<p>Fractile is building something genuinely novel: a hardware accelerator designed from the ground up for LLM inference, with a software runtime that can fully exploit its architecture. The ML Runtime Engineer role — integrating with vLLM and SGLang, building proof-of-concept KV cache management, and working on the paged attention layer — maps directly onto where I have spent the last two years. I'm happy to relocate to London or Bristol.</p>
+""",
+    },
+    {
+        "slug": "hcompany_research-engineer-inference",
+        "company": "H Company",
+        "recipient": "H Company",
+        "body": """
+<p>I am writing to apply for the Research Engineer, Model Inference &amp; Serving role at H Company. The challenge of owning the end-to-end inference stack for multimodal agentic models — optimising latency, throughput, and cost simultaneously — is exactly the problem class I have been building toward.</p>
+
+<p>Three specific achievements directly relevant to this role:</p>
+<ul>
+  <li><strong>End-to-end inference stack ownership:</strong> I benchmarked and tuned vLLM v0.30 vs SGLang v0.5.20 on 2× H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2 — measuring TTFT, TPOT, and throughput across concurrency 1–128. RadixAttention prefix caching: 1,443× TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 5,965 tok/s peak throughput; 100% SLO compliance. Complete inference stack ownership from hardware selection through kernel profiling to live production dashboard. Live: <a href="https://inference-web-theta.vercel.app/benchmarks/llm">inference-web-theta.vercel.app/benchmarks/llm</a></li>
+  <li><strong>Multimodal inference characterisation:</strong> I built <em>lab-vllm-omni</em>, a phased inference lab for vLLM-Omni covering all 5 output modalities — text, audio, image, video, structured output. Characterised throughput, memory pressure, and scheduling behaviour across modalities, directly informing the serving challenges for multimodal agentic systems.</li>
+  <li><strong>Production cost and latency reduction at scale:</strong> Via vLLM/SGLang optimisation on RTX 4090, I achieved 28× LLM cost reduction and 3.8× throughput improvement. I also built the <em>inference-optimizer</em> production gateway delivering 3.87× throughput, 61.4% cost reduction, and 64.3% cheaper routing across four providers — the multi-provider routing pattern that underpins agentic inference at scale.</li>
+</ul>
+
+<p>H Company's focus on building frontier multimodal agentic models — and the inference serving challenges that come with them — is where I want to contribute. I'm happy to be in the London office 3 days/week and am open to relocation.</p>
 """,
     },
     {

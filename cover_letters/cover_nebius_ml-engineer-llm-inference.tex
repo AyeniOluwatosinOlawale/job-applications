@@ -1,0 +1,31 @@
+%% Cover Letter — Nebius ML Engineer, LLM Training & Inference Optimization
+\documentclass[a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Nebius}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the ML Engineer, LLM Training \& Inference Optimization role at Nebius. I build LLM inference systems for production and have the benchmarks to back it up — and Nebius's applied AI platform, Token Factory, and commitment to open-source infrastructure for frontier model deployment is exactly the environment I am looking for.
+
+Three specific achievements directly relevant to this role:
+
+\begin{itemize}
+  \item \textbf{vLLM and SGLang at H100 scale:} I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), serving Qwen3-8B BF16 with TP=2. Measured TTFT, TPOT, and throughput across concurrency 1--128. Peak throughput: vLLM 5,965 tok/s, SGLang 5,646 tok/s. RadixAttention prefix caching delivered a 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context — with 100\% SLO compliance throughout. Results are live at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+  \item \textbf{Production cost reduction and throughput:} Via vLLM/SGLang continuous batching and KV cache optimisation on RTX 4090, I achieved 28$\times$ LLM cost reduction and 3.8$\times$ throughput improvement. Using NVIDIA Nsight Systems and Compute I profiled KV cache CUDA kernels, identified memory bandwidth as the bottleneck, and retuned access patterns for 18$\times$ latency reduction via continuous batching redesign.
+  \item \textbf{Full LLM lifecycle:} I have run end-to-end fine-tuning pipelines (Mistral 7B, Phi-4, Qwen3 via LoRA/PEFT), trained a character-level language model on TinyStories from scratch (Qwen3-TinyStories pipeline), implemented AWQ/GPTQ quantisation experiments, and built model architecture labs covering MHA/GQA/MLA attention variants, Dense vs MoE, and VRAM modelling.
+\end{itemize}
+
+Nebius occupies a rare position: building the cloud infrastructure that lets the most demanding AI workloads run efficiently at scale, without the constraints of a hyperscaler. The applied AI team's focus on LLM training and inference optimisation at the Token Factory — optimising for throughput, cost, and latency across open models — is the exact problem space I want to work in next. The distributed, remote-Europe team structure and the open-source commitments make it even more compelling.
+
+I am a focused, independent engineer who ships: I've gone from a research question to a published benchmark with live results in a few weeks, end to end. I look forward to hearing from you.
+
+\closing{Yours sincerely,}
+
+\end{letter}
+\end{document}

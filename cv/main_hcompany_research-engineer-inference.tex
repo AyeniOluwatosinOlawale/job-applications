@@ -1,0 +1,84 @@
+%% CV — H Company Research Engineer, Model Inference & Serving
+%% Compile: lualatex main_hcompany_research-engineer-inference.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+Research Engineer specialising in LLM inference and model serving, with full-stack ownership of production inference systems across vLLM, SGLang, and TensorRT-LLM. Built end-to-end inference platforms delivering 28$\times$ cost reduction, 3.87$\times$ throughput improvement, and 1,443$\times$ TTFT speedup through targeted hardware-aware optimisations. Experienced in multimodal serving (vLLM-Omni: text, audio, image, video, structured output), agentic inference patterns, and multi-provider routing. Ready to own the end-to-end inference stack for multimodal agentic models at a frontier AI lab. MSc AI with Distinction, University of Strathclyde 2023.
+
+\section{Core Competencies}
+\cvitem{Model Inference \& Serving}{vLLM, SGLang, TensorRT-LLM — latency/throughput optimisation, cost reduction, multi-provider routing, production deployment}
+\cvitem{Multimodal \& Agentic AI}{vLLM-Omni (all 5 modalities), multimodal inference characterisation, agentic LLM workflows (n8n, LangChain), structured output serving}
+\cvitem{GPU \& CUDA}{NVIDIA Nsight Systems/Compute, CUDA kernel profiling, KV cache optimisation, continuous batching, tensor parallelism, speculative decoding, flash attention}
+\cvitem{LLM Optimisation}{RadixAttention prefix caching, AWQ/GPTQ quantisation, multi-LoRA serving, GQA/MQA, KV cache compression, cost-performance Pareto analysis}
+\cvitem{Infrastructure}{Kubernetes, Docker, FastAPI, PyTorch, Python, Prometheus, Grafana, LiteLLM, GitHub Actions, Supabase, Next.js}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Owned end-to-end inference stack benchmarking: vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ H100 NVL 94 GB (NVLink 4.0, CUDA 13.4) — Qwen3-8B BF16, TP=2. RadixAttention: 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 5,965 tok/s peak; 100\% SLO compliance. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+    \item \textit{lab-vllm-omni}: phased inference lab for vLLM-Omni covering all 5 output modalities — text, audio, image, video, structured output. Characterised throughput, memory pressure, and scheduling behaviour across modalities.
+    \item \textit{inference-optimizer}: production Inference Gateway — 3.87$\times$ faster (parallel execution), 61.4\% cost reduction (prompt caching), 14$\times$ throughput (concurrency), 64.3\% cheaper (model routing). Multi-provider: Claude, GPT, Gemini.
+    \item 13-phase AI Inference Engineering curriculum: GPU architecture, CUDA optimisation, serving framework internals, deployment.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item 28$\times$ LLM cost reduction on RTX 4090 via vLLM/SGLang continuous batching and KV cache optimisation.
+    \item CUDA KV cache kernel profiling: 3.8$\times$ throughput improvement; 18$\times$ latency reduction via continuous batching redesign.
+    \item Fine-tuned Mistral 7B with LoRA/PEFT on radiology corpus: $+22\%$ diagnostic accuracy; deployed as production inference API.
+    \item Built \textit{AnaRadiologyAI}: domain-specific LLM assistant for clinical radiology Q\&A at low latency.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Architected real-time NLP pipeline: sub-500 ms latency, concurrent load handling, structured output extraction.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item LLM inference workflows with structured output, multi-step reasoning, and agentic orchestration via n8n.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{lab-vllm-omni}{vLLM-Omni serving across all 5 output modalities — throughput and memory characterisation per modality. \href{https://github.com/AyeniOluwatosinOlawale/lab-vllm-omni}{github.com/AyeniOluwatosinOlawale/lab-vllm-omni}}
+
+\cvitem{llm-inference-benchmark (H100)}{vLLM vs SGLang, 2$\times$ H100 NVLink, TP=2. RadixAttention: 1,443$\times$ TTFT speedup; 5,965 tok/s peak. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}}
+
+\cvitem{inference-optimizer}{Production AI Inference Gateway: 3.87$\times$ throughput, 61.4\% cost reduction, multi-provider. Live: \href{https://inference-web-theta.vercel.app}{inference-web-theta.vercel.app}}
+
+\cvitem{llm-inference-platform}{Production LLM inference on RunPod/Vast.ai — vLLM v0.30 + SGLang v0.5.20 serving Llama 3.1 8B and Qwen3 8B, LiteLLM gateway, KEDA autoscaling. \href{https://github.com/AyeniOluwatosinOlawale/llm-inference-platform}{github.com/AyeniOluwatosinOlawale/llm-inference-platform}}
+
+\cvitem{open-model-engine}{GPU-first benchmarking for vLLM, SGLang, TRT-LLM — quantisation, speculative decoding, Pareto analysis. \href{https://github.com/AyeniOluwatosinOlawale/open-model-engine}{github.com/AyeniOluwatosinOlawale/open-model-engine}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{Open Source}
+\cvitem{45 public repos}{\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} — inference benchmarks, multimodal serving, CUDA labs, agentic AI}
+
+\end{document}

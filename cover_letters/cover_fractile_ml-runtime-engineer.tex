@@ -1,0 +1,31 @@
+%% Cover Letter — Fractile ML Runtime Engineer
+\documentclass[a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Fractile}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the ML Runtime Engineer role at Fractile. I have deep hands-on experience integrating vLLM and SGLang inference engines, implementing and profiling KV cache strategies, and characterising paged attention behaviour at GPU level — which makes Fractile's mission of co-designing a hardware-native ML runtime with custom AI accelerators a natural next step for me.
+
+Three specific achievements relevant to this role:
+
+\begin{itemize}
+  \item \textbf{vLLM and SGLang runtime characterisation:} I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), serving Qwen3-8B BF16 with TP=2. I characterised paged attention and KV cache scheduling under memory pressure at long context (131K tokens): RadixAttention prefix caching delivered a 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms), with 100\% SLO compliance at concurrency 1--128. This required deep understanding of how both engines schedule KV blocks, evict pages, and handle prefix reuse. Live results: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+  \item \textbf{CUDA KV cache kernel profiling:} Using NVIDIA Nsight Systems and Compute, I profiled CUDA KV cache operations on RTX 4090 hardware, identified memory bandwidth as the primary bottleneck, and retuned kernel access patterns for a 3.8$\times$ throughput improvement — and 18$\times$ latency reduction via continuous batching redesign. This work is documented in \href{https://github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive}{phase2-llm-inference-deep-dive}.
+  \item \textbf{Speculative decoding and quantisation experiments:} I ran speculative decoding experiments across vLLM and SGLang to characterise speedup vs draft model overhead tradeoffs, implemented AWQ/GPTQ quantisation pipelines (open-model-engine), and built model architecture labs covering transformer internals, GQA/MQA/MLA attention variants, and VRAM modelling.
+\end{itemize}
+
+Fractile is building something genuinely novel: a hardware accelerator designed from the ground up for LLM inference, with a software runtime that can fully exploit its architecture. The ML Runtime Engineer role — integrating with vLLM and SGLang, building proof-of-concept KV cache management, and working on the paged attention layer — maps directly onto where I have spent the last two years. I'm happy to relocate to London or Bristol for the right role.
+
+I work at depth, ship benchmarks publicly, and think carefully about the systems tradeoffs in inference. I look forward to hearing from you.
+
+\closing{Yours sincerely,}
+
+\end{letter}
+\end{document}
