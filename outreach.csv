@@ -24,3 +24,6 @@ date,company,contact_name,contact_email,contact_role,company_type,email_sent,fol
 2026-10-28,Quantexa,Hiring Team,careers@quantexa.com,unknown,UK AI Company,true,false,,,AI analytics entity resolution at scale — LLM inference efficiency. email_found=inferred
 2026-10-28,Palantir,Hiring Team,careers@palantir.com,unknown,AI-Heavy Product Company,true,false,,,AI in defence/intelligence/enterprise — constrained LLM deployment. email_found=inferred
 2026-10-28,Exscientia,Hiring Team,careers@exscientia.ai,unknown,AI-Heavy Product Company,true,false,,,AI drug discovery — scientific reasoning LLM inference. email_found=inferred
+2026-10-29,Healx,Hiring Team,careers@healx.io,unknown,UK AI Company / Drug Discovery,true,false,,,Sent 2026-10-29. Rare disease AI drug discovery — high-stakes precision LLM inference in life-sciences domain. email_found=inferred
+2026-10-29,Aveni,Hiring Team,careers@aveni.ai,unknown,UK AI Company / LLM FinTech,true,false,,,Sent 2026-10-29. LLM-powered compliance and conversation intelligence for financial services — regulated high-accuracy LLM deployment. email_found=inferred
+2026-10-29,Poolside,Hiring Team,careers@poolside.ai,unknown,AI Research / Code Gen LLM,true,false,,,Sent 2026-10-29. Code generation foundation model and inference infrastructure — building best code LLM with EMEA remote hiring. email_found=inferred
