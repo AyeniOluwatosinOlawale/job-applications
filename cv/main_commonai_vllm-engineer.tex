@@ -1,0 +1,84 @@
+%% CV — CommonAI CIC Senior Software Engineer (vLLM)
+%% Compile: lualatex main_commonai_vllm-engineer.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+Senior Software Engineer with deep expertise in vLLM and open-source LLM inference infrastructure. Extensive hands-on experience benchmarking, deploying, and optimising vLLM across both cloud GPU clusters and on-premise hardware — H100 NVL benchmarks at TP=2 achieved 5,965 tok/s peak with 100\% SLO compliance; RTX 4090 deployments delivered 28$\times$ cost reduction. Passionate about contributing upstream to inference frameworks, profiling CUDA bottlenecks, and expanding hardware support. Open to relocating to Cambridge.
+
+\section{Core Competencies}
+\cvitem{vLLM \& Serving}{vLLM (PagedAttention, continuous batching, LoRA serving, prefix caching), SGLang (RadixAttention), TensorRT-LLM — deep internals familiarity from benchmarking and production deployments}
+\cvitem{Open-Source Infra}{Model deployment on Kubernetes (KEDA autoscaling, startupProbe, PodMonitor), LiteLLM gateway, hardware-aware quantisation (AWQ, BF16, FP8), speculative decoding}
+\cvitem{CUDA \& Profiling}{NVIDIA Nsight Systems/Compute, CUDA kernel profiling, memory bandwidth analysis, KV cache optimisation, tensor parallelism, GPU utilisation monitoring via DCGM Exporter}
+\cvitem{Python \& Tooling}{Python (primary), PyTorch, FastAPI, Prometheus/Grafana, Loki/FluentBit, GitHub Actions, Docker, Helm, Argo CD}
+\cvitem{Languages \& Data}{Python, TypeScript, SQL, PostgreSQL, Redis; Rust (learning — targeting inference tooling)}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item \textbf{llm-inference-benchmark}: benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. Peak: SGLang 5,646 tok/s; vLLM 5,965 tok/s. RadixAttention prefix cache: 1,443$\times$ TTFT speedup at 131K-token context; 100\% SLO compliance at concurrency 1--128. Live dashboard: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+    \item \textbf{llm-inference-platform}: GKE production stack (NVIDIA L4, vLLM 0.32.0 + SGLang 0.5.20) serving Qwen3 8B AWQ and Llama 3.1 8B AWQ; LiteLLM Proxy gateway; KEDA autoscaling on queue depth; 27-target Prometheus + Grafana + AlertManager + Loki; Argo CD GitOps; Traefik TLS. Processed 723 requests, 1.25M+ tokens over 5.3 days.
+    \item \textbf{open-model-engine}: GPU-first inference benchmarking framework for self-hosted models (vLLM, SGLang, TensorRT-LLM, LayerScale) — CUDA profiling pipeline, quantisation experiments, speculative decoding.
+    \item \textbf{inference-harness}: unified benchmarking harness spanning closed and open serving engines, with GPU profiling and live web dashboard.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Deployed vLLM and SGLang on RTX 4090: 28$\times$ cost reduction via continuous batching; profiled CUDA KV cache kernels with Nsight Systems — 3.8$\times$ throughput improvement; 18$\times$ latency reduction via optimised batching.
+    \item Fine-tuned Mistral 7B with LoRA on radiology data: $+22\%$ diagnostic accuracy; deployed as low-latency inference API with production monitoring and VRAM-aware scheduling.
+    \item Designed and built \textbf{inference-optimizer-lab2}: bottleneck classification and optimisation feedback loop for LLM inference workloads.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Designed and built an n8n automation pipeline (WhatsApp Cloud API $\to$ Zoho CRM $\to$ Supabase) handling concurrent bursty load with structured retry logic and latency observability.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item LLM-backed AI automation workflows with structured output extraction, production monitoring, and iterative prompt engineering.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{vllm-k8s-stack}{Production LLM serving on Kubernetes — vLLM, KV-cache-aware routing, HPA autoscaling on GPU node pools, Prometheus/Grafana. \href{https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}{github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}}
+
+\cvitem{phase2-llm-inference-deep-dive}{CUDA kernel optimisation: 3.8$\times$ throughput via KV cache kernel profiling; 18$\times$ latency via continuous batching. Nsight Systems trace analysis. \href{https://github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive}{github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive}}
+
+\cvitem{lab-vllm-omni}{Phased inference engineering lab for vLLM-Omni — all 5 output modalities (text, audio, image, video, structured output). \href{https://github.com/AyeniOluwatosinOlawale/lab-vllm-omni}{github.com/AyeniOluwatosinOlawale/lab-vllm-omni}}
+
+\cvitem{inference-optimizer}{AI Inference Gateway: 13 optimisations, 4 providers, 3.87$\times$ faster, 14$\times$ throughput, 61.4\% cost reduction. \href{https://github.com/AyeniOluwatosinOlawale/inference-optimizer}{github.com/AyeniOluwatosinOlawale/inference-optimizer}}
+
+\cvitem{open-model-engine}{GPU-first benchmarking for self-hosted models (vLLM/SGLang/TensorRT-LLM) — CUDA profiling, quantisation, speculative decoding. \href{https://github.com/AyeniOluwatosinOlawale/open-model-engine}{github.com/AyeniOluwatosinOlawale/open-model-engine}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{Open Source \& Contributions}
+\cvitem{42 public repos}{\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} — vLLM benchmarks, inference labs, CUDA kernel experiments, K8s serving stacks}
+\cvitem{build-an-llm}{Open-source contributor: \href{https://github.com/thekingslee/build-an-llm}{github.com/thekingslee/build-an-llm}}
+
+\end{document}

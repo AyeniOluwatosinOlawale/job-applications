@@ -1,0 +1,39 @@
+%% Cover Letter — CommonAI CIC Senior Software Engineer (vLLM)
+%% Compile: pdflatex cover_commonai_vllm-engineer.tex
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ 07727305230 \\ ayenioluwatosinolawale@gmail.com}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ CommonAI CIC \\ Cambridge, UK}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the Senior Software Engineer (vLLM) role at CommonAI. vLLM internals — PagedAttention, continuous batching, LoRA serving, prefix caching — are not tools I use from the outside; they are systems I have benchmarked at depth, profiled at the CUDA level, and deployed in production. I am open to relocating to Cambridge.
+
+Three specific achievements directly relevant to this role:
+
+\begin{itemize}
+  \item \textbf{H100 NVL vLLM benchmarks — 5,965 tok/s and 100\% SLO compliance:} I ran head-to-head benchmarks of vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2, sweeping concurrency 1--128. vLLM achieved 5,965 tok/s peak throughput and 100\% SLO compliance across all concurrency levels. The benchmark also characterised the impact of PagedAttention on KV memory fragmentation vs SGLang's RadixAttention prefix caching (1,443$\times$ TTFT speedup at 131K-token context). Results live at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+
+  \item \textbf{CUDA kernel profiling — 3.8$\times$ throughput on RTX 4090:} Using NVIDIA Nsight Systems and Compute, I profiled KV cache CUDA kernels on RTX 4090 hardware. I identified memory bandwidth as the primary bottleneck, retuned kernel access patterns, and achieved 3.8$\times$ throughput improvement and 18$\times$ latency reduction via optimised continuous batching — deployed in production via vLLM, delivering a 28$\times$ cost reduction over cloud API pricing. This work is documented in \textit{phase2-llm-inference-deep-dive} (\href{https://github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive}{github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive}).
+
+  \item \textbf{Production GKE vLLM stack — 1.25M+ tokens, 27-target observability:} I built and operated a GKE production inference stack running vLLM 0.32.0 and SGLang 0.5.20, serving Qwen3 8B AWQ and Llama 3.1 8B AWQ via LiteLLM gateway with KEDA autoscaling on queue depth, Argo CD GitOps, Traefik TLS, and a 27-target Prometheus + Grafana + AlertManager + Loki observability stack. Over 5.3 days: 723 requests, 1.25M+ tokens processed with 100\% uptime. This is \textit{llm-inference-platform} (\href{https://github.com/AyeniOluwatosinOlawale/llm-inference-platform}{github.com/AyeniOluwatosinOlawale/llm-inference-platform}).
+\end{itemize}
+
+Beyond these projects, I maintain 42 public repositories focused on LLM inference, CUDA experiments, and Kubernetes serving stacks — and I contribute upstream to open-source LLM tooling (including \href{https://github.com/thekingslee/build-an-llm}{github.com/thekingslee/build-an-llm}). CommonAI's mission to build open, accessible AI infrastructure is exactly the work I want to be doing.
+
+My CV is available at \href{https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_example.tex}{github.com/AyeniOluwatosinOlawale/job-applications} — I am happy to provide a compiled PDF on request.
+
+\closing{Yours sincerely,}
+
+Oluwatosin Ayeni \\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \\
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\end{letter}
+\end{document}

@@ -1,0 +1,21 @@
+Dear Hiring Team,
+
+I am writing to apply for the Senior Software Engineer (vLLM) role at CommonAI. vLLM internals — PagedAttention, continuous batching, LoRA serving, prefix caching — are not tools I use from the outside; they are systems I have benchmarked at depth, profiled at the CUDA level, and deployed in production. I am open to relocating to Cambridge.
+
+Three specific achievements directly relevant to this role:
+
+• H100 NVL vLLM benchmarks — 5,965 tok/s and 100% SLO compliance: I ran head-to-head benchmarks of vLLM v0.30 vs SGLang v0.5.20 on 2x NVIDIA H100 NVL (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2, sweeping concurrency 1-128. vLLM achieved 5,965 tok/s peak throughput and 100% SLO compliance across all concurrency levels. The benchmark also characterised the impact of PagedAttention on KV memory fragmentation vs SGLang's RadixAttention prefix caching (1,443x TTFT speedup at 131K-token context). Results live at https://inference-web-theta.vercel.app/benchmarks/llm.
+
+• CUDA kernel profiling — 3.8x throughput on RTX 4090: Using NVIDIA Nsight Systems and Compute, I profiled KV cache CUDA kernels on RTX 4090 hardware. I identified memory bandwidth as the primary bottleneck, retuned kernel access patterns, and achieved 3.8x throughput improvement and 18x latency reduction via optimised continuous batching — deployed in production via vLLM, delivering a 28x cost reduction over cloud API pricing. Documented in phase2-llm-inference-deep-dive (github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive).
+
+• Production GKE vLLM stack — 1.25M+ tokens, 27-target observability: I built and operated a GKE production inference stack running vLLM 0.32.0 and SGLang 0.5.20, serving Qwen3 8B AWQ and Llama 3.1 8B AWQ via LiteLLM gateway with KEDA autoscaling on queue depth, Argo CD GitOps, Traefik TLS, and a 27-target Prometheus + Grafana + AlertManager + Loki observability stack. Over 5.3 days: 723 requests, 1.25M+ tokens processed with 100% uptime. This is llm-inference-platform (github.com/AyeniOluwatosinOlawale/llm-inference-platform).
+
+Beyond these projects, I maintain 42 public repositories focused on LLM inference, CUDA experiments, and Kubernetes serving stacks — and I contribute upstream to open-source LLM tooling (including github.com/thekingslee/build-an-llm). CommonAI's mission to build open, accessible AI infrastructure is exactly the work I want to be doing.
+
+My CV is available at https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_example.tex (LaTeX source) — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format.
+
+Yours sincerely,
+Oluwatosin Ayeni
+07727305230 | ayenioluwatosinolawale@gmail.com
+GitHub: https://github.com/AyeniOluwatosinOlawale
+LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
