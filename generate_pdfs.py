@@ -348,6 +348,26 @@ ROLES = [
         ],
     },
     {
+        "slug": "fuseenergy_ai-inference-engineer",
+        "title": "AI Inference Engineer",
+        "company": "Fuse Energy",
+        "tagline": "Founding-calibre AI Inference Engineer with deep expertise in production LLM serving, autoscaling infrastructure, and performance optimisation. Built and ran complete GKE inference platform (NVIDIA L4 24 GB): vLLM 0.32.0 + SGLang 0.5.20 serving Qwen3 8B AWQ and Llama 3.1 8B AWQ; LiteLLM Proxy gateway with least-busy routing, A/B weighted round-robin, Redis response cache, and PostgreSQL spend tracking; KEDA autoscaling on queue depth; 27-target Prometheus + Grafana + AlertManager + Loki. LIVE: 723 requests, 1.25M+ tokens, $28.74/day. H100 NVL benchmarks: 5,965 tok/s peak, 1,443× TTFT speedup via RadixAttention, 100% SLO compliance at concurrency 128. Experienced owning the full serving stack — from hardware utilisation and KV cache tuning to routing policies, SLA enforcement, and capacity planning.",
+        "competencies": [
+            ("Inference Serving", "vLLM, SGLang, TensorRT-LLM, LiteLLM Proxy — production deployment, benchmarking, routing, SLA management"),
+            ("Serving Optimisation", "KV cache management, continuous batching, quantisation (AWQ/GPTQ), speculative decoding, prefix caching"),
+            ("Autoscaling &amp; Capacity", "KEDA autoscaling on queue depth, HPA on GPU node pools, Kubernetes, capacity planning, cost-efficiency tuning"),
+            ("GPU &amp; Profiling", "NVIDIA Nsight Systems/Compute, CUDA kernel profiling, VRAM utilisation, BFloat16/FP8, DCGM Exporter"),
+            ("Observability &amp; Ops", "Prometheus, Grafana, AlertManager, Loki, FluentBit, per-node weight caching, Argo CD GitOps, Terraform"),
+        ],
+        "projects": [
+            ("llm-inference-platform (GKE)", "Production LLM serving on GKE: vLLM 0.32.0 + SGLang 0.5.20, KEDA autoscaling, LiteLLM Proxy gateway, 27-target Prometheus stack. 723 requests, 1.25M+ tokens, $28.74/day. <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-platform'>GitHub</a>"),
+            ("llm-inference-benchmark (H100)", "2× H100 NVL 94 GB, CUDA 13.4. vLLM vs SGLang, Qwen3-8B BF16, TP=2. 1,443× TTFT speedup. SLO 100% at concurrency 128. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live dashboard</a>"),
+            ("vllm-k8s-stack", "Production K8s LLM serving: vLLM, KV-cache-aware routing, HPA autoscaling, GPU node management. <a href='https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack'>GitHub</a>"),
+            ("open-model-engine", "GPU inference benchmarking: vLLM, SGLang, TensorRT-LLM; CUDA profiling, quantisation, speculative decoding. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
+            ("inference-optimizer", "13-optimisation Inference Gateway: 3.87× faster, 14× throughput, 61.4% cost reduction. <a href='https://github.com/AyeniOluwatosinOlawale/inference-optimizer'>GitHub</a>"),
+        ],
+    },
+    {
         "slug": "hcompany_research-engineer-inference",
         "title": "Research Engineer, Model Inference &amp; Serving",
         "company": "H Company",
@@ -576,6 +596,25 @@ COVER_LETTERS = [
 </ul>
 
 <p>H Company's focus on building frontier multimodal agentic models — and the inference serving challenges that come with them — is where I want to contribute. I'm happy to be in the London office 3 days/week and am open to relocation.</p>
+""",
+    },
+    {
+        "slug": "fuseenergy_ai-inference-engineer",
+        "company": "Fuse Energy",
+        "recipient": "Fuse Energy, London, UK",
+        "body": """
+<p>I am applying for the AI Inference Engineer role at Fuse Energy. The founding ownership scope — defining and building how Fuse serves AI inference workloads at scale, reporting directly to the CTO — is exactly the kind of full-stack serving challenge I have been building toward independently.</p>
+
+<p>Three specific achievements that map directly to what you need:</p>
+<ul>
+  <li><strong>Production LLM inference platform on GKE — end-to-end ownership:</strong> I designed and ran a complete LLM serving platform on Google Kubernetes Engine (NVIDIA L4 24 GB): vLLM 0.32.0 + SGLang 0.5.20 serving Qwen3 8B AWQ and Llama 3.1 8B AWQ, with a LiteLLM Proxy gateway (least-busy routing, A/B weighted round-robin, Redis response cache, PostgreSQL spend tracking). KEDA autoscaling on queue depth — not CPU, because GPU pods sat at 5–15% CPU when saturated. Over 5.3 live days: 723 requests, 1.25M+ tokens, $28.74/day infra cost. This is the full founding-engineer scope: serving design, autoscaling policy, cost optimisation, and observability from scratch.</li>
+  <li><strong>KV cache optimisation, batching, speculative decoding — across hardware:</strong> On RTX 4090 I achieved 28× cost reduction and 18× latency improvement via continuous batching and KV cache tuning. CUDA-level profiling with NVIDIA Nsight identified the memory bandwidth bottleneck; retuning kernel access patterns gave 3.8× throughput improvement. On 2× H100 NVL hardware I measured 1,443× TTFT speedup via RadixAttention prefix caching at 131K-token context, with 100% SLO compliance at concurrency 128 and peak 5,965 tok/s — published live at <a href="https://inference-web-theta.vercel.app/benchmarks/llm">inference-web-theta.vercel.app/benchmarks/llm</a>.</li>
+  <li><strong>Autoscaling and capacity planning at serving layer:</strong> Built <em>vllm-k8s-stack</em> — KV-cache-aware routing, HPA autoscaling on GPU node pools, per-node hostPath weight caching (cold load 5 min → cached 30 sec), Prometheus/Grafana/AlertManager observability, and Argo CD GitOps. Scaled serving from zero with a defined SLO budget and measured cost per request at each concurrency level.</li>
+</ul>
+
+<p>I am drawn to Fuse Energy's ambition to build a dedicated AI serving team from the ground up in the energy sector. Energy applications are uniquely demanding — reliability and latency guarantees matter when AI drives real-time operational decisions — and the cost sensitivity of inference at scale makes KV cache efficiency and smart routing not nice-to-haves but competitive necessities. Building that layer end-to-end is where I operate best.</p>
+
+<p>I work well in founding-team environments: comfortable making architecture decisions with limited information, iterating fast, and owning both design and production reliability. I look forward to hearing from you.</p>
 """,
     },
     {

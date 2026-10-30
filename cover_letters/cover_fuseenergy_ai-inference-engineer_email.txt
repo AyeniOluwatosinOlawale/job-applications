@@ -1,0 +1,28 @@
+Subject: Application for AI Inference Engineer — Oluwatosin Ayeni
+
+Dear Hiring Team,
+
+I am applying for the AI Inference Engineer role at Fuse Energy. The founding ownership scope — defining and building how Fuse serves AI inference workloads at scale, reporting directly to the CTO — is exactly the kind of full-stack serving challenge I have been building toward independently.
+
+Three specific achievements that map directly to what you need:
+
+1. Production LLM inference platform on GKE — end-to-end ownership:
+I designed and ran a complete LLM serving platform on Google Kubernetes Engine (NVIDIA L4 24 GB): vLLM 0.32.0 + SGLang 0.5.20 serving Qwen3 8B AWQ and Llama 3.1 8B AWQ, with a LiteLLM Proxy gateway (least-busy routing, A/B weighted round-robin, Redis response cache, PostgreSQL spend tracking). KEDA autoscaling on queue depth — not CPU, because GPU pods sat at 5-15% CPU when saturated. Over 5.3 live days: 723 requests, 1.25M+ tokens, $28.74/day infra cost. This is the full founding-engineer scope: serving design, autoscaling policy, cost optimisation, and observability from scratch.
+
+2. KV cache optimisation, batching, speculative decoding — across hardware:
+On RTX 4090 I achieved 28x cost reduction and 18x latency improvement via continuous batching and KV cache tuning. CUDA-level profiling with NVIDIA Nsight identified the memory bandwidth bottleneck; retuning kernel access patterns gave 3.8x throughput improvement. On 2x H100 NVL hardware I measured 1,443x TTFT speedup via RadixAttention prefix caching at 131K-token context, with 100% SLO compliance at concurrency 128 and peak 5,965 tok/s — published live at https://inference-web-theta.vercel.app/benchmarks/llm
+
+3. Autoscaling and capacity planning at serving layer:
+Built vllm-k8s-stack — KV-cache-aware routing, HPA autoscaling on GPU node pools, per-node hostPath weight caching (cold load 5 min → cached 30 sec), Prometheus/Grafana/AlertManager observability, and Argo CD GitOps. Scaled serving from zero with a defined SLO budget and measured cost per request at each concurrency level.
+
+I am drawn to Fuse Energy's ambition to build a dedicated AI serving team from the ground up in the energy sector. Energy applications are uniquely demanding — reliability and latency guarantees matter when AI drives real-time operational decisions — and the cost sensitivity of inference at scale makes KV cache efficiency and smart routing not nice-to-haves but competitive necessities.
+
+I work well in founding-team environments: comfortable making architecture decisions with limited information, iterating fast, and owning both design and production reliability.
+
+My CV is available at https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_fuseenergy_ai-inference-engineer.tex (LaTeX source) — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format.
+
+Best regards,
+Oluwatosin Ayeni
+07727305230 | ayenioluwatosinolawale@gmail.com
+GitHub (42 repos): https://github.com/AyeniOluwatosinOlawale
+LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/

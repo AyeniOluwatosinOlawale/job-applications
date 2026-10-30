@@ -1,0 +1,85 @@
+%% CV — Fuse Energy AI Inference Engineer
+%% Compile: lualatex main_fuseenergy_ai-inference-engineer.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+Founding-calibre AI Inference Engineer with deep expertise in production LLM serving, autoscaling infrastructure, and performance optimisation. Benchmarked vLLM and SGLang on H100 NVL hardware — 5,965 tok/s peak throughput, 1,443$\times$ TTFT speedup via RadixAttention prefix caching, 100\% SLO compliance at concurrency 128. Built production inference gateways delivering 3.87$\times$ latency reduction and 14$\times$ throughput gains. Engineered full GKE inference platform (vLLM + SGLang, KEDA autoscaling, LiteLLM Proxy gateway, Prometheus/Grafana) handling 723 real requests and 1.25M+ tokens at \$28.74/day operating cost. Experienced owning the full serving stack — from hardware utilisation and KV cache tuning to routing policies, SLA enforcement, and capacity planning — exactly the founding ownership Fuse Energy needs.
+
+\section{Core Competencies}
+\cvitem{Inference Serving}{vLLM, SGLang, TensorRT-LLM, LiteLLM Proxy — production deployment, benchmarking, routing, SLA management}
+\cvitem{Serving Optimisation}{KV cache management, continuous batching, quantisation (AWQ/GPTQ), speculative decoding, prefix caching}
+\cvitem{Autoscaling \& Capacity}{KEDA autoscaling on queue depth, HPA on GPU node pools, Kubernetes, capacity planning, cost-efficiency tuning}
+\cvitem{GPU \& Profiling}{NVIDIA Nsight Systems/Compute, CUDA kernel profiling, VRAM utilisation, BFloat16/FP8, DCGM Exporter}
+\cvitem{Observability \& Ops}{Prometheus, Grafana, AlertManager, Loki, FluentBit, per-node weight caching, Argo CD GitOps, Terraform}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Built and ran production LLM inference platform on GKE (NVIDIA L4 24 GB): vLLM 0.32.0 + SGLang 0.5.20 serving Qwen3 8B AWQ and Llama 3.1 8B AWQ; LiteLLM Proxy gateway with least-busy routing, A/B weighted round-robin, Redis response cache, and PostgreSQL spend tracking.
+    \item KEDA autoscaling on queue depth (not CPU — GPU pods at 5--15\% CPU when saturated); NVIDIA DCGM Exporter via PodMonitor; 27-target Prometheus + Grafana 13 (3 custom dashboards) + AlertManager (6 rules) + Loki. LIVE: 723 requests, 1.25M+ tokens, GPU at 19.3 GB/24 GB VRAM, 49°C, 33 W.
+    \item Ran H100 NVL inference benchmark: vLLM v0.30 vs SGLang v0.5.20, Qwen3-8B BF16, TP=2. Peak: 5,965 tok/s; TTFT 39 ms (RadixAttention) vs 55,565 ms baseline — 1,443$\times$ speedup at 131K-token context; 100\% SLO compliance at concurrency 128.
+    \item Built \textit{inference-optimizer}: production Inference Gateway — parallel execution (3.87$\times$ faster), prompt caching (61.4\% cost reduction), model routing (64.3\% cheaper), concurrency (14$\times$ throughput). Multi-provider: Claude API, GPT-4o, Gemini.
+    \item Designed 13-phase AI Inference Engineering curriculum; full-stack SaaS platform (Supabase, Next.js, Stripe, Tauri).
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item 28$\times$ LLM cost reduction: deployed Qwen2.5-7B on RTX 4090 with vLLM/SGLang continuous batching and KV cache optimisation.
+    \item CUDA-level KV cache kernel profiling with NVIDIA Nsight: identified memory bandwidth bottleneck; 3.8$\times$ throughput improvement without hardware change.
+    \item 18$\times$ inference latency reduction via continuous batching pipeline redesign; built production serving APIs for multiple enterprise clients.
+    \item Fine-tuned Mistral 7B (LoRA/PEFT) on radiology data: $+22\%$ diagnostic accuracy, $-35\%$ hallucination rate; deployed as production clinical assistant.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Built real-time NLP pipeline with structured output, multi-step reasoning, and production monitoring; sub-500 ms end-to-end latency.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item Deployed LLM-backed automation workflows with structured output extraction and production monitoring.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{llm-inference-platform (GKE)}{Production LLM serving on GKE: vLLM 0.32.0 + SGLang 0.5.20, KEDA autoscaling, LiteLLM Proxy gateway, 27-target Prometheus stack. 723 requests, 1.25M+ tokens, \$28.74/day. \href{https://github.com/AyeniOluwatosinOlawale/llm-inference-platform}{github.com/AyeniOluwatosinOlawale/llm-inference-platform}}
+
+\cvitem{llm-inference-benchmark (H100)}{2$\times$ H100 NVL 94 GB, CUDA 13.4. vLLM vs SGLang, Qwen3-8B BF16, TP=2. 1,443$\times$ TTFT speedup. SLO 100\% at concurrency 128. \href{https://inference-web-theta.vercel.app/benchmarks/llm}{Live dashboard}}
+
+\cvitem{vllm-k8s-stack}{Production K8s LLM serving: vLLM, KV-cache-aware routing, HPA autoscaling, GPU node management. \href{https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}{github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}}
+
+\cvitem{open-model-engine}{GPU inference benchmarking: vLLM, SGLang, TensorRT-LLM; CUDA profiling, quantisation, speculative decoding. \href{https://github.com/AyeniOluwatosinOlawale/open-model-engine}{github.com/AyeniOluwatosinOlawale/open-model-engine}}
+
+\cvitem{inference-optimizer}{13-optimisation Inference Gateway: 3.87$\times$ faster, 14$\times$ throughput, 61.4\% cost reduction. \href{https://github.com/AyeniOluwatosinOlawale/inference-optimizer}{github.com/AyeniOluwatosinOlawale/inference-optimizer}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{Open Source}
+\cvitem{42 public repos}{\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} — inference benchmarks, CUDA labs, Kubernetes serving stacks, fine-tuning pipelines}
+
+\end{document}
