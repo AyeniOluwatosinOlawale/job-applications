@@ -1,0 +1,37 @@
+%% Cover Letter — Anthropic Staff Software Engineer, Infrastructure (Distributed Systems)
+%% Compile: pdflatex cover_anthropic_infrastructure-distributed-systems.tex
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ 07727305230 \\ ayenioluwatosinolawale@gmail.com}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Anthropic}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the Staff Software Engineer, Infrastructure (Distributed Systems) role at Anthropic. I have built and operated production LLM infrastructure at scale — Kubernetes-based GPU serving platforms, GitOps pipelines, full observability stacks, and distributed serving architectures — and I have done it with Claude as my primary LLM provider. Building the infrastructure that makes Claude reliably available to millions of users is precisely the problem I want to work on.
+
+Three achievements that speak directly to this role:
+
+\begin{itemize}
+  \item \textbf{Production LLM platform on GKE — end-to-end distributed systems ownership:} I built and operate a production LLM inference platform on GKE (NVIDIA L4, us-central1) running vLLM 0.32.0 and SGLang 0.5.20 serving Qwen3 8B AWQ + Llama 3.1 8B AWQ. The platform has processed 723 requests and 1.25M+ tokens (\$152.82 infra over 5.3 days). The full stack includes Terraform IaC, Argo CD GitOps (3-min sync), Argo Rollouts canary deployments, NetworkPolicy default-deny, Kyverno pod security, Traefik TLS ingress, and KEDA autoscaling on queue depth — not CPU, because GPU pods at 5--15\% CPU when saturated would never trigger CPU-based HPA.
+
+  \item \textbf{Observability at production scale:} I deployed a 27-target Prometheus stack with Grafana 13 (3 custom dashboards: engine comparison, GPU utilisation, gateway performance), AlertManager (6 alert rules), Loki + FluentBit DaemonSet log aggregation, and NVIDIA DCGM Exporter via custom PodMonitor for per-GPU memory, utilisation, and thermals. This is the observability culture I bring: instrument everything, alert on what matters, and make performance data legible to the whole team.
+
+  \item \textbf{Distributed multi-node GPU benchmarking:} On 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4) with tensor parallelism 2, I measured peak throughput of 5,965 tok/s, TTFT of 39 ms via RadixAttention prefix caching (a 1,443$\times$ speedup at 131K-token context), and 100\% SLO compliance across concurrency 1--128. Every result is published live at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}. This is the level of rigour I bring to infrastructure performance work.
+\end{itemize}
+
+Anthropic's infrastructure must be as reliable and performant as Claude's reasoning. I care deeply about both, and I have built the kind of distributed serving infrastructure — multi-node GPU orchestration, GitOps delivery, full observability, and reproducible performance measurement — that this role is designed to scale. I am open to relocating to London and available to interview at your convenience.
+
+\closing{Yours sincerely,}
+
+Oluwatosin Ayeni \\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \\
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\end{letter}
+\end{document}
