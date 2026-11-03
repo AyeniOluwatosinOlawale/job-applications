@@ -1,0 +1,24 @@
+Dear Hiring Team,
+
+I am applying for the Staff Software Engineer, Inference role at Anthropic London. I have spent two years building the class of systems this role will scale — production LLM inference platforms, GPU serving stacks, batching pipelines, KV cache optimisation, multi-provider routing, and Kubernetes-based deployment. I have done this work independently, from design through deployment to live production traffic, using Claude as my primary API provider.
+
+Three achievements that map directly to the scope of this role:
+
+• Production LLM inference platform on GKE: I built llm-inference-platform — a full production serving stack on Google Kubernetes Engine (NVIDIA L4 24 GB) running vLLM 0.32.0 (PagedAttention, continuous batching) and SGLang 0.5.20 (RadixAttention, scales-to-zero) behind LiteLLM Proxy 1.40.0 as an inference gateway. The gateway implements least-busy routing, A/B weighted round-robin, Redis response caching, and PostgreSQL spend tracking. KEDA autoscaling is configured on GPU queue depth. Argo CD GitOps, Argo Rollouts canary, Traefik TLS, Terraform IaC, and Kyverno pod security are all in production. As of the last measurement: 723 requests, 1.25M+ tokens served, $152.82 infrastructure cost over 5.3 days.
+
+• H100 inference benchmarking — rigorous, published results: I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2x NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16 with tensor parallelism 2, across concurrency 1-128. Peak: 5,965 tok/s (vLLM). RadixAttention prefix caching delivered a 1,443x TTFT speedup (39 ms vs 55,565 ms) at 131K-token context. 100% SLO compliance at every concurrency level. Every metric and raw result is published live at https://inference-web-theta.vercel.app/benchmarks/llm.
+
+• Inference Gateway — routing, caching, batching at scale: I built inference-optimizer — a production AI Inference Gateway implementing 13 optimisation strategies across Claude, GPT-4o, and Gemini APIs: parallel execution (3.87x faster), prompt caching (61.4% cost reduction), model routing (64.3% cheaper), and dynamic concurrency management (14x throughput).
+
+The London team working on Claude's inference infrastructure is exactly where I want to apply this experience. I use Claude in production daily and I take the safety-reliability connection seriously.
+
+My profiles:
+• GitHub (45 repos, inference benchmarks, Kubernetes serving stacks): https://github.com/AyeniOluwatosinOlawale
+• LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
+• CV (LaTeX source): https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_anthropic_staff-inference-engineer-london.tex (LaTeX source) — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format.
+
+I am planning to relocate to London and available to interview at your convenience.
+
+Best regards,
+Oluwatosin Ayeni
+07727305230 | ayenioluwatosinolawale@gmail.com

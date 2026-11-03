@@ -387,6 +387,26 @@ ROLES = [
             ("open-model-engine", "GPU-first inference benchmarking: CUDA profiling, quantisation, speculative decoding. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
         ],
     },
+    {
+        "slug": "anthropic_staff-inference-engineer-london",
+        "title": "Staff Software Engineer, Inference",
+        "company": "Anthropic (London)",
+        "tagline": "Staff-calibre AI Inference Engineer with proven expertise in distributed LLM serving, GPU infrastructure, and production ML systems at scale. Benchmarked vLLM and SGLang on H100 NVL — 5,965 tok/s peak throughput, 1,443× TTFT speedup via prefix caching, 100% SLO compliance at concurrency 128. Built production LLM inference platform on GKE (NVIDIA L4, 723 requests, 1.25M+ tokens) and Inference Gateways delivering 14× throughput and 3.87× latency improvement. Deep expertise in batching, KV cache optimisation, routing, and Kubernetes GPU infrastructure. Ready to relocate to London.",
+        "competencies": [
+            ("Distributed Inference", "Tensor parallelism (TP=2), pipeline parallelism, KV cache-aware routing, multi-node GPU orchestration, batching strategies (continuous, dynamic, chunked prefill)"),
+            ("Inference Engines", "vLLM (PagedAttention, continuous batching), SGLang (RadixAttention, prefix caching), TensorRT-LLM, LiteLLM Proxy — production deployment and benchmarking"),
+            ("ML Infrastructure", "Kubernetes (HPA/KEDA), GKE, Docker, Prometheus/Grafana, Argo CD/Rollouts, Terraform, Traefik, Redis, PostgreSQL, GitHub Actions"),
+            ("GPU &amp; CUDA", "NVIDIA Nsight Systems/Compute, memory bandwidth profiling, DCGM Exporter, BFloat16/AWQ quantisation, NVIDIA L4/H100 NVL production experience"),
+            ("LLM Systems", "Speculative decoding, multi-provider routing, A/B weighted round-robin, Redis response caching, KEDA autoscaling on GPU queue depth, output scrubbing"),
+        ],
+        "projects": [
+            ("llm-inference-platform (GKE)", "Production on NVIDIA L4, vLLM + SGLang, LiteLLM gateway, KEDA autoscaling, 27-target Prometheus stack, Argo CD GitOps, Traefik TLS. LIVE: 723 req, 1.25M+ tokens. <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-platform'>GitHub</a>"),
+            ("llm-inference-benchmark (H100)", "2× H100 NVL 94 GB, CUDA 13.4. vLLM v0.30 vs SGLang v0.5.20, Qwen3-8B BF16, TP=2. RadixAttention: 1,443× TTFT speedup. Peak: 5,965 tok/s. SLO 100% at concurrency 128. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live results</a>"),
+            ("inference-optimizer", "Production Inference Gateway: 13 optimisations, multi-provider (Claude, GPT, Gemini), 3.87× faster, 14× throughput, 61.4% cost reduction. <a href='https://github.com/AyeniOluwatosinOlawale/inference-optimizer'>GitHub</a>"),
+            ("vllm-k8s-stack", "Kubernetes LLM serving: vLLM, KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana. <a href='https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack'>GitHub</a>"),
+            ("open-model-engine", "GPU-first inference benchmarking: vLLM, SGLang, TensorRT-LLM, CUDA profiling, quantisation, speculative decoding. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
+        ],
+    },
 ]
 
 COVER_LETTERS = [
@@ -615,6 +635,23 @@ COVER_LETTERS = [
 <p>I am drawn to Fuse Energy's ambition to build a dedicated AI serving team from the ground up in the energy sector. Energy applications are uniquely demanding — reliability and latency guarantees matter when AI drives real-time operational decisions — and the cost sensitivity of inference at scale makes KV cache efficiency and smart routing not nice-to-haves but competitive necessities. Building that layer end-to-end is where I operate best.</p>
 
 <p>I work well in founding-team environments: comfortable making architecture decisions with limited information, iterating fast, and owning both design and production reliability. I look forward to hearing from you.</p>
+""",
+    },
+    {
+        "slug": "anthropic_staff-inference-engineer-london",
+        "company": "Anthropic (London)",
+        "recipient": "Anthropic, London, UK",
+        "body": """
+<p>I am applying for the Staff Software Engineer, Inference role at Anthropic London. I have spent two years building the class of systems this role will scale — production LLM inference platforms, GPU serving stacks, batching pipelines, KV cache optimisation, multi-provider routing, and Kubernetes-based deployment. I have done this work independently, from design through deployment to live production traffic, using Claude as my primary API provider.</p>
+
+<p>Three achievements that map directly to the scope of this role:</p>
+<ul>
+  <li><strong>Production LLM inference platform on GKE:</strong> I built <em>llm-inference-platform</em> — a full production serving stack on Google Kubernetes Engine (NVIDIA L4 24 GB) running vLLM 0.32.0 (PagedAttention, continuous batching) and SGLang 0.5.20 (RadixAttention, scales-to-zero) behind LiteLLM Proxy 1.40.0. Gateway implements least-busy routing, A/B weighted round-robin, Redis response caching, and PostgreSQL spend tracking. KEDA autoscaling on GPU queue depth — not CPU (GPU pods at 5–15% CPU when saturated). Argo CD GitOps, Argo Rollouts canary, Traefik TLS, Terraform IaC. LIVE: 723 requests, 1.25M+ tokens, $152.82 over 5.3 days.</li>
+  <li><strong>H100 inference benchmarking — published results:</strong> I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2× NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2, across concurrency 1–128. Peak: 5,965 tok/s. RadixAttention: 1,443× TTFT speedup (39 ms vs 55,565 ms) at 131K-token context. 100% SLO compliance. Results live at <a href="https://inference-web-theta.vercel.app/benchmarks/llm">inference-web-theta.vercel.app/benchmarks/llm</a>.</li>
+  <li><strong>Inference Gateway — routing, caching, batching at scale:</strong> I built <em>inference-optimizer</em> — a production AI Inference Gateway implementing 13 optimisation strategies across Claude, GPT-4o, and Gemini: parallel execution (3.87× faster), prompt caching (61.4% cost reduction), model routing (64.3% cheaper), and dynamic concurrency management (14× throughput).</li>
+</ul>
+
+<p>The London team working on Claude's inference infrastructure is exactly where I want to apply this experience. I use Claude in production daily and I take the safety-reliability connection seriously. I am planning to relocate to London and available to interview at your convenience.</p>
 """,
     },
     {
