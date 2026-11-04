@@ -1,0 +1,43 @@
+%% Cover Letter — Anthropic Staff Cluster Infrastructure Engineer (London)
+\documentclass[11pt,a4paper]{article}
+\usepackage[scale=0.85]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+\pagestyle{empty}
+
+\begin{document}
+
+\textbf{Oluwatosin Ayeni}\\
+Glasgow, Scotland, UK\\
+07727305230 \quad ayenioluwatosinolawale@gmail.com\\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\vspace{1em}
+\today
+
+\textbf{Anthropic, London, UK}
+
+Dear Hiring Team,
+
+I am applying for the Staff Cluster Infrastructure Engineer role at Anthropic London. Building and operating the GPU compute infrastructure that trains Claude — at the reliability and scale that frontier AI demands — is the most consequential infrastructure problem I know of, and it is exactly where I want to apply my experience.
+
+Three specific achievements that map directly to this role:
+
+\textbf{Production GPU cluster infrastructure — end-to-end ownership:} I designed, provisioned, and operated a full production GPU cluster on Google Kubernetes Engine (NVIDIA L4 24GB) using Terraform IaC: node pools, networking, IAM, GCS storage, cluster security policies. Kyverno pod security admission, NetworkPolicy default-deny across namespaces, cert-manager TLS, KEDA autoscaling on GPU queue depth (not CPU — GPU pods sat at 5--15\% CPU when saturated). Argo CD GitOps with Argo Rollouts canary deployments. LIVE over 5.3 days: 723 requests, 1.25M+ tokens, \$152.82 infrastructure cost — this is full cluster lifecycle ownership, not a demo.
+
+\textbf{GPU observability and reliability at the hardware level:} I built a 27-target Prometheus stack with DCGM Exporter for GPU telemetry, AlertManager with 6 alert rules (memory pressure, pod restart loops, SLO breach), Grafana dashboards for cluster health, and Loki + FluentBit DaemonSet for structured log aggregation. At the CUDA level, I used NVIDIA Nsight Systems/Compute to profile kernel execution on H100 NVL hardware: identified a memory bandwidth bottleneck in KV cache access patterns, achieving 3.8$\times$ throughput improvement and a 1,443$\times$ TTFT speedup via RadixAttention prefix caching at 131K-token context.
+
+\textbf{Infrastructure reliability under production load:} Via continuous batching pipeline redesign and kernel-level optimisation on RTX 4090, I achieved 28$\times$ LLM cost reduction and 18$\times$ latency improvement. I built \textit{vllm-k8s-stack} — KV-cache-aware routing, HPA/KEDA autoscaling, hostPath weight caching (5 min cold load $\to$ 30 s cached), Prometheus/Grafana/AlertManager, and Argo CD GitOps — a cluster serving stack built for reliability, not just throughput.
+
+The infrastructure challenges at Anthropic's scale — managing thousands of GPUs, maintaining cluster reliability during long training runs, ensuring network fabric health for all-reduce collectives, and keeping compute utilisation high — are the exact class of problem I have been building toward from first principles. I use Claude in production daily and I take the safety-reliability connection seriously: reliable infrastructure is what makes responsible AI possible.
+
+I am planning to relocate to London and available to interview at your convenience.
+
+Yours sincerely,
+
+\textbf{Oluwatosin Ayeni}\\
+\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale}\\
+\href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+
+\end{document}

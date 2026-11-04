@@ -407,6 +407,26 @@ ROLES = [
             ("open-model-engine", "GPU-first inference benchmarking: vLLM, SGLang, TensorRT-LLM, CUDA profiling, quantisation, speculative decoding. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
         ],
     },
+    {
+        "slug": "anthropic_cluster-infrastructure-engineer",
+        "title": "Staff Cluster Infrastructure Engineer",
+        "company": "Anthropic (London)",
+        "tagline": "Staff-calibre ML Infrastructure Engineer with hands-on experience designing and operating production GPU clusters, Kubernetes serving stacks, and observability infrastructure at scale. Built a full GKE GPU cluster (NVIDIA L4 24GB) with Terraform IaC, KEDA autoscaling on GPU queue depth, 27-target Prometheus + DCGM stack, Argo CD GitOps, NetworkPolicy default-deny, and Kyverno pod security — serving 723 live requests and 1.25M+ tokens over 5.3 days. CUDA-level hardware profiling on H100 NVL (Nsight Systems/Compute) achieving 1,443× TTFT speedup. Committed to building the reliable infrastructure that makes Claude possible.",
+        "competencies": [
+            ("Kubernetes &amp; Cluster Ops", "GKE, HPA/KEDA autoscaling (GPU queue depth), Argo CD GitOps, Argo Rollouts canary, NetworkPolicy default-deny, Kyverno pod security, Velero backup, namespace resource quotas"),
+            ("Infrastructure as Code", "Terraform (GKE cluster, node pools, networking, IAM, GCS), Helm charts, GitHub Actions CI/CD, declarative GitOps pipelines"),
+            ("GPU Infrastructure", "NVIDIA L4/H100 NVL production experience, DCGM Exporter, BFloat16/AWQ quantisation, CUDA-level memory profiling, Nsight Systems/Compute, NVLink topology awareness"),
+            ("Observability", "27-target Prometheus stack, Grafana dashboards, AlertManager (6 rules), Loki + FluentBit DaemonSet, KEDA queue-depth metrics, DCGM GPU telemetry"),
+            ("Networking &amp; Security", "Traefik TLS ingress, NetworkPolicy default-deny, cert-manager, Kyverno admission control, least-privilege RBAC, mTLS service mesh patterns"),
+        ],
+        "projects": [
+            ("llm-inference-platform (GKE)", "Full production GPU cluster: Terraform IaC, NVIDIA L4, KEDA queue-depth autoscaling, Argo CD GitOps, Argo Rollouts canary, Traefik TLS, NetworkPolicy default-deny, Kyverno pod security, 27-target Prometheus + Loki. LIVE: 723 req, 1.25M+ tokens. <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-platform'>GitHub</a>"),
+            ("llm-inference-benchmark (H100)", "CUDA-level profiling on 2× H100 NVL 94 GB (NVLink 4.0, CUDA 13.4). Nsight Systems/Compute kernel analysis. 1,443× TTFT speedup. 5,965 tok/s peak. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live results</a>"),
+            ("vllm-k8s-stack", "Kubernetes LLM serving: KV-cache-aware routing, HPA/KEDA autoscaling, hostPath weight caching (5 min cold → 30 s cached), Prometheus/Grafana/AlertManager, Argo CD GitOps. <a href='https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack'>GitHub</a>"),
+            ("inference-optimizer", "Production AI Gateway: 13 optimisations, multi-provider (Claude, GPT, Gemini), 3.87× faster, 14× throughput, 61.4% cost reduction. <a href='https://github.com/AyeniOluwatosinOlawale/inference-optimizer'>GitHub</a>"),
+            ("open-model-engine", "GPU-first infrastructure benchmarking: vLLM, SGLang, TensorRT-LLM, CUDA profiling, quantisation, speculative decoding. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
+        ],
+    },
 ]
 
 COVER_LETTERS = [
@@ -671,6 +691,25 @@ COVER_LETTERS = [
 <p>Inworld AI sits at the intersection of realtime AI and consumer-grade low latency — building first-party speech models and serving multimodal LLMs as modular APIs for high-volume workloads. That combination of speech, LLM, and production reliability is exactly the class of problem I have been building toward. The latency constraints on a voice-first AI product are unforgiving, and I am drawn to working where the gap between a good model and a good user experience is almost entirely a serving engineering problem.</p>
 
 <p>I enjoy working in small, technically deep teams where shipping reliable systems matters more than process. I look forward to the possibility of discussing how I can contribute to Inworld's inference infrastructure.</p>
+""",
+    },
+    {
+        "slug": "anthropic_cluster-infrastructure-engineer",
+        "company": "Anthropic (London)",
+        "recipient": "Anthropic, London, UK",
+        "body": """
+<p>I am applying for the Staff Cluster Infrastructure Engineer role at Anthropic London. Building and operating the GPU compute infrastructure that trains Claude — at the reliability and scale that frontier AI demands — is the most consequential infrastructure problem I know of, and it is exactly where I want to apply my experience.</p>
+
+<p>Three specific achievements that map directly to this role:</p>
+<ul>
+  <li><strong>Production GPU cluster infrastructure — end-to-end ownership:</strong> I designed, provisioned, and operated a full production GPU cluster on Google Kubernetes Engine (NVIDIA L4 24GB) using Terraform IaC: node pools, networking, IAM, GCS storage, cluster security policies. Kyverno pod security admission, NetworkPolicy default-deny across namespaces, cert-manager TLS, KEDA autoscaling on GPU queue depth (not CPU — GPU pods sat at 5–15% CPU when saturated). Argo CD GitOps with Argo Rollouts canary deployments. LIVE over 5.3 days: 723 requests, 1.25M+ tokens, $152.82 infrastructure cost — this is full cluster lifecycle ownership, not a demo.</li>
+  <li><strong>GPU observability and reliability at the hardware level:</strong> I built a 27-target Prometheus stack with DCGM Exporter for GPU telemetry, AlertManager with 6 alert rules (memory pressure, pod restart loops, SLO breach), Grafana dashboards for cluster health, and Loki + FluentBit DaemonSet for structured log aggregation. At the CUDA level, I used NVIDIA Nsight Systems/Compute to profile kernel execution on H100 NVL hardware: identified a memory bandwidth bottleneck in KV cache access patterns, achieving 3.8× throughput improvement and a 1,443× TTFT speedup via RadixAttention prefix caching at 131K-token context.</li>
+  <li><strong>Infrastructure reliability under production load:</strong> Via continuous batching pipeline redesign and kernel-level optimisation on RTX 4090, I achieved 28× LLM cost reduction and 18× latency improvement. I built <em>vllm-k8s-stack</em> — KV-cache-aware routing, HPA/KEDA autoscaling, hostPath weight caching (5 min cold load → 30 s cached), Prometheus/Grafana/AlertManager, and Argo CD GitOps — a cluster serving stack built for reliability, not just throughput.</li>
+</ul>
+
+<p>The infrastructure challenges at Anthropic's scale — managing thousands of GPUs, maintaining cluster reliability during long training runs, ensuring network fabric health for all-reduce collectives, and keeping compute utilisation high — are the exact class of problem I have been building toward from first principles. I use Claude in production daily and I take the safety-reliability connection seriously: reliable infrastructure is what makes responsible AI possible.</p>
+
+<p>I am planning to relocate to London and available to interview at your convenience.</p>
 """,
     },
 ]
