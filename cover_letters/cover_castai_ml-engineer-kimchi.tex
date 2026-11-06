@@ -1,0 +1,32 @@
+%% Cover Letter — CAST AI Senior ML Engineer Kimchi (LLM Inference Optimization)
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{6 November 2026}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ CAST AI \\ Remote (UK/EU)}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the Senior ML Engineer role on the Kimchi team at CAST AI. LLM inference optimisation is where I have focused my engineering energy for the past two years, and the Kimchi mission — squeezing maximum throughput and minimum latency from vLLM, SGLang, and TensorRT-LLM serving pipelines — is exactly the problem space I want to own at scale.
+
+My recent H100 NVL benchmark of vLLM v0.30 vs SGLang v0.5.20 (Qwen3-8B BF16, TP=2) produced 5,965~tok/s peak throughput and a 1,443$\times$ TTFT speedup via RadixAttention prefix caching — 100\% SLO compliance at concurrency 128. That was not a lab exercise: the results feed directly into production routing decisions for my Nexora Academic inference platform (GKE, NVIDIA L4, 1.25M+ tokens served at \$28.74/day). I know how numbers from a benchmark translate — or fail to translate — into real serving behaviour under load.
+
+On the optimisation side, I have delivered measurable production gains: 3.87$\times$ latency reduction and 14$\times$ throughput improvement through continuous batching and KV cache tuning; 28$\times$ LLM cost reduction on RTX 4090 hardware via CUDA-level kernel profiling with NVIDIA Nsight; 61.4\% cost reduction through intelligent model routing and prompt caching in my inference-optimizer gateway. These are the levers CAST AI Kimchi targets — I have pulled them in production.
+
+My serving infrastructure experience spans the full stack: KV cache–aware request routing, KEDA autoscaling on queue depth (not CPU — the right signal for GPU pods), tensor parallelism configuration, AWQ/GPTQ quantisation, speculative decoding, and multi-LoRA serving. I have deployed and debugged vLLM and SGLang across GKE, bare-metal, and cloud GPU instances, so I understand the gap between what the docs promise and what actually happens under production load.
+
+CAST AI's position — optimising inference costs for enterprise Kubernetes workloads — is a natural fit for my background combining inference engineering with Kubernetes platform expertise. I would bring immediate technical contribution to Kimchi's throughput and latency targets, and genuine enthusiasm for the problem.
+
+I would welcome a conversation about the role.
+
+\closing{Yours sincerely,}
+
+\ps{CV and GitHub: \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} $\cdot$ Benchmark dashboard: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}}
+
+\end{letter}
+\end{document}

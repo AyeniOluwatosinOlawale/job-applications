@@ -1,0 +1,21 @@
+Subject: Application — Senior ML Engineer, Kimchi (LLM Inference Optimization)
+
+Dear Hiring Team,
+
+I am applying for the Senior ML Engineer role on the Kimchi team at CAST AI.
+
+My recent H100 NVL benchmark of vLLM v0.30 vs SGLang v0.5.20 (Qwen3-8B BF16, TP=2) achieved 5,965 tok/s peak throughput and a 1,443× TTFT speedup via RadixAttention prefix caching — 100% SLO compliance at concurrency 128. I run a production LLM serving platform on GKE (NVIDIA L4, 1.25M+ tokens, $28.74/day) where those benchmark numbers directly inform routing and scaling decisions.
+
+On the optimisation side, I have delivered: 3.87× latency reduction and 14× throughput improvement via continuous batching and KV cache tuning; 28× LLM cost reduction through CUDA-level kernel profiling with NVIDIA Nsight; 61.4% cost reduction through intelligent model routing and prompt caching. I have worked across the full Kimchi stack — vLLM, SGLang, TensorRT-LLM, AWQ/GPTQ quantisation, speculative decoding, multi-LoRA serving, KEDA autoscaling on GPU queue depth.
+
+My CV is attached (PDF). Key links:
+- GitHub: https://github.com/AyeniOluwatosinOlawale (45 public repos — inference benchmarks, CUDA labs, K8s serving stacks)
+- Benchmark dashboard: https://inference-web-theta.vercel.app/benchmarks/llm
+- CV (GitHub): https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_example.tex
+
+I would welcome a conversation about the Kimchi role.
+
+Best regards,
+Oluwatosin Ayeni
+Glasgow, Scotland, UK
+ayenioluwatosinolawale@gmail.com | 07727305230
