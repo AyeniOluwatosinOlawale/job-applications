@@ -1,0 +1,30 @@
+%% Cover Letter — Nscale Staff AI Engineer (Specialized)
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{10 November 2026}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Nscale \\ London, UK}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the Staff AI Engineer (Specialized) role at Nscale. Setting technical direction for inference and RL systems on a platform managing thousands of H100s and A100s for enterprise LLM deployments is the kind of challenge I have been building toward — and my production experience across the full inference stack makes me a strong candidate to do this at Nscale's scale.
+
+At the technical depth required for Staff level, I bring: H100 NVL benchmark expertise (vLLM vs SGLang, 5,965~tok/s peak throughput, 1,443$\times$ TTFT speedup, 100\% SLO at concurrency 128); production GKE inference platform operation (vLLM 0.32.0 + SGLang 0.5.20, KEDA autoscaling, LiteLLM Proxy, 1.25M+ tokens served); and CUDA-level kernel profiling that delivered 28$\times$ LLM cost reduction and 3.8$\times$ throughput improvement. I have designed autoscaling strategies tuned to GPU workload characteristics, architected observability stacks for production SLO monitoring, and built serving APIs handling multiple enterprise clients simultaneously.
+
+Beyond individual technical contribution, I have set inference strategy from first principles: benchmarking engine tradeoffs (vLLM vs SGLang vs TensorRT-LLM), defining SLO frameworks, and making architecture decisions about batching policy, caching strategy, and parallelism configuration. At Nscale, I would apply this to setting the technical direction that determines how thousands of GPUs are used efficiently for enterprise LLM inference and RL workloads.
+
+Nscale's combination of cloud infrastructure scale and AI-native focus — having managed $140M+ revenue and filed for IPO — represents a genuinely differentiated position in the market. I would bring both the inference depth and the platform engineering experience to contribute at Staff level from day one.
+
+I would welcome a conversation about the role.
+
+\closing{Yours sincerely,}
+
+\ps{CV and GitHub: \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} $\cdot$ Benchmark dashboard: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}}
+
+\end{letter}
+\end{document}

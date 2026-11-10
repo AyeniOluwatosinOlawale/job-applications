@@ -1,0 +1,75 @@
+%% CV — Nscale Staff AI Engineer (Specialized)
+%% Compile: lualatex main_nscale_staff-ai-engineer.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+Staff-level AI Engineer with deep expertise in LLM inference and serving infrastructure at H100-scale. Benchmarked vLLM and SGLang on H100 NVL hardware — 5,965~tok/s peak throughput, 1,443$\times$ TTFT speedup via RadixAttention prefix caching, 100\% SLO compliance at concurrency 128. Built and operated production GKE inference platform serving 1.25M+ tokens. Experienced across the full AI infrastructure stack: CUDA profiling, inference engine tuning, Kubernetes orchestration, observability, and enterprise LLM deployment. Ready to set technical direction for inference and RL systems at Nscale's scale — thousands of H100s/A100s serving enterprise clients.
+
+\section{Core Competencies}
+\cvitem{Inference Systems}{vLLM, SGLang, TensorRT-LLM, TGI — serving optimisation, throughput/latency tuning, SLO compliance at scale}
+\cvitem{Technical Leadership}{Architecture design, inference roadmap ownership, cross-functional collaboration, mentoring engineering teams}
+\cvitem{GPU Infrastructure}{Kubernetes (GKE), KEDA autoscaling, NVIDIA DCGM, GPU node management, cluster capacity planning, H100/A100/L4}
+\cvitem{Quantisation \& Efficiency}{AWQ, GPTQ, BFloat16/FP8, speculative decoding, multi-LoRA serving, tensor parallelism, model sharding}
+\cvitem{Observability}{Prometheus, Grafana, AlertManager, Loki, FluentBit, DCGM Exporter — production SLO monitoring and alerting}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Designed and operated production LLM inference platform on GKE (NVIDIA L4 24~GB): vLLM 0.32.0 + SGLang 0.5.20 serving Qwen3-8B AWQ and Llama 3.1-8B AWQ; LiteLLM Proxy gateway with least-busy routing, A/B weighted round-robin, Redis response cache, and PostgreSQL spend tracking. LIVE: 723 requests, 1.25M+ tokens, \$28.74/day.
+    \item Ran systematic H100 NVL inference benchmark: vLLM v0.30 vs SGLang v0.5.20, Qwen3-8B BF16, TP=2. Peak 5,965~tok/s; TTFT 39~ms (RadixAttention) vs 55,565~ms baseline — 1,443$\times$ speedup at 131K-token context; 100\% SLO at concurrency 128.
+    \item Architected full observability stack: NVIDIA DCGM Exporter via PodMonitor, 27-target Prometheus + Grafana 13 (3 custom dashboards) + AlertManager (6 rules) + Loki for log aggregation.
+    \item Set technical direction for inference serving strategy: benchmarked engine tradeoffs, defined SLO framework, designed autoscaling policy tuned to GPU workload characteristics.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item 28$\times$ LLM cost reduction: deployed Qwen2.5-7B on RTX 4090 with vLLM/SGLang continuous batching and KV cache optimisation; achieved 3.8$\times$ throughput improvement via CUDA-level kernel profiling with NVIDIA Nsight.
+    \item 18$\times$ inference latency reduction via continuous batching pipeline redesign; built production serving APIs for multiple enterprise clients.
+    \item Fine-tuned Mistral 7B (LoRA/PEFT) on radiology data: $+22\%$ diagnostic accuracy, $-35\%$ hallucination rate; deployed as production clinical assistant with vLLM serving.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Built real-time NLP pipeline with structured output extraction, multi-step reasoning, and production monitoring; sub-500~ms end-to-end latency.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{llm-inference-benchmark (H100)}{2$\times$ H100 NVL 94~GB, CUDA 13.4. vLLM vs SGLang, Qwen3-8B BF16, TP=2. 1,443$\times$ TTFT speedup; SLO 100\% at concurrency 128. \href{https://inference-web-theta.vercel.app/benchmarks/llm}{Live dashboard} $\cdot$ \href{https://github.com/AyeniOluwatosinOlawale/llm-inference-benchmark}{GitHub}}
+
+\cvitem{llm-inference-platform (GKE)}{Production LLM serving: vLLM 0.32.0 + SGLang 0.5.20, KEDA autoscaling, LiteLLM Proxy, 27-target Prometheus stack. 723 requests, 1.25M+ tokens, \$28.74/day. \href{https://github.com/AyeniOluwatosinOlawale/llm-inference-platform}{GitHub}}
+
+\cvitem{inference-optimizer}{13-optimisation Inference Gateway: 3.87$\times$ faster, 14$\times$ throughput, 61.4\% cost reduction. \href{https://github.com/AyeniOluwatosinOlawale/inference-optimizer}{GitHub}}
+
+\cvitem{open-model-engine}{GPU inference benchmarking suite: vLLM, SGLang, TensorRT-LLM; CUDA profiling, quantisation, speculative decoding. \href{https://github.com/AyeniOluwatosinOlawale/open-model-engine}{GitHub}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{Open Source}
+\cvitem{45 public repos}{\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} — inference benchmarks, CUDA labs, Kubernetes serving stacks, fine-tuning pipelines}
+
+\end{document}

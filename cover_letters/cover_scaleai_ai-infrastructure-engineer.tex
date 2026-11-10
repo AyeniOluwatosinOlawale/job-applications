@@ -1,0 +1,30 @@
+%% Cover Letter — Scale AI AI Infrastructure Engineer, Serving Platform
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{10 November 2026}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Scale AI \\ London, UK}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the AI Infrastructure Engineer role on Scale AI's Serving Platform team. Building scalable, fault-tolerant LLM serving infrastructure at the intersection of inference optimisation and distributed systems is exactly the engineering problem I have been solving — and I would bring immediate technical contribution to this role.
+
+My production experience maps directly to what this role requires. I designed and operated a GKE LLM inference platform (vLLM 0.32.0 + SGLang 0.5.20, NVIDIA L4, KEDA autoscaling, LiteLLM Proxy) that has served 1.25M+ tokens at \$28.74/day with a 27-target Prometheus observability stack. I ran systematic H100 NVL benchmarks comparing vLLM and SGLang across concurrency levels — 5,965~tok/s peak throughput, 100\% SLO compliance at concurrency 128, 1,443$\times$ TTFT speedup via RadixAttention prefix caching. These are not theoretical numbers: they informed production serving decisions.
+
+On the infrastructure side, I engineered fault-tolerant request routing with health-check-based failover and circuit breakers, implemented KEDA autoscaling tuned to GPU queue depth rather than CPU (the right signal for inference workloads), and built inference gateways delivering 3.87$\times$ latency reduction and 14$\times$ throughput gains through continuous batching and KV cache tuning. I have debugged production GPU failures, VRAM OOM conditions, and scheduling inefficiencies across GKE, bare-metal, and cloud GPU instances.
+
+Scale AI's infrastructure challenges — serving frontier models at the scale RLHF and data annotation pipelines demand — require exactly the combination of inference depth and platform engineering reliability I have built. I am comfortable with Python at expert level and have worked with distributed microservices patterns that would transfer to Go or Rust-based tooling.
+
+I would welcome a conversation about how I can contribute to Scale AI's serving platform.
+
+\closing{Yours sincerely,}
+
+\ps{CV and GitHub: \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} $\cdot$ Benchmark dashboard: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}}
+
+\end{letter}
+\end{document}

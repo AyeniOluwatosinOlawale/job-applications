@@ -1,0 +1,81 @@
+%% CV — Scale AI AI Infrastructure Engineer, Serving Platform
+%% Compile: lualatex main_scaleai_ai-infrastructure-engineer.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+AI Infrastructure Engineer specialising in scalable, fault-tolerant LLM serving platforms. Benchmarked vLLM and SGLang on H100 NVL hardware — 5,965~tok/s peak throughput, 1,443$\times$ TTFT speedup via RadixAttention prefix caching, 100\% SLO compliance at concurrency 128. Built production LLM inference platform on GKE (vLLM + SGLang, KEDA autoscaling, LiteLLM Proxy, Prometheus/Grafana) handling 1.25M+ tokens at \$28.74/day. Engineered inference gateways delivering 3.87$\times$ latency reduction, 14$\times$ throughput gains, and 61.4\% cost reduction through continuous batching, KV cache tuning, and intelligent routing. Experienced with Python, Go-compatible tooling, and distributed systems design — ready to build Scale AI's next-generation LLM serving infrastructure.
+
+\section{Core Competencies}
+\cvitem{Serving Platforms}{vLLM, SGLang, TensorRT-LLM — scalable fault-tolerant LLM serving, throughput/latency tuning, SLO compliance}
+\cvitem{Infrastructure \& Orchestration}{Kubernetes (GKE), KEDA autoscaling, Helm, Terraform, Argo CD GitOps, GPU node pools, HPA}
+\cvitem{Quantisation \& Efficiency}{AWQ, GPTQ, BFloat16/FP8, speculative decoding, multi-LoRA serving, tensor parallelism, model sharding}
+\cvitem{Observability \& Reliability}{Prometheus, Grafana, AlertManager, Loki, FluentBit, DCGM Exporter, PodMonitor, end-to-end SLO tracking}
+\cvitem{Languages \& APIs}{Python (expert), FastAPI, LiteLLM Proxy, Claude API, OpenAI API — distributed microservices design}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Designed and operated production LLM inference platform on GKE (NVIDIA L4 24~GB): vLLM 0.32.0 + SGLang 0.5.20 serving Qwen3-8B AWQ and Llama 3.1-8B AWQ; LiteLLM Proxy gateway with least-busy routing, A/B weighted round-robin, Redis response cache, and PostgreSQL spend tracking. LIVE: 723 requests, 1.25M+ tokens, \$28.74/day operating cost.
+    \item Ran systematic H100 NVL inference benchmark: vLLM v0.30 vs SGLang v0.5.20, Qwen3-8B BF16, TP=2. Peak 5,965~tok/s; TTFT 39~ms (RadixAttention) vs 55,565~ms baseline — 1,443$\times$ speedup at 131K-token context; 100\% SLO at concurrency 128. Results published at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}.
+    \item Implemented KEDA autoscaling on queue depth (not CPU — GPU pods at 5--15\% CPU under saturation); NVIDIA DCGM Exporter via PodMonitor; 27-target Prometheus + Grafana 13 (3 custom dashboards) + AlertManager (6 rules) + Loki for log aggregation.
+    \item Built fault-tolerant request routing with health-check-based failover, circuit breakers, and graceful degradation under GPU node failures.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item 28$\times$ LLM cost reduction: deployed Qwen2.5-7B on RTX 4090 with vLLM/SGLang continuous batching and KV cache optimisation; achieved 3.8$\times$ throughput improvement via CUDA-level kernel profiling with NVIDIA Nsight.
+    \item 18$\times$ inference latency reduction via continuous batching pipeline redesign; built production serving APIs for multiple enterprise clients.
+    \item Built \textit{inference-optimizer}: production Inference Gateway with parallel execution (3.87$\times$ faster), prompt caching (61.4\% cost reduction), intelligent model routing (64.3\% cheaper), concurrency (14$\times$ throughput).
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Built real-time NLP pipeline with structured output extraction, multi-step reasoning, and production monitoring; sub-500~ms end-to-end latency.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item Deployed LLM-backed automation workflows with structured output extraction and production observability.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{llm-inference-platform (GKE)}{Production LLM serving: vLLM 0.32.0 + SGLang 0.5.20, KEDA autoscaling, LiteLLM Proxy, 27-target Prometheus stack. 723 requests, 1.25M+ tokens, \$28.74/day. \href{https://github.com/AyeniOluwatosinOlawale/llm-inference-platform}{GitHub}}
+
+\cvitem{llm-inference-benchmark (H100)}{2$\times$ H100 NVL 94~GB, CUDA 13.4. vLLM vs SGLang, Qwen3-8B BF16, TP=2. 1,443$\times$ TTFT speedup; SLO 100\% at concurrency 128. \href{https://inference-web-theta.vercel.app/benchmarks/llm}{Live dashboard} $\cdot$ \href{https://github.com/AyeniOluwatosinOlawale/llm-inference-benchmark}{GitHub}}
+
+\cvitem{inference-optimizer}{13-optimisation Inference Gateway: 3.87$\times$ faster, 14$\times$ throughput, 61.4\% cost reduction. \href{https://github.com/AyeniOluwatosinOlawale/inference-optimizer}{GitHub}}
+
+\cvitem{vllm-k8s-stack}{Production K8s LLM serving: KV-cache-aware routing, HPA autoscaling, GPU node management. \href{https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}{GitHub}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{Open Source}
+\cvitem{45 public repos}{\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} — inference benchmarks, CUDA labs, Kubernetes serving stacks, fine-tuning pipelines}
+
+\end{document}

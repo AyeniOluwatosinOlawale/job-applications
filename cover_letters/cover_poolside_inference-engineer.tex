@@ -1,0 +1,30 @@
+%% Cover Letter — Poolside Member of Engineering (Inference)
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{10 November 2026}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Poolside \\ UK / Remote Europe}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the Member of Engineering (Inference) role at Poolside. Maximising GPU utilisation for LLM inference — through intelligent scheduling, continuous batching, and KV cache management — is the specific problem I have been solving in production, and Poolside's focus on code generation inference at scale is a compelling application of these techniques.
+
+My H100 NVL benchmark of vLLM vs SGLang (Qwen3-8B BF16, TP=2) achieved 5,965~tok/s peak throughput and 100\% SLO compliance at concurrency 128. The critical insight from that work was not just the numbers — it was understanding exactly which GPU utilisation signals matter for scheduling decisions under real request distributions. I implemented KEDA autoscaling on GPU queue depth (not CPU) on my production GKE platform; GPU pods run at 5--15\% CPU under saturation, so CPU-based scaling is the wrong signal entirely.
+
+Beyond benchmarking, I operate a production LLM inference platform (vLLM 0.32.0 + SGLang 0.5.20, NVIDIA L4, 1.25M+ tokens served) where GPU utilisation optimisation directly affects operating cost. I have tuned continuous batching policies, configured max-tokens-in-flight limits, optimised KV cache pre-allocation, and profiled CUDA kernels with NVIDIA Nsight Systems/Compute to find and fix GPU idle time. I have also implemented speculative decoding pipelines and multi-LoRA serving configurations.
+
+Code generation inference has specific characteristics — typically longer context, structured output constraints, and extreme latency sensitivity — that make GPU scheduling particularly interesting. I have thought carefully about how these workload properties change the optimal batching and caching strategy, and I would bring both the technical depth and production instinct to Poolside's inference engineering.
+
+I would welcome the opportunity to discuss the role.
+
+\closing{Yours sincerely,}
+
+\ps{CV and GitHub: \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} $\cdot$ Benchmark dashboard: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}}
+
+\end{letter}
+\end{document}
