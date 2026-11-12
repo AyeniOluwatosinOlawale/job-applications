@@ -1,0 +1,22 @@
+Dear Hiring Team,
+
+I am writing to apply for the Staff Software Engineer, Inference Infrastructure role at Cohere.
+
+Three specific achievements directly relevant to this role:
+
+• Production LLM serving platform on GKE: I designed and operated llm-inference-platform — vLLM 0.32.0 + SGLang 0.5.20 on GKE (NVIDIA L4 24 GB, us-central1) serving Qwen3 8B AWQ + Llama 3.1 8B AWQ. LiteLLM Proxy gateway with least-busy routing, A/B weighted round-robin, Redis cache, PostgreSQL spend tracking. KEDA autoscaling on GPU queue depth. Argo CD GitOps + Argo Rollouts canary. Terraform IaC. 723 live requests, 1.25M+ tokens, $152.82 infra over 5.3 days.
+
+• H100 benchmarking at scale: vLLM v0.30 vs SGLang v0.5.20 on 2x NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. Peak: vLLM 5,965 tok/s. RadixAttention prefix caching: 1,443x TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 100% SLO compliance at concurrency 1-128. Live: https://inference-web-theta.vercel.app/benchmarks/llm
+
+• Full observability stack: 27-target Prometheus + Grafana 13 (3 custom dashboards) + AlertManager + Loki + FluentBit + NVIDIA DCGM Exporter via custom PodMonitor. NetworkPolicy default-deny + Kyverno pod security. Per-node hostPath weight cache (cold: ~5 min -> cached: ~30 s).
+
+Cohere's focus on enterprise LLM infrastructure — running open models at production scale with the reliability and latency guarantees commercial workloads demand — is exactly the problem I have been building towards independently. I am particularly drawn to working where inference efficiency is a core business priority, not an afterthought.
+
+My profiles:
+• GitHub (47 repos, inference platforms, Kubernetes stacks, CUDA labs): https://github.com/AyeniOluwatosinOlawale
+• LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
+• CV (LaTeX source): https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_cohere_inference-infrastructure.tex (LaTeX source) — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format.
+
+Best regards,
+Oluwatosin Ayeni
+07727305230 | ayenioluwatosinolawale@gmail.com

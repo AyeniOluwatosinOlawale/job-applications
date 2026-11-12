@@ -1,0 +1,22 @@
+Dear Hiring Team,
+
+I am writing to apply for the Senior ML Engineer (Token Factory) role at Nebius.
+
+Three specific achievements directly relevant to this role:
+
+• Speculative decoding and inference optimisation at H100 scale: vLLM v0.30 vs SGLang v0.5.20 on 2x NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. RadixAttention prefix caching: 1,443x TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; peak throughput: vLLM 5,965 tok/s, SGLang 5,646 tok/s; 100% SLO compliance at concurrency 1-128. Live: https://inference-web-theta.vercel.app/benchmarks/llm
+
+• Production cost reduction and quantisation: 28x LLM cost reduction on RTX 4090 via vLLM/SGLang continuous batching and KV cache optimisation. AWQ/GPTQ quantisation for Qwen3 8B + Llama 3.1 8B; deployed AWQ models in production on GKE. CUDA KV cache kernel profiling with Nsight: 3.8x throughput improvement; 18x latency reduction via continuous batching redesign.
+
+• Full model lifecycle: Fine-tuning pipelines (Mistral 7B radiology: +22% diagnostic accuracy; Phi-4 LoRA; Qwen3 via LoRA/PEFT), trained LM from scratch (Qwen3-TinyStories: tokenizer, architecture, training loop, generation eval), model architecture labs (MHA/GQA/MLA, Dense vs MoE, VRAM modelling).
+
+Nebius's Token Factory — where inference efficiency and model quality are joint optimisation targets — is exactly where I want to work next. The focus on speculative decoding, low-precision training, and high-performance open model deployment aligns directly with what I have been building independently.
+
+My profiles:
+• GitHub (47 repos, inference benchmarks, fine-tuning pipelines): https://github.com/AyeniOluwatosinOlawale
+• LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
+• CV (LaTeX source): https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_nebius_token-factory.tex (LaTeX source) — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format.
+
+Best regards,
+Oluwatosin Ayeni
+07727305230 | ayenioluwatosinolawale@gmail.com

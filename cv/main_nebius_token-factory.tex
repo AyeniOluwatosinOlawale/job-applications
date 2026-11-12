@@ -1,0 +1,84 @@
+%% CV — Nebius Senior ML Engineer (Token Factory)
+%% Compile: lualatex main_nebius_token-factory.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+Senior ML Engineer specialising in LLM inference serving, speculative decoding, and production model deployment. I have benchmarked vLLM and SGLang on 2$\times$ NVIDIA H100 NVL 94 GB (1,443$\times$ TTFT speedup via RadixAttention prefix caching; 5,965 tok/s peak), delivered 28$\times$ cost reduction via continuous batching and KV cache optimisation on RTX 4090, and built a full production LLM serving platform on GKE serving Qwen3 8B and Llama 3.1 8B AWQ. Experienced across the full model lifecycle: pre-training, LoRA/PEFT fine-tuning, AWQ/GPTQ quantisation, speculative decoding, and production serving. Open to London hybrid or UK remote. MSc AI with Distinction, University of Strathclyde 2023.
+
+\section{Core Competencies}
+\cvitem{LLM Inference \& Serving}{vLLM, SGLang, TensorRT-LLM, LiteLLM Proxy; speculative decoding, continuous batching, KV cache optimisation, PagedAttention, RadixAttention, prefix caching}
+\cvitem{Model Efficiency}{AWQ/GPTQ/BnB quantisation, LoRA/PEFT fine-tuning, low-precision inference (BF16, INT8, INT4), model compression, throughput/latency Pareto analysis}
+\cvitem{GPU \& CUDA Optimisation}{NVIDIA Nsight Systems/Compute, CUDA kernel profiling, memory bandwidth analysis, tensor parallelism (TP=2 on H100 NVLink), multi-GPU inference}
+\cvitem{Training \& Fine-tuning}{Mistral 7B, Phi-4, Qwen3, Gemma 2 via LoRA/PEFT; complete training pipelines from data prep to evaluation; trained LM from scratch (Qwen3-TinyStories)}
+\cvitem{Infrastructure \& Serving}{Kubernetes (GKE), KEDA, Argo CD, Prometheus, Grafana, Docker, FastAPI, Python, Terraform, Redis}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item H100 NVL inference benchmark: vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ H100 NVL 94 GB (NVLink 4.0, CUDA 13.4) — Qwen3-8B BF16, TP=2. Peak: vLLM 5,965 tok/s, SGLang 5,646 tok/s. RadixAttention prefix caching: 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 100\% SLO compliance at concurrency 1--128.
+    \item Production LLM serving platform (GKE): vLLM + SGLang + LiteLLM Proxy serving Qwen3 8B AWQ + Llama 3.1 8B AWQ; KEDA autoscaling on GPU queue depth; 1.25M+ tokens served.
+    \item \textit{open-model-engine}: GPU-first benchmarking — vLLM, SGLang, TensorRT-LLM, speculative decoding, quantisation (AWQ/GPTQ), throughput/latency Pareto.
+    \item Designed 13-phase AI Inference Engineering curriculum: GPU architecture, CUDA kernels, framework internals, speculative decoding, production deployment.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item 28$\times$ LLM cost reduction on RTX 4090 via vLLM/SGLang continuous batching and KV cache optimisation.
+    \item CUDA KV cache kernel profiling with Nsight: 3.8$\times$ throughput improvement; 18$\times$ latency reduction via continuous batching redesign.
+    \item Fine-tuned Mistral 7B with LoRA/PEFT on radiology corpus: $+22\%$ diagnostic accuracy, $-35\%$ hallucination rate; deployed as production inference API.
+    \item Phase 3 model architecture labs: transformer internals, MHA/GQA/MLA attention variants, Dense vs MoE, VRAM modelling.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item Real-time NLP pipeline: sub-500 ms end-to-end latency under concurrent load; structured output extraction, retries, observability.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item LLM inference workflows with structured output, multi-step reasoning, and automated evaluation pipelines.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{llm-inference-benchmark (H100)}{vLLM vs SGLang on 2$\times$ H100 NVLink, Qwen3-8B BF16 TP=2. 5,965 tok/s peak; 1,443$\times$ TTFT speedup via RadixAttention. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}}
+
+\cvitem{open-model-engine}{GPU-first benchmarking for vLLM, SGLang, TensorRT-LLM: quantisation (AWQ/GPTQ), speculative decoding, throughput/latency Pareto. \href{https://github.com/AyeniOluwatosinOlawale/open-model-engine}{github.com/AyeniOluwatosinOlawale/open-model-engine}}
+
+\cvitem{Qwen3-TinyStories-Training}{Complete LM training pipeline from scratch: tokenizer training, architecture, training loop, generation eval. \href{https://github.com/AyeniOluwatosinOlawale/Qwen3-TinyStories-Tokenizer-Model-Training}{github.com/AyeniOluwatosinOlawale/Qwen3-TinyStories-Tokenizer-Model-Training}}
+
+\cvitem{My\_finetuned\_Phi-4}{Phi-4 LoRA fine-tuning: data prep, LoRA config, training, eval, inference. \href{https://github.com/AyeniOluwatosinOlawale/My_finetuned_Phi-4}{github.com/AyeniOluwatosinOlawale/My\_finetuned\_Phi-4}}
+
+\cvitem{llm-inference-platform (GKE)}{Production serving: vLLM + SGLang + LiteLLM Proxy on GKE; KEDA autoscaling; Prometheus/Grafana; Argo CD GitOps; 1.25M+ tokens. \href{https://github.com/AyeniOluwatosinOlawale/llm-inference-platform}{github.com/AyeniOluwatosinOlawale/llm-inference-platform}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{Open Source}
+\cvitem{47 public repos}{\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} — inference benchmarks, CUDA labs, fine-tuning pipelines, model architecture labs}
+
+\end{document}

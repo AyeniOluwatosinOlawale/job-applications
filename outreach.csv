@@ -51,3 +51,6 @@ date,company,contact_name,contact_email,contact_role,company_type,email_sent,fol
 2026-11-10,Together AI,Hiring Team,careers@together.ai,unknown,AI Inference Platform / Serverless LLM,true,false,,,Sent 2026-11-10. Serverless LLM inference across 100+ open models — multi-model serving throughput and cold-start latency. email_found=inferred
 2026-11-10,Lightning AI,Hiring Team,careers@lightning.ai,unknown,AI Infrastructure / ML Framework,true,false,,,Sent 2026-11-10. PyTorch Lightning makers — AI training/inference infrastructure with LiteLLM and vLLM integrations. email_found=inferred
 2026-11-10,Runway,Hiring Team,careers@runwayml.com,unknown,AI / Generative Video,true,false,,,Sent 2026-11-10. Generative video AI (Gen-3) — GPU-intensive inference serving at scale; latency and throughput for video generation models. email_found=inferred
+2026-11-12,Locai,Hiring Team,hello@locai.co.uk,unknown,UK AI Company (off-cloud inference),true,,,,Sent cold outreach 2026-11-12. Off-cloud AI inference platform. London.
+2026-11-12,Stanhope AI,Hiring Team,talent@stanhopeai.com,unknown,UK AI Research Lab,true,,,,Sent cold outreach 2026-11-12. UCL/KCL spinout $8M seed. London.
+2026-11-12,Inephany,Hiring Team,careers@inephany.com,unknown,UK AI Company (foundation model efficiency),true,,,,Sent cold outreach 2026-11-12. Foundation model efficiency focus.

@@ -427,6 +427,46 @@ ROLES = [
             ("open-model-engine", "GPU-first infrastructure benchmarking: vLLM, SGLang, TensorRT-LLM, CUDA profiling, quantisation, speculative decoding. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
         ],
     },
+    {
+        "slug": "cohere_inference-infrastructure",
+        "title": "Staff Software Engineer, Inference Infrastructure",
+        "company": "Cohere",
+        "tagline": "Staff-level infrastructure engineer specialising in LLM inference serving at production scale. Designed and operated a full GKE production stack (vLLM + SGLang + LiteLLM Proxy, KEDA autoscaling, 27-target Prometheus, Argo CD GitOps, Terraform IaC) serving 1.25M+ tokens. Benchmarked vLLM and SGLang on 2× NVIDIA H100 NVL 94 GB — 5,965 tok/s peak, 1,443× TTFT speedup via RadixAttention prefix caching, 100% SLO compliance at concurrency 128. Deep expertise in distributed systems, Kubernetes GPU ops, and multi-model routing at scale. Open to London hybrid.",
+        "competencies": [
+            ("Inference Infrastructure", "vLLM, SGLang, TensorRT-LLM, LiteLLM Proxy; production LLM serving at scale — routing, load balancing, fault tolerance, multi-tenant isolation"),
+            ("Kubernetes &amp; GPU Ops", "GKE, Helm, Argo CD, Argo Rollouts, KEDA (queue-depth autoscaling), Traefik TLS ingress, Kyverno pod security, NetworkPolicy; NVIDIA L4 and H100 GPU node management"),
+            ("Distributed Systems", "Multi-instance request routing, A/B weighted round-robin, Redis response caching, PostgreSQL spend tracking; designed for horizontal scale"),
+            ("Observability &amp; Reliability", "27-target Prometheus stack, Grafana 13, AlertManager, Loki, FluentBit DaemonSet, NVIDIA DCGM Exporter — full GPU observability in production"),
+            ("Languages &amp; Tooling", "Python, Golang (scripting and tooling), C++ (CUDA kernel profiling), Terraform IaC, Docker, FastAPI, GitHub Actions, SQL"),
+        ],
+        "projects": [
+            ("llm-inference-platform (GKE)", "Production LLM serving: vLLM + SGLang + LiteLLM Proxy on GKE; KEDA autoscaling; 27-target Prometheus; Argo CD GitOps; Terraform IaC. 723 live requests, 1.25M+ tokens. <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-platform'>GitHub</a>"),
+            ("llm-inference-benchmark (H100)", "vLLM vs SGLang, 2× H100 NVLink, Qwen3-8B BF16 TP=2. 5,965 tok/s peak; 1,443× TTFT speedup. Live: <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>inference-web-theta.vercel.app</a>"),
+            ("vllm-k8s-stack", "Production Kubernetes LLM serving: KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana. <a href='https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack'>GitHub</a>"),
+            ("inference-optimizer", "Production AI Inference Gateway: 3.87× faster, 61.4% cost reduction, 14× throughput, 64.3% cheaper via model routing. <a href='https://github.com/AyeniOluwatosinOlawale/inference-optimizer'>GitHub</a>"),
+            ("inference-harness", "Unified benchmarking harness for Anthropic, OpenAI, Gemini, vLLM, SGLang, TRT-LLM with GPU profiling. <a href='https://github.com/AyeniOluwatosinOlawale/inference-harness'>GitHub</a>"),
+        ],
+    },
+    {
+        "slug": "nebius_token-factory",
+        "title": "Senior ML Engineer (Token Factory)",
+        "company": "Nebius",
+        "tagline": "Senior ML Engineer specialising in LLM inference serving, speculative decoding, and production model deployment. Benchmarked vLLM and SGLang on 2× NVIDIA H100 NVL 94 GB — 1,443× TTFT speedup via RadixAttention prefix caching, 5,965 tok/s peak. Delivered 28× cost reduction via continuous batching and KV cache optimisation. Experienced across the full model lifecycle: pre-training, LoRA/PEFT fine-tuning, AWQ/GPTQ quantisation, speculative decoding, and production serving. Open to London hybrid or UK remote.",
+        "competencies": [
+            ("LLM Inference &amp; Serving", "vLLM, SGLang, TensorRT-LLM, LiteLLM Proxy; speculative decoding, continuous batching, KV cache optimisation, PagedAttention, RadixAttention, prefix caching"),
+            ("Model Efficiency", "AWQ/GPTQ/BnB quantisation, LoRA/PEFT fine-tuning, low-precision inference (BF16, INT8, INT4), model compression, throughput/latency Pareto analysis"),
+            ("GPU &amp; CUDA Optimisation", "NVIDIA Nsight Systems/Compute, CUDA kernel profiling, memory bandwidth analysis, tensor parallelism (TP=2 on H100 NVLink), multi-GPU inference"),
+            ("Training &amp; Fine-tuning", "Mistral 7B, Phi-4, Qwen3, Gemma 2 via LoRA/PEFT; complete training pipelines; trained LM from scratch (Qwen3-TinyStories)"),
+            ("Infrastructure &amp; Serving", "Kubernetes (GKE), KEDA, Argo CD, Prometheus, Grafana, Docker, FastAPI, Python, Terraform, Redis"),
+        ],
+        "projects": [
+            ("llm-inference-benchmark (H100)", "vLLM vs SGLang on 2× H100 NVLink, Qwen3-8B BF16 TP=2. 5,965 tok/s peak; 1,443× TTFT speedup via RadixAttention. Live: <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>inference-web-theta.vercel.app</a>"),
+            ("open-model-engine", "GPU-first benchmarking: vLLM, SGLang, TensorRT-LLM, speculative decoding, quantisation (AWQ/GPTQ), throughput/latency Pareto. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
+            ("Qwen3-TinyStories-Training", "Complete LM training pipeline from scratch: tokenizer training, architecture, training loop, generation eval. <a href='https://github.com/AyeniOluwatosinOlawale/Qwen3-TinyStories-Tokenizer-Model-Training'>GitHub</a>"),
+            ("My_finetuned_Phi-4", "Phi-4 LoRA fine-tuning: data prep, LoRA config, training, eval, inference. <a href='https://github.com/AyeniOluwatosinOlawale/My_finetuned_Phi-4'>GitHub</a>"),
+            ("llm-inference-platform (GKE)", "Production serving: vLLM + SGLang + LiteLLM Proxy on GKE; KEDA autoscaling; Prometheus/Grafana; Argo CD GitOps; 1.25M+ tokens. <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-platform'>GitHub</a>"),
+        ],
+    },
 ]
 
 COVER_LETTERS = [
@@ -710,6 +750,44 @@ COVER_LETTERS = [
 <p>The infrastructure challenges at Anthropic's scale — managing thousands of GPUs, maintaining cluster reliability during long training runs, ensuring network fabric health for all-reduce collectives, and keeping compute utilisation high — are the exact class of problem I have been building toward from first principles. I use Claude in production daily and I take the safety-reliability connection seriously: reliable infrastructure is what makes responsible AI possible.</p>
 
 <p>I am planning to relocate to London and available to interview at your convenience.</p>
+""",
+    },
+    {
+        "slug": "cohere_inference-infrastructure",
+        "company": "Cohere",
+        "recipient": "Cohere, London, UK",
+        "body": """
+<p>I am applying for the Staff Software Engineer, Inference Infrastructure role at Cohere. I build and operate production LLM serving platforms at scale — Kubernetes, GPU fleets, multi-model routing, and full observability — and Cohere's focus on enterprise-grade open model deployment at the infrastructure layer is exactly the problem space I want to work on next.</p>
+
+<p>Three specific achievements directly relevant to this role:</p>
+<ul>
+  <li><strong>Production LLM serving platform on GKE:</strong> I designed and operated <em>llm-inference-platform</em> — a full production stack on GKE (NVIDIA L4 24 GB, us-central1) running vLLM 0.32.0 and SGLang 0.5.20 serving Qwen3 8B AWQ and Llama 3.1 8B AWQ. LiteLLM Proxy 1.40.0 gateway with least-busy routing, A/B weighted round-robin, Redis response cache, and PostgreSQL spend tracking. KEDA autoscaling on GPU queue depth (not CPU — GPU pods at 5–15% CPU when saturated). Argo CD GitOps (3-min sync) + Argo Rollouts canary. Full Terraform IaC. Served 723 live requests, 1.25M+ tokens, $152.82 infra over 5.3 days.</li>
+  <li><strong>GPU infrastructure at scale — H100 benchmarking:</strong> I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2× NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), serving Qwen3-8B BF16 at TP=2. Measured TTFT, TPOT, and throughput across concurrency 1–128. Peak: vLLM 5,965 tok/s. RadixAttention prefix caching delivered a 1,443× TTFT speedup (39 ms vs 55,565 ms) at 131K-token context — 100% SLO compliance throughout. Live: <a href="https://inference-web-theta.vercel.app/benchmarks/llm">inference-web-theta.vercel.app/benchmarks/llm</a>.</li>
+  <li><strong>Full observability and reliability stack:</strong> 27-target Prometheus stack + Grafana 13 (3 custom dashboards: engine comparison, GPU utilisation, gateway) + AlertManager (6 rules) + Loki + FluentBit DaemonSet + NVIDIA DCGM Exporter via custom PodMonitor. NetworkPolicy default-deny + Kyverno pod security. Per-node hostPath weight cache (cold: ~5 min → cached: ~30 s).</li>
+</ul>
+
+<p>Cohere occupies a rare position: building the enterprise LLM infrastructure layer that makes open models viable at production scale — serving commercial workloads with the reliability, latency, and cost guarantees that hyperscalers charge a premium for. The inference infrastructure team's challenge of running efficient, multi-tenant, low-latency serving across Cohere's model family is the class of problem I have been building towards independently. I am particularly drawn to working where inference efficiency is a core business priority, not an afterthought.</p>
+
+<p>I am a focused, independent engineer who ships end to end: from Terraform and Kubernetes YAML to CUDA profiling to live dashboards. I look forward to discussing this role.</p>
+""",
+    },
+    {
+        "slug": "nebius_token-factory",
+        "company": "Nebius",
+        "recipient": "Nebius, London / Remote-UK",
+        "body": """
+<p>I am applying for the Senior ML Engineer (Token Factory) role at Nebius. I specialise in LLM inference serving, speculative decoding, and production model deployment — and Nebius's Token Factory platform, focused on high-performance open model serving with an emphasis on throughput, latency, and cost efficiency, is exactly where I want to contribute next.</p>
+
+<p>Three specific achievements directly relevant to this role:</p>
+<ul>
+  <li><strong>Speculative decoding and inference optimisation at H100 scale:</strong> I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2× NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. Measured the full latency/throughput profile across concurrency 1–128. RadixAttention prefix caching delivered a 1,443× TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; peak throughput: vLLM 5,965 tok/s, SGLang 5,646 tok/s; 100% SLO compliance throughout. Live: <a href="https://inference-web-theta.vercel.app/benchmarks/llm">inference-web-theta.vercel.app/benchmarks/llm</a>.</li>
+  <li><strong>Production cost reduction and quantisation:</strong> Via vLLM/SGLang continuous batching and KV cache optimisation on RTX 4090, I achieved 28× LLM cost reduction and 3.8× throughput improvement. I ran AWQ/GPTQ quantisation experiments for Qwen3 8B and Llama 3.1 8B, deployed AWQ models in production on GKE, and profiled CUDA KV cache kernels with Nsight to identify memory bandwidth as the bottleneck — yielding 18× latency reduction via continuous batching redesign.</li>
+  <li><strong>Full model lifecycle — training to production:</strong> I have run end-to-end fine-tuning pipelines (Mistral 7B radiology fine-tune: +22% diagnostic accuracy; Phi-4 LoRA on Cosmopedia; Qwen3 via LoRA/PEFT), trained a character-level language model from scratch (Qwen3-TinyStories: tokenizer training, architecture, training loop, generation eval), and built model architecture labs covering MHA/GQA/MLA attention variants, Dense vs MoE, and VRAM modelling.</li>
+</ul>
+
+<p>Nebius's Token Factory is one of the few platforms where inference efficiency and model quality are treated as joint optimisation targets rather than separate concerns. The focus on speculative decoding, low-precision training, and high-performance open model deployment is precisely the problem space I have been investing in independently. The distributed remote-Europe team structure and the open-source commitments make it even more compelling.</p>
+
+<p>I am a focused, independent engineer who ships: from a research question to a live benchmark with published results in days. I look forward to hearing from you.</p>
 """,
     },
 ]

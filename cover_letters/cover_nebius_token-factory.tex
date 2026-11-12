@@ -1,0 +1,31 @@
+%% Cover Letter — Nebius Senior ML Engineer (Token Factory)
+\documentclass[a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Nebius}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the Senior ML Engineer (Token Factory) role at Nebius. I specialise in LLM inference serving, speculative decoding, and production model deployment — and Nebius's Token Factory platform, focused on high-performance open model serving with an emphasis on throughput, latency, and cost efficiency, is exactly where I want to contribute next.
+
+Three specific achievements directly relevant to this role:
+
+\begin{itemize}
+  \item \textbf{Speculative decoding and inference optimisation at H100 scale:} I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. Measured the full latency/throughput profile across concurrency 1--128 — including TTFT, TPOT, and SLO compliance. RadixAttention prefix caching delivered a 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; peak throughput: SGLang 5,646 tok/s, vLLM 5,965 tok/s. Results are live at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+  \item \textbf{Production cost reduction and quantisation:} Via vLLM/SGLang continuous batching and KV cache optimisation on RTX 4090, I achieved 28$\times$ LLM cost reduction and 3.8$\times$ throughput improvement. I ran AWQ/GPTQ quantisation experiments for Qwen3 8B and Llama 3.1 8B, deployed AWQ models in production on GKE, and profiled CUDA KV cache kernels with Nsight to identify memory bandwidth as the bottleneck — yielding 18$\times$ latency reduction via continuous batching redesign.
+  \item \textbf{Full model lifecycle — training to production:} I have run end-to-end fine-tuning pipelines (Mistral 7B radiology fine-tune: $+22\%$ diagnostic accuracy; Phi-4 LoRA on Cosmopedia; Qwen3 via LoRA/PEFT), trained a character-level language model from scratch (Qwen3-TinyStories: tokenizer training, architecture, training loop, generation eval), and built model architecture labs covering MHA/GQA/MLA attention variants, Dense vs MoE, and VRAM modelling.
+\end{itemize}
+
+Nebius's Token Factory is one of the few platforms where inference efficiency and model quality are treated as joint optimisation targets rather than separate concerns. The focus on speculative decoding, low-precision training, and high-performance open model deployment is precisely the problem space I have been investing in independently. The distributed remote-Europe team structure and the open-source commitments make it even more compelling.
+
+I am a focused, independent engineer who ships: from a research question to a live benchmark with published results in days. I look forward to hearing from you.
+
+\closing{Yours sincerely,}
+
+\end{letter}
+\end{document}

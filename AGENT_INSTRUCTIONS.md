@@ -15,7 +15,7 @@ LLM Inference Engineer, ML Engineer (LLM), Generative AI Engineer, AI Engineer, 
 Primary: Python, vLLM, SGLang, TensorRT-LLM, CUDA/NVIDIA Nsight, AWQ, speculative decoding, KV cache optimisation, PyTorch, LLM fine-tuning (Mistral 7B / Phi-4 / Qwen3 / Gemma 2 via PEFT/LoRA), LangChain, RAG systems, n8n, FastAPI, Docker, Kubernetes, Claude API
 Secondary: TypeScript, SQL, Scikit-learn, NLP, Computer Vision, Pandas, Power BI, React, Next.js, PostgreSQL, Redis, GitHub Actions, Vertex AI, LiteLLM, KEDA, Loki, AlertManager, Velero, RunPod, Vast.ai, Ollama, MoE (Mixture of Experts), GQA/MQA (grouped/multi-query attention), Terraform, Helm, Argo CD, Argo Rollouts, Traefik, Prometheus, Grafana, DCGM Exporter, Kyverno, GKE, NVIDIA L4
 
-## GitHub: 45 public repos — github.com/AyeniOluwatosinOlawale
+## GitHub: 47 public repos — github.com/AyeniOluwatosinOlawale
 ## Portfolio: portfolio-ten-brown-40.vercel.app
 ## Consulting: vertinab.com | anaai.tech
 

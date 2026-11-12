@@ -1,0 +1,31 @@
+%% Cover Letter — Cohere Staff Software Engineer, Inference Infrastructure
+\documentclass[a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Cohere}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the Staff Software Engineer, Inference Infrastructure role at Cohere. I build and operate production LLM serving platforms at scale — Kubernetes, GPU fleets, multi-model routing, and full observability — and Cohere's focus on enterprise-grade open model deployment at the infrastructure layer is exactly the problem space I want to work on next.
+
+Three specific achievements directly relevant to this role:
+
+\begin{itemize}
+  \item \textbf{Production LLM serving platform on GKE:} I designed and operated \textit{llm-inference-platform} — a full production stack on GKE (NVIDIA L4 24 GB, us-central1) running vLLM 0.32.0 and SGLang 0.5.20 serving Qwen3 8B AWQ and Llama 3.1 8B AWQ. LiteLLM Proxy 1.40.0 gateway with least-busy routing, A/B weighted round-robin, Redis response cache, and PostgreSQL spend tracking. KEDA autoscaling on GPU queue depth (not CPU — GPU pods at 5--15\% CPU when saturated). Argo CD GitOps (3-min sync) + Argo Rollouts canary. Full Terraform IaC. Served 723 live requests, 1.25M+ tokens, \$152.82 infra over 5.3 days.
+  \item \textbf{GPU infrastructure at scale — H100 benchmarking:} I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), serving Qwen3-8B BF16 at TP=2. Measured TTFT, TPOT, and throughput across concurrency 1--128. Peak: vLLM 5,965 tok/s. RadixAttention prefix caching delivered a 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context — 100\% SLO compliance throughout. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+  \item \textbf{Full observability and reliability:} 27-target Prometheus stack + Grafana 13 (3 custom dashboards: engine comparison, GPU utilisation, gateway) + AlertManager (6 rules) + Loki + FluentBit DaemonSet + NVIDIA DCGM Exporter via custom PodMonitor. NetworkPolicy default-deny + Kyverno pod security. Startupprobe with 10-min budget for model loading; per-node hostPath weight cache (cold: $\sim$5 min $\rightarrow$ cached: $\sim$30 s).
+\end{itemize}
+
+Cohere occupies a rare position: building the enterprise LLM infrastructure layer that makes open models viable at production scale — serving commercial workloads with the reliability, latency, and cost guarantees that hyperscalers charge a premium for. The inference infrastructure team's challenge of running efficient, multi-tenant, low-latency serving across Cohere's model family is the class of problem I have been building towards independently. I am particularly drawn to the opportunity to work at the intersection of model serving, GPU infrastructure, and distributed systems at a company where inference efficiency is a core business priority, not an afterthought.
+
+I am a focused, independent engineer who ships end to end: from Terraform and Kubernetes YAML to CUDA profiling to live dashboards. I look forward to discussing this role.
+
+\closing{Yours sincerely,}
+
+\end{letter}
+\end{document}
