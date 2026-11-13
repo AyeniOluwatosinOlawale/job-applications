@@ -54,3 +54,6 @@ date,company,contact_name,contact_email,contact_role,company_type,email_sent,fol
 2026-11-12,Locai,Hiring Team,hello@locai.co.uk,unknown,UK AI Company (off-cloud inference),true,,,,Sent cold outreach 2026-11-12. Off-cloud AI inference platform. London.
 2026-11-12,Stanhope AI,Hiring Team,talent@stanhopeai.com,unknown,UK AI Research Lab,true,,,,Sent cold outreach 2026-11-12. UCL/KCL spinout $8M seed. London.
 2026-11-12,Inephany,Hiring Team,careers@inephany.com,unknown,UK AI Company (foundation model efficiency),true,,,,Sent cold outreach 2026-11-12. Foundation model efficiency focus.
+2026-11-13,AssemblyAI,Hiring Team,careers@assemblyai.com,unknown,AI Voice / Speech AI Inference,true,,,,Sent 2026-11-13. Speech AI inference at scale for 1M+ API users. Senior Software Engineer Inference role open (UK remote £120-145k). email_found=inferred
+2026-11-13,Prolific,Hiring Team,careers@prolific.com,unknown,UK AI Research Platform,true,,,,Sent 2026-11-13. UK AI-driven research platform (Partech-backed). ML platform for large-scale behavioural research. Senior MLOps Engineer role open. email_found=inferred
+2026-11-13,Twelve Labs,Hiring Team,careers@twelvelabs.io,unknown,AI / Multimodal Video Understanding,true,,,,Sent 2026-11-13. Multimodal video understanding foundation models — inference infrastructure at scale for video AI. email_found=inferred
