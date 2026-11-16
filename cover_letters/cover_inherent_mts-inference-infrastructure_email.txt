@@ -1,0 +1,22 @@
+Dear Hiring Team,
+
+I am writing to apply for the Member of Technical Staff, Infrastructure Engineer (Training & Inference Systems) role at Inherent.
+
+Three specific achievements directly relevant to this role:
+
+• Production LLM serving stack on GKE — end-to-end infrastructure ownership: llm-inference-platform on GKE (NVIDIA L4 24 GB, us-central1): vLLM 0.32.0 + SGLang 0.5.20 serving Qwen3 8B AWQ + Llama 3.1 8B AWQ, LiteLLM Proxy 1.40.0 gateway (least-busy routing, A/B weighted round-robin, Redis cache, PostgreSQL spend tracking), KEDA autoscaling on GPU queue depth, Argo CD GitOps, Argo Rollouts canary, Terraform IaC. LIVE: 723 requests, 1.25M+ tokens, $152.82 over 5.3 days.
+
+• Inference optimisation — H100 NVLink at scale: vLLM v0.30 vs SGLang v0.5.20 on 2x NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. RadixAttention: 1,443x TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 5,965 tok/s peak; 100% SLO compliance at concurrency 1-128. CUDA KV cache kernel profiling (Nsight): 3.8x throughput improvement, 18x latency reduction — identified memory bandwidth as bottleneck. Live: https://inference-web-theta.vercel.app/benchmarks/llm
+
+• Full ML lifecycle from training to production: Fine-tuning pipelines (Mistral 7B LoRA/PEFT on radiology corpus: +22% diagnostic accuracy; Phi-4 on Cosmopedia; Qwen3 LoRA/PEFT). Language model trained from scratch (Qwen3-TinyStories: tokeniser training, architecture, training loop, generation eval). vllm-k8s-stack: KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana, GPU node management. The full pipeline from research to production.
+
+I am happy to be in King's Cross.
+
+My profiles:
+• GitHub (47 repos, inference platforms, Kubernetes stacks, CUDA labs): https://github.com/AyeniOluwatosinOlawale
+• LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
+• CV (LaTeX source): https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_inherent_mts-inference-infrastructure.tex — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format.
+
+Best regards,
+Oluwatosin Ayeni
+07727305230 | ayenioluwatosinolawale@gmail.com

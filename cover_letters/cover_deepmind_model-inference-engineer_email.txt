@@ -1,0 +1,22 @@
+Dear Hiring Team,
+
+I am writing to apply for the Software Engineer, Model Inference role at Google DeepMind.
+
+Three specific achievements directly relevant to this role:
+
+• CUDA-level inference bottleneck profiling: Using NVIDIA Nsight Systems and Compute, I profiled CUDA KV cache operations on RTX 4090 hardware, identified memory bandwidth as the primary bottleneck, and retuned kernel access patterns for a 3.8x throughput improvement — with 18x latency reduction via continuous batching redesign. Documented in github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive.
+
+• Distributed ML inference optimisation — H100 NVLink at TP=2: I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2x NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2 — 576+ measurements across 9 context lengths and 8 concurrency levels. Peak: vLLM 5,965 tok/s. RadixAttention prefix caching: 1,443x TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 100% SLO compliance at concurrency 128. Live: https://inference-web-theta.vercel.app/benchmarks/llm
+
+• LLM architecture depth — from internals to production: Model architecture labs covering MHA/GQA/MLA attention variants, Dense vs MoE, VRAM modelling, AWQ/GPTQ quantisation, speculative decoding. End-to-end fine-tuning pipelines: Mistral 7B LoRA/PEFT on radiology corpus (+22% diagnostic accuracy); Phi-4 on Cosmopedia; Qwen3 LoRA/PEFT. Language model trained from scratch (Qwen3-TinyStories). MSc AI with Distinction, University of Strathclyde 2023.
+
+I am happy to relocate to London.
+
+My profiles:
+• GitHub (47 repos, inference platforms, Kubernetes stacks, CUDA labs): https://github.com/AyeniOluwatosinOlawale
+• LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
+• CV (LaTeX source): https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_deepmind_model-inference-engineer.tex — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format.
+
+Best regards,
+Oluwatosin Ayeni
+07727305230 | ayenioluwatosinolawale@gmail.com

@@ -1,0 +1,20 @@
+Dear Hiring Team,
+
+I am writing to apply for the Staff+ Software Engineer, Inference Velocity role at Anthropic. I use Claude in production daily and care deeply about the safety-reliability connection.
+
+Three specific achievements that map directly to inference velocity:
+
+• 1,443x TTFT speedup and 5,965 tok/s peak — H100 inference at scale: vLLM v0.30 vs SGLang v0.5.20 on 2x NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2 — TTFT, TPOT, throughput, and SLO compliance across concurrency 1-128. RadixAttention prefix caching: 1,443x TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 100% SLO compliance throughout. Live: https://inference-web-theta.vercel.app/benchmarks/llm
+
+• 3.87x throughput, 61.4% cost reduction — inference gateway velocity: inference-optimizer, a production AI Inference Gateway implementing 13 optimisation strategies across Claude, GPT-4o, and Gemini: parallel execution (3.87x faster), prompt caching (61.4% cost reduction), dynamic concurrency management (14x throughput), model routing (64.3% cheaper). Every improvement measured against a baseline. https://github.com/AyeniOluwatosinOlawale/inference-optimizer
+
+• Production serving platform — full stack ownership: llm-inference-platform on GKE (NVIDIA L4 24 GB): vLLM 0.32.0 + SGLang 0.5.20, LiteLLM Proxy gateway (least-busy routing, A/B weighted round-robin, Redis cache, PostgreSQL spend tracking), KEDA autoscaling on GPU queue depth (not CPU — GPU pods at 5-15% CPU when saturated), Argo CD GitOps, Terraform IaC. LIVE: 723 requests, 1.25M+ tokens, $152.82 over 5.3 days. CUDA kernel profiling (Nsight): 3.8x throughput improvement, 18x latency reduction.
+
+My profiles:
+• GitHub (47 repos, inference platforms, Kubernetes stacks, CUDA labs): https://github.com/AyeniOluwatosinOlawale
+• LinkedIn: https://www.linkedin.com/in/oluwatosinolawaleayeni/
+• CV (LaTeX source): https://github.com/AyeniOluwatosinOlawale/job-applications/blob/master/cv/main_anthropic_inference-velocity.tex — I am happy to provide a compiled PDF on request, or please let me know if you need it in another format.
+
+Best regards,
+Oluwatosin Ayeni
+07727305230 | ayenioluwatosinolawale@gmail.com
