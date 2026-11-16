@@ -1,0 +1,84 @@
+%% CV — Callosum Inference Performance & Deployment (MTS)
+%% Compile: lualatex main_callosum_inference-perf-deployment.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+Inference performance and deployment engineer specialising in benchmarking harnesses, regression suites, and production serving orchestration at GPU scale. I have designed and run a 576+ measurement benchmark suite for vLLM and SGLang on 2$\times$ NVIDIA H100 NVL 94 GB — measuring TTFT, TPOT, throughput, and SLO compliance across 9 context lengths and 8 concurrency levels, with live results dashboard at inference-web-theta.vercel.app. Built production GKE LLM serving platform (KEDA autoscaling, Argo CD GitOps, 27-target Prometheus) and authored the \textit{inference-harness} benchmarking framework spanning vLLM, SGLang, TRT-LLM, and closed APIs. Open to London in-person. MSc AI with Distinction, University of Strathclyde 2023.
+
+\section{Core Competencies}
+\cvitem{Benchmarking \& Regression}{576+ measurement benchmark suite; TTFT/TPOT/throughput/SLO compliance measurement; 9 context lengths $\times$ 8 concurrency levels; regression detection across engine versions; live dashboard at inference-web-theta.vercel.app}
+\cvitem{Inference Performance}{vLLM (PagedAttention, continuous batching), SGLang (RadixAttention prefix caching), TensorRT-LLM; RadixAttention 1,443$\times$ TTFT speedup at 131K-token context; 5,965 tok/s peak throughput on H100 NVLink}
+\cvitem{Deployment \& Orchestration}{GKE, Kubernetes, Helm, Argo CD (3-min sync), Argo Rollouts canary, Terraform IaC; KEDA autoscaling on GPU queue depth; multi-model A/B weighted round-robin via LiteLLM Proxy}
+\cvitem{Observability \& Reliability}{27-target Prometheus stack, Grafana 13 (3 custom dashboards: engine comparison, GPU utilisation, gateway), AlertManager (6 rules), Loki, FluentBit DaemonSet, NVIDIA DCGM Exporter — full GPU observability in production}
+\cvitem{Languages \& Tooling}{Python, Golang (scripting), Terraform IaC, Docker, FastAPI, GitHub Actions, SQL; inference-harness (unified CLI benchmarking framework across engines)}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item H100 NVL inference benchmark: vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4) — Qwen3-8B BF16, TP=2. 576+ measurement records. Peak: vLLM 5,965 tok/s. RadixAttention: 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 100\% SLO compliance at concurrency 1--128.
+    \item Designed and operated \textit{llm-inference-platform}: production LLM serving on GKE (NVIDIA L4 24 GB, us-central1) — vLLM 0.32.0 + SGLang 0.5.20; LiteLLM Proxy 1.40.0 gateway; KEDA autoscaling on GPU queue depth; 723 live requests, 1.25M+ tokens, \$152.82 infra over 5.3 days.
+    \item Full GitOps: Terraform IaC, Argo CD (3-min sync), Argo Rollouts canary, NetworkPolicy default-deny, Kyverno pod security.
+    \item 27-target Prometheus + Grafana 13 (3 custom dashboards) + AlertManager (6 rules) + Loki + FluentBit + NVIDIA DCGM Exporter via custom PodMonitor.
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item 28$\times$ LLM cost reduction on RTX 4090 via vLLM/SGLang continuous batching and KV cache optimisation.
+    \item CUDA KV cache kernel profiling with Nsight: 3.8$\times$ throughput improvement; 18$\times$ latency reduction via continuous batching redesign — identified memory bandwidth as bottleneck.
+    \item \textit{vllm-k8s-stack}: production LLM serving on Kubernetes — KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana monitoring, GPU node management.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item High-throughput real-time NLP pipeline: sub-500 ms end-to-end latency under concurrent load; structured output extraction, retries, observability.
+    \item Distributed automation engine: n8n workflows → WhatsApp Cloud API → Zoho CRM → Supabase; real-time lead scoring via Meta Cloud API.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item LLM inference workflows with structured output, multi-step reasoning, and automated evaluation pipelines at scale.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{llm-inference-benchmark (H100)}{vLLM vs SGLang on 2$\times$ H100 NVLink, Qwen3-8B BF16, TP=2. 576+ measurements across 9 context lengths $\times$ 8 concurrency levels. 5,965 tok/s peak; 1,443$\times$ TTFT speedup. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}}
+
+\cvitem{inference-harness}{Unified benchmarking harness for Anthropic, OpenAI, Gemini, vLLM, SGLang, TRT-LLM with GPU profiling and live dashboard. \href{https://github.com/AyeniOluwatosinOlawale/inference-harness}{github.com/AyeniOluwatosinOlawale/inference-harness}}
+
+\cvitem{llm-inference-platform (GKE)}{Production LLM serving on GKE: vLLM + SGLang + LiteLLM Proxy; KEDA autoscaling; 27-target Prometheus; Argo CD GitOps; Terraform IaC. 723 live requests, 1.25M+ tokens. \href{https://github.com/AyeniOluwatosinOlawale/llm-inference-platform}{github.com/AyeniOluwatosinOlawale/llm-inference-platform}}
+
+\cvitem{inference-optimizer}{Production AI Inference Gateway: 3.87$\times$ faster via parallel execution, 61.4\% cost reduction via prompt caching, 14$\times$ throughput via concurrency, 64.3\% cheaper via model routing. \href{https://github.com/AyeniOluwatosinOlawale/inference-optimizer}{github.com/AyeniOluwatosinOlawale/inference-optimizer}}
+
+\cvitem{vllm-k8s-stack}{Production LLM serving on Kubernetes: KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana, GPU node management. \href{https://github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}{github.com/AyeniOluwatosinOlawale/vllm-k8s-stack}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\section{Open Source}
+\cvitem{47 public repos}{\href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} — inference platforms, Kubernetes stacks, CUDA labs, benchmarking pipelines}
+
+\end{document}
