@@ -1,0 +1,31 @@
+%% Cover Letter -- Callosum Inference Performance & Deployment (MTS)
+\documentclass[a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Callosum}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the Inference Performance \& Deployment (Member of Technical Staff) role at Callosum. Designing and operating benchmarking harnesses, regression suites, and performance dashboards for production inference engines is the work I have been doing independently -- and I have published the results.
+
+Three specific achievements directly relevant to this role:
+
+\begin{itemize}
+  \item \textbf{576+ measurement inference benchmark suite -- live results dashboard:} I designed, ran, and published a comprehensive benchmark of vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2 -- measuring TTFT, TPOT, throughput, and SLO compliance across 9 context lengths and 8 concurrency levels, 576+ measurement records. RadixAttention prefix caching: 1,443$\times$ TTFT speedup at 131K-token context; peak vLLM 5,965 tok/s; 100\% SLO compliance at concurrency 128. Results live at \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+
+  \item \textbf{Unified benchmarking harness across inference engines:} I built \textit{inference-harness} -- a unified framework spanning closed APIs (Anthropic, OpenAI, Gemini) and open engines (vLLM, SGLang, TensorRT-LLM) with GPU profiling via NVIDIA Nsight and automated evaluation reporting. Cross-version regression detection across engine releases and configuration changes. \href{https://github.com/AyeniOluwatosinOlawale/inference-harness}{GitHub}.
+
+  \item \textbf{Production deployment and orchestration on GKE:} \textit{llm-inference-platform} on GKE (NVIDIA L4 24 GB, us-central1): vLLM 0.32.0 + SGLang 0.5.20, LiteLLM Proxy 1.40.0 gateway, KEDA autoscaling on GPU queue depth, Argo CD GitOps (3-min sync), Argo Rollouts canary, Terraform IaC. 723 live requests, 1.25M+ tokens, \$152.82 infra over 5.3 days.
+\end{itemize}
+
+The Deployment MTS role at Callosum -- owning the performance measurement and regression detection layer for a production inference engine -- is exactly where I want to work. I am happy to relocate to London and note this role closes 22 November.
+
+\closing{Yours sincerely,}
+
+\end{letter}
+\end{document}

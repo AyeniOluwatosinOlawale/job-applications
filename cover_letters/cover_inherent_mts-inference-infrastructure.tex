@@ -1,0 +1,31 @@
+%% Cover Letter -- Inherent MTS Infrastructure Engineer Training & Inference Systems
+\documentclass[a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Inherent}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the Member of Technical Staff, Infrastructure Engineer (Training \& Inference Systems) role at Inherent. Building the distributed infrastructure layer for frontier AI for science -- PyTorch training pipelines, SGLang/vLLM inference serving, distributed job orchestration -- is the problem space I have been building toward independently.
+
+Three specific achievements directly relevant to this role:
+
+\begin{itemize}
+  \item \textbf{Production LLM serving stack on GKE -- end-to-end infrastructure ownership:} I designed and operated \textit{llm-inference-platform} on Google Kubernetes Engine (NVIDIA L4 24 GB, us-central1): vLLM 0.32.0 + SGLang 0.5.20 serving Qwen3 8B AWQ + Llama 3.1 8B AWQ, LiteLLM Proxy 1.40.0 gateway (least-busy routing, A/B weighted round-robin, Redis cache, PostgreSQL spend tracking), KEDA autoscaling on GPU queue depth, Argo CD GitOps, Argo Rollouts canary, Terraform IaC. LIVE: 723 requests, 1.25M+ tokens, \$152.82 over 5.3 days.
+
+  \item \textbf{Inference optimisation -- H100 NVLink at scale:} I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. RadixAttention prefix caching: 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 5,965 tok/s peak; 100\% SLO compliance at concurrency 1--128. CUDA KV cache kernel profiling (Nsight): 3.8$\times$ throughput improvement, 18$\times$ latency reduction -- identified memory bandwidth as bottleneck.
+
+  \item \textbf{Full ML lifecycle from training to production:} End-to-end fine-tuning pipelines (Mistral 7B LoRA/PEFT on radiology corpus: +22\% diagnostic accuracy; Phi-4 on Cosmopedia; Qwen3 LoRA/PEFT). Language model trained from scratch (Qwen3-TinyStories: tokeniser training, architecture, training loop, generation eval). \textit{vllm-k8s-stack}: KV-cache-aware routing, HPA autoscaling, Prometheus/Grafana, GPU node management.
+\end{itemize}
+
+Inherent's mission -- applying frontier AI to accelerate scientific discovery, backed by \$50M from Index Ventures, led by ex-DeepMind founders -- is the kind of high-stakes environment where the infrastructure layer genuinely matters. I am happy to be in King's Cross.
+
+\closing{Yours sincerely,}
+
+\end{letter}
+\end{document}

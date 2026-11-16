@@ -1,0 +1,31 @@
+%% Cover Letter -- Callosum Inference System & Performance Engineer (MTS)
+\documentclass[a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Callosum}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the Inference System \& Performance Engineer (Member of Technical Staff) role at Callosum. Building production inference engines at the C++/Python boundary -- deep vLLM/SGLang internals, CUDA kernel profiling, KV cache scheduling, and multi-node dispatch -- is exactly the class of work I have been doing independently.
+
+Three specific achievements directly relevant to this role:
+
+\begin{itemize}
+  \item \textbf{CUDA KV cache kernel profiling -- memory bandwidth bottleneck:} Using NVIDIA Nsight Systems and Compute, I profiled CUDA KV cache operations on RTX 4090 hardware, identified memory bandwidth as the primary bottleneck in the access pattern, and retuned kernel execution for a 3.8$\times$ throughput improvement and 18$\times$ latency reduction via continuous batching redesign. Documented in \href{https://github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive}{phase2-llm-inference-deep-dive}.
+
+  \item \textbf{SGLang RadixAttention and vLLM PagedAttention -- deep engine characterisation:} I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2 -- 576+ measurement records across 9 context lengths and 8 concurrency levels. RadixAttention prefix caching: 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 100\% SLO compliance at concurrency 128. Peak: vLLM 5,965 tok/s. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+
+  \item \textbf{Multi-node Kubernetes LLM serving -- production KV-cache-aware routing:} I built \textit{vllm-k8s-stack} -- production LLM serving on Kubernetes with KV-cache-aware request routing, HPA autoscaling on GPU node pools, and Prometheus/Grafana observability. I also designed \textit{llm-inference-platform} on GKE (NVIDIA L4 24 GB): vLLM + SGLang + LiteLLM Proxy gateway, KEDA autoscaling on GPU queue depth, Argo CD GitOps, Terraform IaC -- 723 live requests, 1.25M+ tokens in production.
+\end{itemize}
+
+Callosum is building frontier inference infrastructure -- the layer that makes large models actually serve users at scale. The MTS role at the intersection of inference engine internals, CUDA profiling, and production deployment is precisely the technical depth I want to operate at. I am happy to relocate to London.
+
+\closing{Yours sincerely,}
+
+\end{letter}
+\end{document}

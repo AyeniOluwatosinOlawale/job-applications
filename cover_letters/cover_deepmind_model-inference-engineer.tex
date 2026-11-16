@@ -1,0 +1,31 @@
+%% Cover Letter -- Google DeepMind Software Engineer Model Inference
+\documentclass[a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Google DeepMind}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the Software Engineer, Model Inference role at Google DeepMind. Profiling inference bottlenecks, optimising distributed ML systems, and understanding the relationship between model architecture and serving efficiency -- this is the class of problem I have been building toward from first principles.
+
+Three specific achievements directly relevant to this role:
+
+\begin{itemize}
+  \item \textbf{CUDA-level inference bottleneck profiling:} Using NVIDIA Nsight Systems and Compute, I profiled CUDA KV cache operations on RTX 4090 hardware, identified memory bandwidth as the primary bottleneck, and retuned kernel access patterns for a 3.8$\times$ throughput improvement -- with 18$\times$ latency reduction via continuous batching redesign. Documented in \href{https://github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive}{phase2-llm-inference-deep-dive}.
+
+  \item \textbf{Distributed ML inference optimisation -- H100 NVLink at TP=2:} I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2 -- 576+ measurements across 9 context lengths and 8 concurrency levels. Peak: vLLM 5,965 tok/s. RadixAttention prefix caching: 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 100\% SLO compliance at concurrency 128. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+
+  \item \textbf{LLM architecture depth -- from internals to production:} Model architecture labs covering MHA/GQA/MLA attention variants, Dense vs MoE, VRAM modelling, AWQ/GPTQ quantisation, speculative decoding. End-to-end fine-tuning: Mistral 7B LoRA/PEFT on radiology corpus (+22\% diagnostic accuracy); Phi-4 on Cosmopedia; Qwen3 LoRA/PEFT. Language model trained from scratch (Qwen3-TinyStories). MSc AI Distinction, University of Strathclyde 2023.
+\end{itemize}
+
+DeepMind's model inference challenges -- serving frontier models efficiently at scale, with the measurement rigour to understand where performance is lost -- are exactly the class of problem I find most compelling. I am happy to relocate to London.
+
+\closing{Yours sincerely,}
+
+\end{letter}
+\end{document}

@@ -1,0 +1,31 @@
+%% Cover Letter -- Anthropic Staff+ Software Engineer Inference Velocity
+\documentclass[a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Anthropic}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the Staff+ Software Engineer, Inference Velocity role at Anthropic. I have spent two years driving measurable velocity improvements across the inference stack -- throughput, latency, and cost -- using the same technologies and operating under the same constraints as Claude's production serving infrastructure. I use Claude in production daily and I take the safety-reliability connection seriously.
+
+Three specific achievements that map directly to inference velocity:
+
+\begin{itemize}
+  \item \textbf{1,443$\times$ TTFT speedup and 5,965 tok/s peak -- H100 inference at scale:} I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2 -- TTFT, TPOT, throughput, and SLO compliance across concurrency 1--128. RadixAttention prefix caching: 1,443$\times$ TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 100\% SLO compliance throughout. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+
+  \item \textbf{3.87$\times$ throughput, 61.4\% cost reduction -- inference gateway velocity:} I built \textit{inference-optimizer}, a production AI Inference Gateway implementing 13 optimisation strategies across Claude, GPT-4o, and Gemini: parallel execution (3.87$\times$ faster), prompt caching (61.4\% cost reduction), dynamic concurrency management (14$\times$ throughput), and model routing (64.3\% cheaper). Every velocity improvement was measured against a baseline. \href{https://github.com/AyeniOluwatosinOlawale/inference-optimizer}{GitHub}.
+
+  \item \textbf{Production serving platform -- full stack ownership:} \textit{llm-inference-platform} on GKE (NVIDIA L4 24 GB): vLLM 0.32.0 + SGLang 0.5.20, LiteLLM Proxy gateway (least-busy routing, A/B weighted round-robin, Redis cache, PostgreSQL spend tracking), KEDA autoscaling on GPU queue depth (not CPU -- GPU pods at 5--15\% CPU when saturated), Argo CD GitOps, Terraform IaC. LIVE: 723 requests, 1.25M+ tokens, \$152.82 over 5.3 days. CUDA kernel profiling (Nsight): 3.8$\times$ throughput improvement, 18$\times$ latency reduction.
+\end{itemize}
+
+The Inference Velocity role -- specifically owning throughput and latency improvements for Claude's production serving infrastructure -- is where I want to apply this work at the highest possible impact. I am remote-friendly and available to interview at your convenience.
+
+\closing{Yours sincerely,}
+
+\end{letter}
+\end{document}

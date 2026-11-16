@@ -1,0 +1,31 @@
+%% Cover Letter -- AssemblyAI Senior Software Engineer Inference
+\documentclass[a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{\today}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ AssemblyAI}
+
+\opening{Dear Hiring Team,}
+
+I am writing to apply for the Senior Software Engineer, Inference role at AssemblyAI. Building production backend services for high-throughput real-time streaming inference at scale -- 1M+ API users, sub-second latency guarantees -- is precisely the class of problem I have been building toward independently.
+
+Three specific achievements directly relevant to this role:
+
+\begin{itemize}
+  \item \textbf{Production LLM inference platform -- real-time streaming at scale:} I designed and operated \textit{llm-inference-platform} on GKE (NVIDIA L4 24 GB, us-central1): vLLM 0.32.0 (PagedAttention, continuous batching, streaming) + SGLang 0.5.20 (RadixAttention, real-time token streaming) serving Qwen3 8B AWQ + Llama 3.1 8B AWQ, LiteLLM Proxy 1.40.0 gateway, KEDA autoscaling on GPU queue depth. LIVE: 723 requests, 1.25M+ tokens, \$152.82 infra over 5.3 days.
+
+  \item \textbf{Sub-500 ms end-to-end latency under concurrent load:} I built a high-throughput real-time NLP pipeline for EduTechConnect delivering sub-500 ms end-to-end latency under concurrent load: structured output extraction, automatic retries, full observability, and Supabase (PostgreSQL) for high-concurrency data persistence. Latency holding under bursty concurrent load is a constraint I engineered around directly.
+
+  \item \textbf{H100 SLO compliance and throughput -- production measurement rigour:} I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2 -- TTFT, TPOT, throughput, SLO compliance at concurrency 1--128. Peak: 5,965 tok/s; 100\% SLO compliance at concurrency 128. RadixAttention: 1,443$\times$ TTFT speedup at 131K-token context. Live: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}.
+\end{itemize}
+
+AssemblyAI's challenge -- serving speech AI reliably to 1M+ API users with the low-latency guarantees real-time streaming demands -- requires the same backend engineering fundamentals as LLM inference serving: batching, streaming, concurrent load management, and production reliability. I am UK Remote and available to start immediately.
+
+\closing{Yours sincerely,}
+
+\end{letter}
+\end{document}
