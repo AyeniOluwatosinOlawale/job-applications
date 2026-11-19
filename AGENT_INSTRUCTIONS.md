@@ -537,9 +537,10 @@ AI-Heavy Product Companies:
       I'm Oluwatosin Ayeni — an AI & ML Engineer based in Glasgow, Scotland, specialising in LLM inference engineering and production AI systems.
 
       A few things that might be relevant to [Company Name]:
-      • Benchmarked Qwen2.5-7B on RTX 4090 with vLLM and SGLang — achieved 28x cost reduction and 18x latency improvement via continuous batching and KV cache optimisation.
-      • Fine-tuned Mistral 7B on radiology data: +22% diagnostic accuracy, −35% hallucination rate — deployed as a live clinical assistant.
-      • Built a production LLM serving stack on Kubernetes (vllm-k8s-stack): KV-cache-aware routing, HPA autoscaling, GPU node management.
+      [INSERT 3 BULLETS — pick the 3 most relevant projects from ## Key Projects at the top of this file, based on what this company works on. Use the most recent and highest-impact projects first. Each bullet must include a concrete metric or result. Format: "• [Project name]: [what it does] — [key metric/result]." Always prefer the newest projects (production-grade-nebius-llm-benchmark, llm-inference-platform, llm-inference-benchmark) unless the company's focus calls for something else. Example bullets:
+      • Built production-grade 2×3 inference benchmark on Nebius H100 SXM5 — llm-d vs NVIDIA Dynamo across vLLM/SGLang/TRT-LLM on Qwen3-27B; 88,183 real requests at 34.27 req/s sustained, TTFT p95 2.76s.
+      • Deployed production LLM inference platform on GKE (NVIDIA L4) — vLLM + SGLang dual-engine behind LiteLLM gateway; KEDA autoscaling on queue depth; 1.25M+ tokens served, $28.74/day infra cost.
+      • Benchmarked vLLM vs SGLang on 2× H100 NVL — RadixAttention delivers 1,443x TTFT speedup at 131K context; 100% SLO compliance at concurrency 1–128.]
       • MSc Artificial Intelligence with Distinction — University of Strathclyde, 2023.
 
       I'm actively looking for LLM inference, ML engineering, or AI systems roles — open to remote, hybrid, or Glasgow/London-based.
