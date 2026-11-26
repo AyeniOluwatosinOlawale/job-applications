@@ -15,7 +15,7 @@ LLM Inference Engineer, ML Engineer (LLM), Generative AI Engineer, AI Engineer, 
 Primary: Python, vLLM, SGLang, TensorRT-LLM, CUDA/NVIDIA Nsight, AWQ, speculative decoding, KV cache optimisation, PyTorch, LLM fine-tuning (Mistral 7B / Phi-4 / Qwen3 / Gemma 2 via PEFT/LoRA), LangChain, RAG systems, n8n, FastAPI, Docker, Kubernetes, Claude API
 Secondary: TypeScript, SQL, Scikit-learn, NLP, Computer Vision, Pandas, Power BI, React, Next.js, PostgreSQL, Redis, GitHub Actions, Vertex AI, LiteLLM, KEDA, Loki, AlertManager, Velero, RunPod, Vast.ai, Nebius AI Cloud, Ollama, MoE (Mixture of Experts), GQA/MQA (grouped/multi-query attention), Terraform, Helm, Argo CD, Argo Rollouts, Traefik, Prometheus, Grafana, DCGM Exporter, Kyverno, GKE, NVIDIA L4, NVIDIA H100 SXM5, NVIDIA Dynamo (disaggregated inference), llm-d (Kubernetes-native LLM scheduler), NATS JetStream, disaggregated prefill/decode serving, NIXL KV transfer, k6 load testing
 
-## GitHub: 47 public repos — github.com/AyeniOluwatosinOlawale
+## GitHub: 48 public repos — github.com/AyeniOluwatosinOlawale
 ## Portfolio: portfolio-ten-brown-40.vercel.app
 ## Consulting: vertinab.com | anaai.tech
 
@@ -60,6 +60,7 @@ RAG & Agents:
 - AI Automation n8n workflows (github.com/AyeniOluwatosinOlawale/AI-Powered-Automation-Workflows-with-n8n)
 
 Research:
+- Pneumonia-Detector-Analyser: deep learning pipeline for pneumonia detection from chest X-rays — CNN classification with diagnostic explanation (github.com/AyeniOluwatosinOlawale/Pneumonia-Detector-Analyser)
 - Multilingual-Emotion-Analyzer: NLP pipeline for multilingual emotion detection — MSc AI research (github.com/AyeniOluwatosinOlawale/-Multilingual-Emotion-Action-Analyzer)
 - PathLoss-ML-mmWave: ML-based path loss prediction for mmWave/Sub-THz 5G/6G networks — MSc AI research (github.com/AyeniOluwatosinOlawale/PathLoss-ML-Predicting-mmWave-Sub-THz-Path-Loss-with-Machine-Learning)
 - Open source contributor: build-an-llm (github.com/thekingslee/build-an-llm)

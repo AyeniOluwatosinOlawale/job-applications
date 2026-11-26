@@ -1,0 +1,30 @@
+%% Cover Letter — Luma AI Software Engineer, Inference
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{26 November 2026}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Luma AI \\ London, UK}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the Software Engineer, Inference role at Luma AI. Scaling GPU inference infrastructure for large-scale video and 3D generative models — where compute demands are substantially higher than text, and latency tolerance is tighter — is precisely the engineering frontier I am most excited to work on.
+
+My inference infrastructure experience is deep and production-verified. I designed a GKE LLM inference platform (vLLM 0.32.0 + SGLang 0.5.20, NVIDIA L4, KEDA autoscaling on GPU queue depth, LiteLLM Proxy) that has handled 1.25M+ tokens at \$28.74/day with a 27-target Prometheus observability stack. I ran systematic H100 NVL benchmarks: 5,965~tok/s peak throughput, 1,443$\times$ TTFT speedup via RadixAttention prefix caching at 131K-token context, 100\% SLO compliance at concurrency 128. For disaggregated inference, I benchmarked NVIDIA Dynamo 1.6.1 (NATS JetStream + etcd + NIXL KV transfer) against llm-d across vLLM, SGLang, and TensorRT-LLM on Nebius H100 SXM5 — 88,183 requests, 34.27~req/s sustained, TTFT p95 2.76~s, running at \$1.09/GPU/hr on preemptible instances.
+
+Multi-modal serving is a specific area of focus for me. My \textit{lab-vllm-omni} project covers all five vLLM-Omni output modalities — text, audio, image, video, and structured output — building practical intuition for the unique serving characteristics of each. For generative video and 3D models, I understand that memory bandwidth, batch strategy, and tensor parallelism trade-offs look quite different from text serving, and I am excited to bring this systems thinking to Luma AI's Dream Machine infrastructure.
+
+I engineered inference gateways delivering 3.87$\times$ latency reduction and 14$\times$ throughput gains through continuous batching, KV cache tuning, and intelligent routing — and I have debugged VRAM OOM conditions, CUDA kernel bottlenecks, and scheduling inefficiencies across GKE, bare-metal, and cloud GPU instances. I am comfortable building at the full stack from CUDA profiling to Kubernetes orchestration to production API reliability.
+
+I would welcome a conversation about Luma AI's inference scaling challenges and how I can contribute.
+
+\closing{Yours sincerely,}
+
+\ps{CV and GitHub: \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} $\cdot$ Benchmark dashboard: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm} $\cdot$ Multi-modal lab: \href{https://github.com/AyeniOluwatosinOlawale/lab-vllm-omni}{github.com/AyeniOluwatosinOlawale/lab-vllm-omni}}
+
+\end{letter}
+\end{document}

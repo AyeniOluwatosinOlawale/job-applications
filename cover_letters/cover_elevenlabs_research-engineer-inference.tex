@@ -1,0 +1,30 @@
+%% Cover Letter — ElevenLabs Research Engineer, Inference
+\documentclass[12pt,a4paper]{letter}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+\address{Oluwatosin Ayeni \\ Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+\date{26 November 2026}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ ElevenLabs \\ London, UK}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the Research Engineer, Inference role at ElevenLabs. Building ultra-low-latency generative AI serving infrastructure at production scale — where every millisecond of latency directly impacts user experience in real-time voice synthesis — is exactly the engineering challenge I have been working on, and I would bring immediate depth to this team.
+
+My inference engineering experience maps directly to ElevenLabs' needs. I benchmarked vLLM and SGLang on H100 NVL hardware — 5,965~tok/s peak throughput, 1,443$\times$ TTFT speedup via RadixAttention prefix caching at 131K-token context, 100\% SLO compliance at concurrency 128. I designed and operated a production LLM inference platform on GKE (vLLM 0.32.0 + SGLang 0.5.20, NVIDIA L4, KEDA autoscaling on GPU queue depth, LiteLLM Proxy gateway) handling 1.25M+ tokens at \$28.74/day, with a 27-target Prometheus observability stack and custom Grafana dashboards. I also ran a full disaggregated inference benchmark on Nebius H100 SXM5 comparing NVIDIA Dynamo (NATS JetStream + NIXL KV transfer) against llm-d across vLLM, SGLang, and TensorRT-LLM — 88,183 requests, 34.27~req/s sustained, TTFT p95 2.76~s.
+
+For latency-critical serving specifically, I engineered inference gateways delivering 3.87$\times$ latency reduction and 14$\times$ throughput gains through continuous batching, KV cache tuning, and intelligent routing. I have profiled and resolved GPU memory fragmentation, VRAM OOM conditions, and CUDA kernel inefficiencies across multiple hardware generations. My \textit{open-model-engine} project benchmarks vLLM, SGLang, TensorRT-LLM, and LayerScale with CUDA profiling, quantisation, and speculative decoding — building the intuition for where latency is actually lost.
+
+ElevenLabs serves real-time voice synthesis to millions of users, where TTFT and streaming latency budgets are far tighter than standard LLM serving. I am particularly excited about bringing inference research — not just engineering — to this problem: optimising the serving stack for audio generation models, exploring speculative decoding for TTS, and pushing the latency floor lower.
+
+I would welcome a conversation about how I can contribute to ElevenLabs' inference research.
+
+\closing{Yours sincerely,}
+
+\ps{CV and GitHub: \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} $\cdot$ Benchmark dashboard: \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app/benchmarks/llm}}
+
+\end{letter}
+\end{document}

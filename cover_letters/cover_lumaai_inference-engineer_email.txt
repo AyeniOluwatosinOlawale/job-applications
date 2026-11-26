@@ -1,0 +1,22 @@
+Subject: Software Engineer, Inference — Oluwatosin Ayeni
+
+Dear Hiring Team,
+
+I am applying for the Software Engineer, Inference role at Luma AI. Scaling GPU inference infrastructure for large-scale video and 3D generative models is precisely the engineering frontier I am most excited to work on — and I sent a cold outreach email earlier this year because of how compelling Dream Machine's inference challenges are.
+
+Highlights from my inference work:
+• Production GKE platform (vLLM 0.32.0 + SGLang 0.5.20, NVIDIA L4, KEDA autoscaling on GPU queue depth, LiteLLM Proxy): 1.25M+ tokens at $28.74/day, 27-target Prometheus + Grafana stack
+• H100 NVL benchmark: vLLM vs SGLang — 5,965 tok/s peak, 1,443× TTFT speedup via RadixAttention prefix caching, 100% SLO at concurrency 128
+• Nebius H100 SXM5 disaggregated inference benchmark: NVIDIA Dynamo 1.6.1 (NATS JetStream + NIXL KV) vs llm-d across vLLM/SGLang/TRT-LLM — 88,183 requests, 34.27 req/s, TTFT p95 2.76s, $1.09/GPU/hr
+• lab-vllm-omni: phased inference lab covering all 5 vLLM-Omni output modalities — text, audio, image, video, structured output — directly relevant to multi-modal generative serving
+
+GitHub: https://github.com/AyeniOluwatosinOlawale (48 public repos)
+Multi-modal lab: https://github.com/AyeniOluwatosinOlawale/lab-vllm-omni
+Benchmark dashboard: https://inference-web-theta.vercel.app/benchmarks/llm
+
+Please find my CV attached.
+
+Best regards,
+Oluwatosin Ayeni
+ayenioluwatosinolawale@gmail.com | 07727305230
+Glasgow, UK (open to London relocation)

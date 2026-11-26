@@ -587,6 +587,46 @@ ROLES = [
             ("inference-harness", "Unified benchmarking framework spanning Anthropic, OpenAI, Gemini, vLLM, SGLang, TRT-LLM with GPU profiling. <a href='https://github.com/AyeniOluwatosinOlawale/inference-harness'>GitHub</a>"),
         ],
     },
+    {
+        "slug": "elevenlabs_research-engineer-inference",
+        "title": "Research Engineer, Inference",
+        "company": "ElevenLabs",
+        "tagline": "Research Engineer specialising in ultra-low-latency generative AI inference. Benchmarked vLLM and SGLang on H100 NVL hardware — 5,965 tok/s peak throughput, 1,443× TTFT speedup via RadixAttention prefix caching at 131K-token context, 100% SLO compliance at concurrency 128. Built production LLM inference platform on GKE (vLLM + SGLang, KEDA autoscaling on GPU queue depth, LiteLLM Proxy, Prometheus/Grafana) handling 1.25M+ tokens at $28.74/day. Deep interest in latency-critical serving for real-time generative AI — the core engineering challenge at ElevenLabs scale.",
+        "competencies": [
+            ("Inference Engines", "vLLM, SGLang, TensorRT-LLM — ultra-low-latency serving, throughput/latency tuning, real-time streaming"),
+            ("GPU Profiling &amp; Optimisation", "CUDA kernels, NVIDIA Nsight, DCGM Exporter, KV cache tuning, speculative decoding, quantisation (AWQ/GPTQ)"),
+            ("Infrastructure &amp; Orchestration", "Kubernetes (GKE), KEDA autoscaling, Helm, Terraform, Argo CD GitOps, GPU node pools, HPA"),
+            ("Observability", "Prometheus, Grafana, AlertManager, Loki, FluentBit, end-to-end latency and SLO tracking"),
+            ("Languages &amp; Frameworks", "Python (expert), PyTorch, FastAPI, LiteLLM Proxy, Claude API, OpenAI-compatible APIs"),
+        ],
+        "projects": [
+            ("production-grade-nebius-llm-benchmark", "2×3 scheduler/engine matrix on Nebius H100 SXM5: llm-d vs NVIDIA Dynamo 1.6.1 across vLLM / SGLang / TRT-LLM. Qwen3-27B BF16 tp=2. 88,183 requests, 34.27 req/s, TTFT p95 2.76s. <a href='https://github.com/AyeniOluwatosinOlawale/production-grade-nebius-llm-benchmark'>GitHub</a>"),
+            ("llm-inference-benchmark (H100)", "2× H100 NVL 94 GB, CUDA 13.4. vLLM vs SGLang, Qwen3-8B BF16, TP=2. 1,443× TTFT speedup; 100% SLO at concurrency 128. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live dashboard</a> · <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-benchmark'>GitHub</a>"),
+            ("llm-inference-platform (GKE)", "Production LLM serving: vLLM + SGLang, KEDA autoscaling, LiteLLM Proxy, 27-target Prometheus. 1.25M+ tokens, $28.74/day. <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-platform'>GitHub</a>"),
+            ("inference-optimizer", "13-optimisation Inference Gateway: 3.87× faster, 14× throughput, 61.4% cost reduction. <a href='https://github.com/AyeniOluwatosinOlawale/inference-optimizer'>GitHub</a>"),
+            ("open-model-engine", "GPU-first benchmarking for vLLM, SGLang, TensorRT-LLM; CUDA profiling, quantisation, speculative decoding. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
+        ],
+    },
+    {
+        "slug": "lumaai_inference-engineer",
+        "title": "Software Engineer, Inference",
+        "company": "Luma AI",
+        "tagline": "Software Engineer specialising in GPU inference infrastructure for large-scale generative AI models. Benchmarked vLLM and SGLang on H100 NVL hardware — 5,965 tok/s peak throughput, 1,443× TTFT speedup via RadixAttention prefix caching, 100% SLO compliance at concurrency 128. Built production LLM inference platform on GKE (vLLM + SGLang, KEDA autoscaling, LiteLLM Proxy, Prometheus/Grafana) handling 1.25M+ tokens at $28.74/day. Experience spanning multi-modal generative model serving (text, audio, image, video), disaggregated inference, and GPU cluster management — directly applicable to Luma AI's Dream Machine inference infrastructure.",
+        "competencies": [
+            ("Inference Engines", "vLLM, SGLang, TensorRT-LLM — large-scale generative model serving, throughput/latency optimisation, multi-modal inference"),
+            ("GPU Infrastructure", "CUDA profiling, NVIDIA Nsight, DCGM Exporter, tensor parallelism, speculative decoding, quantisation (AWQ/GPTQ/BF16)"),
+            ("Orchestration &amp; Autoscaling", "Kubernetes (GKE), KEDA autoscaling, Helm, Terraform, Argo CD GitOps, GPU node pools, HPA"),
+            ("Disaggregated Inference", "NVIDIA Dynamo 1.6.1, llm-d, NATS JetStream, NIXL KV transfer, prefill/decode separation, KV-cache-aware routing"),
+            ("Observability", "Prometheus, Grafana, AlertManager, Loki, FluentBit, PodMonitor, end-to-end SLO tracking"),
+        ],
+        "projects": [
+            ("production-grade-nebius-llm-benchmark", "2×3 matrix: llm-d vs NVIDIA Dynamo 1.6.1 across vLLM / SGLang / TRT-LLM on H100 SXM5. Qwen3-27B BF16 tp=2. 88,183 requests, 34.27 req/s, TTFT p95 2.76s, $1.09/GPU/hr. <a href='https://github.com/AyeniOluwatosinOlawale/production-grade-nebius-llm-benchmark'>GitHub</a>"),
+            ("llm-inference-benchmark (H100)", "2× H100 NVL 94 GB, CUDA 13.4. vLLM vs SGLang, Qwen3-8B BF16, TP=2. 1,443× TTFT speedup; 100% SLO at concurrency 128. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live dashboard</a> · <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-benchmark'>GitHub</a>"),
+            ("llm-inference-platform (GKE)", "Production LLM serving: vLLM + SGLang, KEDA autoscaling, LiteLLM Proxy, 27-target Prometheus. 1.25M+ tokens, $28.74/day. <a href='https://github.com/AyeniOluwatosinOlawale/llm-inference-platform'>GitHub</a>"),
+            ("lab-vllm-omni", "Phased inference lab for vLLM-Omni — all 5 output modalities: text, audio, image, video, structured output. <a href='https://github.com/AyeniOluwatosinOlawale/lab-vllm-omni'>GitHub</a>"),
+            ("open-model-engine", "GPU-first benchmarking for vLLM, SGLang, TensorRT-LLM; CUDA profiling, quantisation, speculative decoding. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
+        ],
+    },
 ]
 
 COVER_LETTERS = [
@@ -1010,6 +1050,40 @@ COVER_LETTERS = [
 <p>Nebius's Token Factory is one of the few platforms where inference efficiency and model quality are treated as joint optimisation targets rather than separate concerns. The focus on speculative decoding, low-precision training, and high-performance open model deployment is precisely the problem space I have been investing in independently. The distributed remote-Europe team structure and the open-source commitments make it even more compelling.</p>
 
 <p>I am a focused, independent engineer who ships: from a research question to a live benchmark with published results in days. I look forward to hearing from you.</p>
+""",
+    },
+    {
+        "slug": "elevenlabs_research-engineer-inference",
+        "company": "ElevenLabs",
+        "recipient": "ElevenLabs, London, UK",
+        "body": """
+<p>I am applying for the Research Engineer, Inference role at ElevenLabs. Building ultra-low-latency generative AI serving infrastructure where every millisecond directly impacts real-time voice synthesis is exactly the engineering challenge I have been working on.</p>
+
+<p>Three specific achievements directly relevant to this role:</p>
+<ul>
+  <li><strong>H100 NVL benchmark — 1,443× TTFT speedup:</strong> I benchmarked vLLM v0.30 vs SGLang v0.5.20 on 2× NVIDIA H100 NVL 94 GB (NVLink 4.0, CUDA 13.4), Qwen3-8B BF16, TP=2. RadixAttention prefix caching: 1,443× TTFT speedup (39 ms vs 55,565 ms) at 131K-token context; 100% SLO compliance at concurrency 128; peak: 5,965 tok/s. Live: <a href="https://inference-web-theta.vercel.app/benchmarks/llm">inference-web-theta.vercel.app</a>.</li>
+  <li><strong>Nebius H100 SXM5 disaggregated inference benchmark:</strong> NVIDIA Dynamo 1.6.1 (NATS JetStream + NIXL KV transfer) vs llm-d across vLLM, SGLang, TensorRT-LLM — Qwen3-27B BF16 tp=2. 88,183 requests, 34.27 req/s, TTFT p95 2.76s, $1.09/GPU/hr. <a href="https://github.com/AyeniOluwatosinOlawale/production-grade-nebius-llm-benchmark">GitHub</a>.</li>
+  <li><strong>Production GKE LLM serving platform:</strong> vLLM 0.32.0 + SGLang 0.5.20, NVIDIA L4, KEDA autoscaling on GPU queue depth, LiteLLM Proxy gateway (least-busy routing, A/B round-robin, Redis cache, PostgreSQL spend tracking), 27-target Prometheus + Grafana + AlertManager. LIVE: 723 requests, 1.25M+ tokens, $28.74/day.</li>
+</ul>
+
+<p>I am particularly excited about applying inference research — speculative decoding, serving-stack optimisation, latency profiling — to audio generation models at ElevenLabs' scale.</p>
+""",
+    },
+    {
+        "slug": "lumaai_inference-engineer",
+        "company": "Luma AI",
+        "recipient": "Luma AI, London, UK",
+        "body": """
+<p>I am applying for the Software Engineer, Inference role at Luma AI. Scaling GPU inference infrastructure for large-scale video and 3D generative models — where compute demands are substantially higher than text, and latency tolerance is tighter — is precisely the engineering frontier I am most excited to work on.</p>
+
+<p>Three specific achievements directly relevant to this role:</p>
+<ul>
+  <li><strong>Production GKE LLM inference platform:</strong> vLLM 0.32.0 + SGLang 0.5.20 on NVIDIA L4, KEDA autoscaling on GPU queue depth, LiteLLM Proxy gateway (least-busy routing, A/B round-robin, Redis cache, PostgreSQL spend tracking), 27-target Prometheus + Grafana + AlertManager. LIVE: 723 requests, 1.25M+ tokens, $28.74/day.</li>
+  <li><strong>Nebius H100 SXM5 disaggregated inference benchmark:</strong> NVIDIA Dynamo 1.6.1 (NATS JetStream + etcd + NIXL KV transfer) vs llm-d across vLLM, SGLang, TensorRT-LLM — Qwen3-27B BF16 tp=2. 88,183 requests, 34.27 req/s, TTFT p95 2.76s, $1.09/GPU/hr. <a href="https://github.com/AyeniOluwatosinOlawale/production-grade-nebius-llm-benchmark">GitHub</a>.</li>
+  <li><strong>Multi-modal inference lab — all 5 vLLM-Omni modalities:</strong> <em>lab-vllm-omni</em> covers text, audio, image, video, and structured output — building practical intuition for the unique serving characteristics of each modality. For generative video and 3D models, memory bandwidth, batch strategy, and tensor parallelism trade-offs look quite different from text serving. <a href="https://github.com/AyeniOluwatosinOlawale/lab-vllm-omni">GitHub</a>.</li>
+</ul>
+
+<p>Luma AI's Dream Machine inference infrastructure — serving high-throughput video and 3D generation at production scale — is exactly the class of problem I want to work on. I look forward to the conversation.</p>
 """,
     },
 ]

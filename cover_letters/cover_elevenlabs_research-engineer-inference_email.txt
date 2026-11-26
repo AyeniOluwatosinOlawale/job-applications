@@ -1,0 +1,23 @@
+Subject: Research Engineer, Inference — Oluwatosin Ayeni
+
+Dear Hiring Team,
+
+I am applying for the Research Engineer, Inference role at ElevenLabs. Building ultra-low-latency generative AI serving infrastructure where every millisecond directly impacts real-time voice synthesis is exactly the engineering challenge I have been working on.
+
+Highlights from my inference work:
+• H100 NVL benchmark: vLLM vs SGLang — 5,965 tok/s peak, 1,443× TTFT speedup via RadixAttention prefix caching at 131K-token context, 100% SLO compliance at concurrency 128
+• Production GKE platform (vLLM 0.32.0 + SGLang 0.5.20, NVIDIA L4, KEDA autoscaling on GPU queue depth, LiteLLM Proxy): 1.25M+ tokens at $28.74/day, 27-target Prometheus stack
+• Nebius H100 SXM5 disaggregated inference benchmark: NVIDIA Dynamo 1.6.1 (NATS JetStream + NIXL KV) vs llm-d across vLLM/SGLang/TRT-LLM — 88,183 requests, 34.27 req/s, TTFT p95 2.76s at $1.09/GPU/hr
+• Inference gateway engineering: 3.87× latency reduction, 14× throughput gains, 61.4% cost reduction via continuous batching, KV cache tuning, and intelligent routing
+
+GitHub: https://github.com/AyeniOluwatosinOlawale (48 public repos — inference benchmarks, CUDA labs, Kubernetes serving stacks)
+Benchmark dashboard: https://inference-web-theta.vercel.app/benchmarks/llm
+
+I am particularly excited about applying inference research — speculative decoding, serving-stack optimisation, latency profiling — to audio generation models at ElevenLabs' scale.
+
+Please find my CV attached.
+
+Best regards,
+Oluwatosin Ayeni
+ayenioluwatosinolawale@gmail.com | 07727305230
+Glasgow, UK (open to London relocation)
