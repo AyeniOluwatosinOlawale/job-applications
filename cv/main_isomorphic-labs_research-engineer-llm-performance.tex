@@ -1,0 +1,84 @@
+%% CV — Isomorphic Labs Research Engineer (LLM Performance), London
+%% Compile: lualatex main_isomorphic-labs_research-engineer-llm-performance.tex
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[scale=0.80]{geometry}
+\usepackage{hyperref}
+
+\name{Oluwatosin}{Ayeni}
+\address{Glasgow, Scotland, UK}{}{}
+\phone[mobile]{07727305230}
+\email{ayenioluwatosinolawale@gmail.com}
+\extrainfo{%
+  \href{https://github.com/AyeniOluwatosinOlawale}{github.com/AyeniOluwatosinOlawale} \quad
+  \href{https://www.linkedin.com/in/oluwatosinolawaleayeni/}{linkedin.com/in/oluwatosinolawaleayeni}
+}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+Research engineer specialising in LLM post-training optimisation, distributed inference performance, and low-precision methods for frontier models. I benchmark LLMs at scale on 2$\times$ NVIDIA H100 NVL and H100 SXM5 hardware — profiling TTFT/TPOT bottlenecks across vLLM, SGLang, and TensorRT-LLM — and have fine-tuned Mistral 7B, Phi-4, and Qwen3 models using PEFT/LoRA pipelines with rigorous evaluation frameworks. My CUDA KV cache kernel profiling on RTX 4090 with NVIDIA Nsight Systems identified memory bandwidth bottlenecks and delivered 3.8$\times$ throughput improvement. Passionate about applying LLM performance engineering to high-stakes scientific domains. Open to London in-person. MSc AI with Distinction, University of Strathclyde 2023.
+
+\section{Core Competencies}
+\cvitem{LLM Post-Training \& Evaluation}{PEFT/LoRA fine-tuning pipelines (Mistral 7B, Phi-4, Qwen3, Gemma 2); SFT on domain-specific corpora; structured evaluation harnesses; +22\% diagnostic accuracy Mistral 7B radiology fine-tune; AWQ/GPTQ quantisation for production serving}
+\cvitem{Distributed Inference Performance}{vLLM 0.33.0 + SGLang 0.5.23 + TensorRT-LLM 25.01 on 2$\times$ H100 SXM5 (80 GB HBM, tp=2 via NVLink); TTFT p95 2.76 s at 500 VU sustained; RadixAttention 1,443$\times$ TTFT speedup at 131K-token context; bottleneck classification across engine matrix}
+\cvitem{CUDA \& Low-Precision Methods}{NVIDIA Nsight Systems + Compute kernel profiling; memory bandwidth bottleneck identification; KV cache kernel retuning (3.8$\times$ throughput); speculative decoding experiments; AWQ/BF16/FP8 precision trade-off analysis}
+\cvitem{Post-Training Infra \& Scaling}{Multi-node GPU orchestration (GKE, Kubernetes, KEDA); NATS JetStream + etcd + NIXL KV transfer for disaggregated prefill/decode; LiteLLM gateway (least-busy routing, Redis cache, spend tracking); structured output + evaluation pipeline automation}
+\cvitem{Languages \& Frameworks}{Python (primary), PyTorch, CUDA C++ (kernel profiling), FastAPI, Docker, Kubernetes, Terraform, GitHub Actions}
+
+\section{Professional Experience}
+
+\cventry{Jan 2025--present}{Founder \& Lead Engineer}{Nexora Academic}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Production-grade 2$\times$3 inference benchmark on Nebius H100 SXM5 (80 GB HBM each, tp=2): llm-d vs NVIDIA Dynamo 1.6.1 across vLLM 0.33.0 / SGLang 0.5.23 / TRT-LLM 25.01 on Qwen3-27B BF16. Live run 3 (500 VU stress): 88,183 requests at 34.27 req/s sustained, 0.09\% failure rate, TTFT p95 2.76 s.
+    \item H100 NVL benchmark: vLLM v0.30 vs SGLang v0.5.20 on 2$\times$ NVIDIA H100 NVL 94 GB (NVLink 4.0) — Qwen3-8B BF16 TP=2; RadixAttention prefix caching: 1,443$\times$ TTFT speedup at 131K-token context; 100\% SLO compliance concurrency 1--128.
+    \item Fine-tuned Phi-4 and Qwen3 models with LoRA/PEFT on domain-specific datasets — full pipeline: data preparation, LoRA training, evaluation harness, inference validation.
+    \item Designed 13-phase AI Inference Engineering curriculum; built evaluation frameworks tracking TTFT/TPOT/SLO/throughput across closed and open model APIs (Anthropic, OpenAI, Gemini, vLLM, SGLang, TRT-LLM).
+  \end{itemize}
+}
+
+\cventry{Jan 2023--present}{Founder \& AI Consultant}{Vertinab / AnaburyAI Technology}{Glasgow, UK}{}{
+  \begin{itemize}
+    \item Fine-tuned Mistral 7B on radiology corpus using PEFT/LoRA: +22\% diagnostic accuracy; full pipeline from data curation to structured evaluation against clinician baselines.
+    \item CUDA KV cache kernel profiling on RTX 4090 with NVIDIA Nsight Systems: memory bandwidth bottleneck identification, 3.8$\times$ throughput improvement, 18$\times$ latency reduction via continuous batching redesign.
+    \item 28$\times$ LLM serving cost reduction via vLLM/SGLang on RTX 4090 — AWQ quantisation, speculative decoding, prefix caching, continuous batching combined.
+  \end{itemize}
+}
+
+\cventry{2024--present}{Senior Software Engineer (Contract)}{EduTechConnect / Stellar Labs}{Remote}{}{
+  \begin{itemize}
+    \item High-throughput NLP pipeline: sub-500 ms end-to-end latency; structured output extraction with evaluation-driven quality assurance.
+    \item Distributed automation: n8n workflows $\rightarrow$ WhatsApp Cloud API $\rightarrow$ Zoho CRM $\rightarrow$ Supabase; real-time lead scoring.
+  \end{itemize}
+}
+
+\cventry{Mar 2026--present}{AI Automation Engineer}{EduTech Global}{Remote}{}{
+  \begin{itemize}
+    \item LLM inference workflows with structured output, multi-step reasoning, automated evaluation at production scale.
+  \end{itemize}
+}
+
+\cventry{Jan 2018--Jul 2022}{Data Analyst}{Bytelab Technologies Ltd}{Nigeria}{}{}
+
+\section{Key Projects}
+
+\cvitem{production-grade-nebius-llm-benchmark}{2$\times$3 scheduler/engine benchmark on Nebius H100 SXM5: llm-d vs NVIDIA Dynamo across vLLM/SGLang/TRT-LLM; Qwen3-27B tp=2; 88,183 requests at 34.27 req/s. \href{https://github.com/AyeniOluwatosinOlawale/production-grade-nebius-llm-benchmark}{github.com/AyeniOluwatosinOlawale/production-grade-nebius-llm-benchmark}}
+
+\cvitem{phase2-llm-inference-deep-dive}{CUDA KV cache kernel profiling on RTX 4090 with NVIDIA Nsight: memory bandwidth bottleneck identification, 3.8$\times$ throughput, speculative decoding experiments. \href{https://github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive}{github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive}}
+
+\cvitem{Mistral 7B Radiology Fine-tune}{PEFT/LoRA fine-tuning of Mistral 7B on radiology data: +22\% diagnostic accuracy. Full pipeline: data curation, LoRA training, structured evaluation, inference deployment. \href{https://github.com/AyeniOluwatosinOlawale/Offline-AI-Assisted-Health-Diagnosis}{github.com/AyeniOluwatosinOlawale/Offline-AI-Assisted-Health-Diagnosis}}
+
+\cvitem{inference-harness}{Unified benchmarking harness: Anthropic, OpenAI, Gemini, vLLM, SGLang, TRT-LLM with GPU profiling, TTFT/TPOT/SLO tracking, live dashboard. \href{https://github.com/AyeniOluwatosinOlawale/inference-harness}{github.com/AyeniOluwatosinOlawale/inference-harness}}
+
+\cvitem{llm-inference-benchmark (H100)}{vLLM vs SGLang on 2$\times$ H100 NVL, Qwen3-8B BF16 TP=2; 5,965 tok/s peak; 1,443$\times$ TTFT speedup at 131K context. \href{https://inference-web-theta.vercel.app/benchmarks/llm}{inference-web-theta.vercel.app}}
+
+\section{Education}
+\cventry{2022--2023}{MSc Artificial Intelligence and Applications, \textbf{Distinction}}{University of Strathclyde}{Glasgow, UK}{}{}
+\cventry{2010--2016}{MTech / BSc Physics}{Federal University of Technology Akure}{Nigeria}{}{}
+
+\vspace{4pt}
+\textit{References available on request.}
+
+\end{document}

@@ -84,3 +84,6 @@ date,company,contact_name,contact_email,contact_role,company_type,email_sent,fol
 2026-11-26,AI21 Labs,Hiring Team,careers@ai21.com,unknown,AI Research / LLM Serving,true,,,,Sent 2026-11-26. Jamba SSM-Transformer hybrid model — inference serving for novel architectures. email_found=inferred
 2026-11-26,Jina AI,Hiring Team,careers@jina.ai,unknown,AI / Multimodal Inference,true,,,,Sent 2026-11-26. ColPali multimodal embedding inference at scale — Reader API production serving. email_found=inferred
 2026-11-26,Covariant,Hiring Team,careers@covariant.ai,unknown,Robotics AI / Foundation Models,true,,,,Sent 2026-11-26. RFM-1 robotics foundation model — real-time inference at edge with action loop constraints. email_found=inferred
+2026-11-27,Scale AI,Hiring Team,careers@scale.com,unknown,AI Company (LLM Serving),true,email_found=inferred. London LLM serving infra role. No named contact found. Best-effort careers@ address.
+2026-11-27,deepset,Hiring Team,careers@deepset.ai,unknown,AI Company (LLM Platform),true,email_found=inferred. NLP/LLM platform - Haystack. No named contact found. Best-effort careers@ address.
+2026-11-27,Anyscale,Hiring Team,careers@anyscale.com,unknown,AI Company (ML Infra),true,email_found=inferred. Ray Serve / distributed LLM serving. No named contact found. Best-effort careers@ address.

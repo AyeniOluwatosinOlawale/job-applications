@@ -1,0 +1,36 @@
+%% Cover Letter — Isomorphic Labs Research Engineer (LLM Performance), London
+\documentclass[11pt,a4paper]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\signature{Oluwatosin Ayeni}
+\address{Glasgow, Scotland, UK \\ ayenioluwatosinolawale@gmail.com \\ 07727305230}
+
+\begin{document}
+\begin{letter}{Hiring Team \\ Isomorphic Labs \\ London, UK}
+
+\opening{Dear Hiring Team,}
+
+I am applying for the Research Engineer (LLM Performance) position at Isomorphic Labs. My strongest fit signal is a direct overlap between this role's core focus — LLM post-training optimisation at scale and distributed inference performance profiling — and work I have been doing independently on production systems, including fine-tuning Mistral 7B on domain-specific scientific data and running 2$\times$3 inference benchmarks across vLLM, SGLang, and TensorRT-LLM on Nebius H100 SXM5 hardware.
+
+Specific achievements that map to your requirements:
+
+\begin{itemize}
+  \item \textbf{LLM Fine-tuning with Rigorous Evaluation:} Fine-tuned Mistral 7B on radiology corpus using PEFT/LoRA — full pipeline from data curation to structured evaluation against clinician baselines. Result: +22\% diagnostic accuracy. Also fine-tuned Phi-4 and Qwen3 on domain-specific datasets with custom evaluation harnesses tracking generation quality, latency, and accuracy at each checkpoint.
+
+  \item \textbf{Distributed Inference Performance Profiling:} Benchmarked vLLM 0.33.0, SGLang 0.5.23, and TRT-LLM 25.01 on 2$\times$ H100 SXM5 (tp=2, BF16) — 88,183 real requests at 34.27 req/s sustained, TTFT p95 2.76 s under 500-VU stress. Separately measured 1,443$\times$ TTFT speedup via RadixAttention prefix caching at 131K-token context on H100 NVL hardware.
+
+  \item \textbf{CUDA Kernel Profiling and Low-Precision Methods:} Profiled KV cache CUDA kernels on RTX 4090 using NVIDIA Nsight Systems and Nsight Compute — identified memory bandwidth bottlenecks and achieved 3.8$\times$ throughput improvement. Applied AWQ quantisation for production serving, reducing cost 28$\times$ while maintaining output quality.
+
+  \item \textbf{Post-Training Infrastructure at Scale:} Operated production serving stacks on GKE (NVIDIA L4 24 GB) serving 1.25M+ tokens across Qwen3 8B AWQ and Llama 3.1 8B AWQ behind a LiteLLM gateway; KEDA autoscaling on GPU queue depth; full Prometheus/DCGM observability.
+\end{itemize}
+
+Isomorphic Labs sits at a compelling intersection: the performance challenges of running frontier LLMs at scale, applied to problems in molecular biology and drug discovery where precision and reliability are non-negotiable. That is exactly the kind of environment where rigorous LLM performance engineering — not just chasing benchmark numbers but understanding why they move — matters most. The overlap between my radiology fine-tuning work and Isomorphic's application of LLMs to scientific domains gives me confidence I can contribute quickly.
+
+I am a systematic engineer who enjoys reasoning about why performance degrades before reaching for optimisations. I look forward to hearing from you.
+
+\closing{Yours sincerely,}
+
+\end{letter}
+\end{document}

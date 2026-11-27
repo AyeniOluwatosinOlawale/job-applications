@@ -627,6 +627,26 @@ ROLES = [
             ("open-model-engine", "GPU-first benchmarking for vLLM, SGLang, TensorRT-LLM; CUDA profiling, quantisation, speculative decoding. <a href='https://github.com/AyeniOluwatosinOlawale/open-model-engine'>GitHub</a>"),
         ],
     },
+    {
+        "slug": "isomorphic-labs_research-engineer-llm-performance",
+        "title": "Research Engineer (LLM Performance)",
+        "company": "Isomorphic Labs",
+        "tagline": "Research engineer specialising in LLM post-training optimisation, distributed inference performance profiling, and low-precision methods for frontier models. Fine-tuned Mistral 7B on domain-specific scientific data (+22% diagnostic accuracy); benchmarked vLLM, SGLang, and TRT-LLM on 2× H100 SXM5 (88,183 real requests, 34.27 req/s, TTFT p95 2.76s); CUDA KV cache kernel profiling (3.8× throughput). Open to London in-person. MSc AI with Distinction, University of Strathclyde 2023.",
+        "competencies": [
+            ("LLM Post-Training", "PEFT/LoRA fine-tuning pipelines (Mistral 7B, Phi-4, Qwen3, Gemma 2); SFT on domain-specific corpora; structured evaluation harnesses; +22% diagnostic accuracy Mistral 7B radiology fine-tune; AWQ/GPTQ quantisation"),
+            ("Distributed Inference Performance", "vLLM 0.33.0 + SGLang 0.5.23 + TRT-LLM 25.01 on 2× H100 SXM5 (tp=2, BF16); TTFT p95 2.76s at 500 VU; RadixAttention 1,443× TTFT speedup at 131K context; bottleneck classification across engine matrix"),
+            ("CUDA &amp; Low-Precision Methods", "NVIDIA Nsight Systems + Compute kernel profiling; memory bandwidth bottleneck identification; KV cache kernel retuning (3.8× throughput); speculative decoding; AWQ/BF16/FP8 precision analysis"),
+            ("Post-Training Infrastructure", "Multi-node GPU orchestration (GKE, Kubernetes, KEDA); NATS JetStream + etcd + NIXL KV transfer; LiteLLM gateway; structured output + evaluation pipeline automation"),
+            ("Languages &amp; Frameworks", "Python (primary), PyTorch, CUDA C++ (kernel profiling), FastAPI, Docker, Kubernetes, Terraform, GitHub Actions"),
+        ],
+        "projects": [
+            ("production-grade-nebius-llm-benchmark", "2×3 benchmark on Nebius H100 SXM5: llm-d vs NVIDIA Dynamo across vLLM/SGLang/TRT-LLM; Qwen3-27B tp=2; 88,183 requests at 34.27 req/s. <a href='https://github.com/AyeniOluwatosinOlawale/production-grade-nebius-llm-benchmark'>GitHub</a>"),
+            ("Mistral 7B Radiology Fine-tune", "PEFT/LoRA fine-tuning on radiology corpus: +22% diagnostic accuracy. Full pipeline: data curation, LoRA training, structured evaluation, inference deployment. <a href='https://github.com/AyeniOluwatosinOlawale/Offline-AI-Assisted-Health-Diagnosis'>GitHub</a>"),
+            ("phase2-llm-inference-deep-dive", "CUDA KV cache kernel profiling on RTX 4090 with NVIDIA Nsight: memory bandwidth bottleneck, 3.8× throughput improvement, speculative decoding experiments. <a href='https://github.com/AyeniOluwatosinOlawale/phase2-llm-inference-deep-dive'>GitHub</a>"),
+            ("inference-harness", "Unified benchmarking harness: Anthropic, OpenAI, Gemini, vLLM, SGLang, TRT-LLM with GPU profiling, TTFT/TPOT/SLO tracking, live dashboard. <a href='https://github.com/AyeniOluwatosinOlawale/inference-harness'>GitHub</a>"),
+            ("llm-inference-benchmark (H100)", "vLLM vs SGLang on 2× H100 NVL, Qwen3-8B BF16 TP=2; 5,965 tok/s peak; 1,443× TTFT speedup at 131K context. <a href='https://inference-web-theta.vercel.app/benchmarks/llm'>Live results</a>"),
+        ],
+    },
 ]
 
 COVER_LETTERS = [
@@ -1084,6 +1104,26 @@ COVER_LETTERS = [
 </ul>
 
 <p>Luma AI's Dream Machine inference infrastructure — serving high-throughput video and 3D generation at production scale — is exactly the class of problem I want to work on. I look forward to the conversation.</p>
+""",
+    },
+    {
+        "slug": "isomorphic-labs_research-engineer-llm-performance",
+        "company": "Isomorphic Labs",
+        "recipient": "Isomorphic Labs, London, UK",
+        "body": """
+<p>I am applying for the Research Engineer (LLM Performance) position at Isomorphic Labs. My strongest fit signal is a direct overlap between this role's core focus — LLM post-training optimisation at scale and distributed inference performance profiling — and work I have been doing independently on production systems, including fine-tuning Mistral 7B on domain-specific scientific data and running 2×3 inference benchmarks across vLLM, SGLang, and TensorRT-LLM on Nebius H100 SXM5 hardware.</p>
+
+<p>Specific achievements that map to your requirements:</p>
+<ul>
+  <li><strong>LLM Fine-tuning with Rigorous Evaluation:</strong> Fine-tuned Mistral 7B on radiology corpus using PEFT/LoRA — full pipeline from data curation to structured evaluation against clinician baselines. Result: +22% diagnostic accuracy. Also fine-tuned Phi-4 and Qwen3 on domain-specific datasets with custom evaluation harnesses tracking generation quality, latency, and accuracy at each checkpoint.</li>
+  <li><strong>Distributed Inference Performance Profiling:</strong> Benchmarked vLLM 0.33.0, SGLang 0.5.23, and TRT-LLM 25.01 on 2× H100 SXM5 (tp=2, BF16) — 88,183 real requests at 34.27 req/s sustained, TTFT p95 2.76s under 500-VU stress. Separately measured 1,443× TTFT speedup via RadixAttention prefix caching at 131K-token context on H100 NVL hardware.</li>
+  <li><strong>CUDA Kernel Profiling and Low-Precision Methods:</strong> Profiled KV cache CUDA kernels on RTX 4090 using NVIDIA Nsight Systems and Nsight Compute — identified memory bandwidth bottlenecks and achieved 3.8× throughput improvement. Applied AWQ quantisation for production serving, reducing cost 28× while maintaining output quality.</li>
+  <li><strong>Post-Training Infrastructure at Scale:</strong> Operated production serving stacks on GKE (NVIDIA L4 24 GB) serving 1.25M+ tokens across Qwen3 8B AWQ and Llama 3.1 8B AWQ behind a LiteLLM gateway; KEDA autoscaling on GPU queue depth; full Prometheus/DCGM observability.</li>
+</ul>
+
+<p>Isomorphic Labs sits at a compelling intersection: the performance challenges of running frontier LLMs at scale, applied to problems in molecular biology and drug discovery where precision and reliability are non-negotiable. That is exactly the kind of environment where rigorous LLM performance engineering — not just chasing benchmark numbers but understanding why they move — matters most. The overlap between my radiology fine-tuning work and Isomorphic's application of LLMs to scientific domains gives me confidence I can contribute quickly.</p>
+
+<p>I am a systematic engineer who enjoys reasoning about why performance degrades before reaching for optimisations. I look forward to hearing from you.</p>
 """,
     },
 ]
